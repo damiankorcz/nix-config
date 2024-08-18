@@ -20,13 +20,15 @@
         ];
 
         # Use GRUB boot loader
-        loader.grub.enable = true;
-        loader.grub.device = "/dev/sda";
-        loader.grub.useOSProber = true;
+        # loader.grub.enable = true;
+        # loader.grub.device = "/dev/sda";
+        # loader.grub.useOSProber = true;
+        # loader.grub.configurationLimit = 25;
 
         # Use the systemd-boot EFI boot loader.
-        # loader.systemd-boot.enable = true;
-        # loader.efi.canTouchEfiVariables = true;
+        loader.systemd-boot.enable = true;
+        loader.efi.canTouchEfiVariables = true;
+        loader.systemd-boot.configurationLimit = 25;
 
         # Filesystem support
         supportedFilesystems = [
@@ -159,4 +161,9 @@
         # https://nixos.wiki/wiki/Visual_Studio_Code
         gnome.gnome-keyring.enable = true;
     };
+
+    # ------------ Time ------------
+
+    # Fixing time sync when dualbooting with Windows
+    time.hardwareClockInLocalTime = true;
 }
