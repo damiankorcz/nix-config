@@ -14,9 +14,9 @@
 
         consoleLogLevel = 3;
         kernelParams = [
-        "quiet"
-        "systemd.show_status=auto"
-        "rd.udev.log_level=3"
+            "quiet"
+            "systemd.show_status=auto"
+            "rd.udev.log_level=3"
         ];
 
         # Use GRUB boot loader
@@ -32,8 +32,8 @@
 
         # Filesystem support
         supportedFilesystems = [
-        "ntfs"
-        "btrfs"
+            "ntfs"
+            "btrfs"
         ];
 
         plymouth.enable = true;
@@ -64,6 +64,9 @@
 
     # Set your time zone
     time.timeZone = systemSettings.timezone;
+
+    # Fixing time sync when dualbooting with Windows
+    time.hardwareClockInLocalTime = true;
 
     # Select internationalisation properties
     i18n = {
@@ -153,19 +156,15 @@
         openssh.settings.PasswordAuthentication = true;
         openssh.settings.PermitRootLogin = "no";
 
-        # Enable touchpad support (enabled default in most desktopManager).
-        # xserver.libinput.enable = true;
-
         # Auto-mount USB drives
         udisks2.enable = true;
 
         # Needed for auth tokens in Github Desktop to work (even when using KDE / Plasma). Also an issue with VSCode apparently.
         # https://nixos.wiki/wiki/Visual_Studio_Code
         gnome.gnome-keyring.enable = true;
+
+        # Enable touchpad support (enabled default in most desktopManager).
+        # xserver.libinput.enable = true;
+
     };
-
-    # ------------ Time ------------
-
-    # Fixing time sync when dualbooting with Windows
-    time.hardwareClockInLocalTime = true;
 }

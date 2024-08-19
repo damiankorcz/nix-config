@@ -101,6 +101,7 @@
                 fonts = [
                     # symbols icon only
                     "NerdFontsSymbolsOnly"
+
                     # Characters
                     "CascadiaCode"
                     "FiraCode"
