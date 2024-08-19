@@ -49,7 +49,7 @@
                     init.defaultBranch = "main";
                     safe.directory = [
                     "/etc/nixos"
-                    "/home/${userSettings.username}/.dotfiles"
+                    "/home/${userSettings.username}"
                     ];
                 };
             };
