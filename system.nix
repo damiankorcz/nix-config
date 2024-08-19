@@ -1,4 +1,4 @@
-{ config, pkgs, systemSettings,  ... }:
+{ config, pkgs, lib, systemSettings,  ... }:
 
 {
     imports = [
@@ -78,8 +78,6 @@
             LC_PAPER = systemSettings.locale;
             LC_TELEPHONE = systemSettings.locale;
             LC_TIME = systemSettings.locale;
-            LC_CTYPE = systemSettings.locale;
-            LC_MESSAGES = systemSettings.locale;
         };
     };
 
@@ -137,6 +135,10 @@
 
         # User-mode tablet driver
         # opentabletdriver.enable = true;
+
+        # Firmware
+        enableAllFirmware = true;
+        cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
     };
 
     services = {

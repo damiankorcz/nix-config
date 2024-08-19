@@ -15,7 +15,7 @@
         kernel = "linuxPackages_latest";
         hostname = "nixos-desktop";
         timezone = "Europe/London";
-        locale = "en_US.UTF-8";
+        locale = "en_GB.UTF-8";
         keyboard = "us";
         bootMode = "uefi";
         bootMountPath = "/boot"; # mount path for efi boot partition; only used for uefi boot mode
