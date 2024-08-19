@@ -24,9 +24,7 @@
         name = "Damian Korcz"; # Name  / Identifier
         email = "damiankorcz28@gmail.com"; # Email
         dotfilesDir = "~/.dotfiles"; # Absolute path of the local repo
-        windowManager = "plasma"; # Window Manager or Desktop Environment
-        displayManager = "x11"; # Display Server
-        defaultSession = "plasmax11"; # Default Session to log into
+        defaultSession = "plasma"; # Default Session to log into
         editor = "kate";
         spawnEditor = "exec $(userSettings.terminal) -e nano";
         terminal = "konsole";

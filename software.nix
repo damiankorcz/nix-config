@@ -12,7 +12,47 @@
         krita
         krita-plugin-gmic
         github-desktop
+        displaycal # Display Calibration Tool
+        argyllcms # Color Management System
         # libsForQt5.xp-pen-deco-01-v2-driver # XP-Pen Driver and Software (works with many XP-Pen Tablets)
+
+        # Flatpaks as nix
+        vscode
+        thunderbird
+        birdtray
+        bitwarden-desktop
+        firefox
+        microsoft-edge
+        obsidian
+        spotify
+        discord
+        foliate
+        komikku
+        mpv
+        mission-center
+        libreoffice-qt6-fresh
+        zed-editor
+        gearlever
+        inkscape-with-extensions
+
+        mgba
+        ppsspp-qt
+        snes9x
+        flycast
+        sameboy
+        ryujinx
+        dosbox-staging
+        xemu
+        duckstation # bit outdated
+        rpcs3
+        # cemu # Build currently broken
+        lime3ds
+        dolphin-emu
+        pcsx2 # bit outdated
+        melonDS
+        mame
+
+
 
         # Terminal Utilities
         gh # GitHub CLI tool
@@ -21,6 +61,7 @@
         fastfetch # System Info
         xorg.xrandr # Monitor / Resolution Manager (X11)
         home-manager
+        pciutils
     ];
 
     # ------------ Flatpak ------------
@@ -33,44 +74,44 @@
 
     services.flatpak.packages = [
         # Software
-        "com.visualstudio.code"
-        "org.mozilla.Thunderbird"
-        "com.ulduzsoft.Birdtray" # Tray icon for Thunderbird
-        "com.bitwarden.desktop" # Password Manager
-        "org.mozilla.firefox"
-        "com.microsoft.Edge"
-        "md.obsidian.Obsidian"
-        "com.spotify.Client"
-        "com.discordapp.Discord"
-        "com.github.johnfactotum.Foliate" # EBook Reader
-        "info.febvre.Komikku" # Manga / Comics Reader
-        "io.mpv.Mpv" # Video Player
-        "io.missioncenter.MissionCenter" # System Stats
-        "org.libreoffice.LibreOffice" # Office Suite
+        #"com.visualstudio.code"
+        #"org.mozilla.Thunderbird"
+        #"com.ulduzsoft.Birdtray" # Tray icon for Thunderbird
+        #"com.bitwarden.desktop" # Password Manager
+        #"org.mozilla.firefox"
+        #"com.microsoft.Edge"
+        #"md.obsidian.Obsidian"
+        #"com.spotify.Client"
+        #"com.discordapp.Discord"
+        #"com.github.johnfactotum.Foliate" # EBook Reader
+        #"info.febvre.Komikku" # Manga / Comics Reader
+        #"io.mpv.Mpv" # Video Player
+        #"io.missioncenter.MissionCenter" # System Stats
+        #"org.libreoffice.LibreOffice" # Office Suite
         # "io.github.shiftey.Desktop" # GitHub Desktop client
-        "dev.zed.Zed" # Text / Code Editor
-        "com.github.tchx84.Flatseal" # Flatpak Permissions Manager
-        "it.mijorus.gearlever" # AppImage Manager
-        "org.inkscape.Inkscape" # Vector Graphics Editor
+        #"dev.zed.Zed" # Text / Code Editor
+        #"com.github.tchx84.Flatseal" # Flatpak Permissions Manager
+        #"it.mijorus.gearlever" # AppImage Manager
+        #"org.inkscape.Inkscape" # Vector Graphics Editor
 
         # Emulators
-        "io.mgba.mGBA" # Game Boy Advance
-        "org.ppsspp.PPSSPP" # PlayStation Portable
-        "com.snes9x.Snes9x" # Super Nintendo Entertainment System
-        "org.flycast.Flycast" # Sega Dreamcast, Naomi/2 and Atomiswave
-        "io.github.sameboy.SameBoy" # Game Boy & Game Boy Color
-        "org.ryujinx.Ryujinx" # Nintendo Switch
-        "io.github.dosbox-staging" # DOS
-        "app.xemu.xemu" # OG Xbox
-        "org.duckstation.DuckStation" # PlayStation 1
-        "net.rpcs3.RPCS3" # PlayStation 3
-        "io.github.simple64.simple64" # Nintendo 64
+        #"io.mgba.mGBA" # Game Boy Advance
+        #"org.ppsspp.PPSSPP" # PlayStation Portable
+        #"com.snes9x.Snes9x" # Super Nintendo Entertainment System
+        #"org.flycast.Flycast" # Sega Dreamcast, Naomi/2 and Atomiswave
+        #"io.github.sameboy.SameBoy" # Game Boy & Game Boy Color
+        #"org.ryujinx.Ryujinx" # Nintendo Switch
+        #"io.github.dosbox-staging" # DOS
+        #"app.xemu.xemu" # OG Xbox
+        #"org.duckstation.DuckStation" # PlayStation 1
+        #"net.rpcs3.RPCS3" # PlayStation 3
+            "io.github.simple64.simple64" # Nintendo 64
         "info.cemu.Cemu" # Wii U
-        "io.github.lime3ds.Lime3DS" # Nintendo 3DS
-        "org.DolphinEmu.dolphin-emu" # GameCube & Wii
-        "net.pcsx2.PCSX2" # PlayStation 2
-        "net.kuribo64.melonDS" # Nintendo DS
-        "org.mamedev.MAME" # Arcade games
+        #"io.github.lime3ds.Lime3DS" # Nintendo 3DS
+        #"org.DolphinEmu.dolphin-emu" # GameCube & Wii
+        #"net.pcsx2.PCSX2" # PlayStation 2
+        #"net.kuribo64.melonDS" # Nintendo DS
+        #"org.mamedev.MAME" # Arcade games
     ];
 
     # ------------ AppImage ------------
@@ -94,6 +135,8 @@
             noto-fonts-emoji
             source-sans
             source-serif
+            corefonts
+            vistafonts
 
             # Nerdfonts
             # https://github.com/NixOS/nixpkgs/blob/nixos-24.05/pkgs/data/fonts/nerdfonts/shas.nix

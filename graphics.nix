@@ -25,10 +25,5 @@
         # amdgpu.legacySupport.enable = false; # Should already be set to false by default (will use `radeon`); true will use amdgpu
     };
 
-    services.xserver = {
-        videoDrivers = [
-            "nvidia"
-            "radeon"
-        ];
-    };
+    services.xserver.videoDrivers = [ "nvidia" ];
 }

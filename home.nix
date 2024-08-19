@@ -42,6 +42,7 @@
         programs = {
             git = {
                 enable = true;
+                lfs.enable = true;
                 userName  = userSettings.name;
                 userEmail = userSettings.email;
                 extraConfig = {
@@ -65,7 +66,10 @@
             defaultSession = userSettings.defaultSession;
 
             # Enable Display Manager for Plasma.
-            sddm.enable = true;
+            sddm = {
+                enable = true;
+                wayland.enable = true;
+            };
         };
 
         # Enable the KDE Plasma Desktop Environment.
@@ -73,6 +77,6 @@
 
         # Enable the X11 windowing system.
         # You can disable this if you're only using the Wayland session.
-        xserver.enable = true;
+        # xserver.enable = true;
     };
 }

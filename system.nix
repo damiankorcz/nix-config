@@ -27,7 +27,8 @@
 
         # Use the systemd-boot EFI boot loader.
         loader.systemd-boot.enable = true;
-        loader.systemd-boot.configurationLimit = 25;
+        loader.systemd-boot.configurationLimit = 5;
+        loader.systemd-boot.consoleMode = "max";
         loader.efi.canTouchEfiVariables = true;
 
         # Filesystem support
@@ -140,8 +141,8 @@
         # opentabletdriver.enable = true;
 
         # Firmware
-        enableAllFirmware = true;
-        cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+#         enableAllFirmware = true;
+#         cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
     };
 
     services = {
@@ -165,6 +166,5 @@
 
         # Enable touchpad support (enabled default in most desktopManager).
         # xserver.libinput.enable = true;
-
     };
 }
