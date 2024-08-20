@@ -14,7 +14,9 @@
         github-desktop
         displaycal # Display Calibration Tool
         argyllcms # Color Management System
-        # libsForQt5.xp-pen-deco-01-v2-driver # XP-Pen Driver and Software (works with many XP-Pen Tablets)
+        #xwaylandvideobridge # Allows streaming Wayland windows to X11 Applications (fixes screenshare in Discord)
+
+        libsForQt5.xp-pen-deco-01-v2-driver # XP-Pen Driver and Software (works with many XP-Pen Tablets)
 
         # Flatpaks as nix
         vscode
@@ -25,7 +27,7 @@
         microsoft-edge
         obsidian
         spotify
-        discord
+        vesktop # Discord alt client
         foliate
         komikku
         mpv
@@ -35,24 +37,26 @@
         gearlever
         inkscape-with-extensions
 
-        mgba
-        ppsspp-qt
-        snes9x
-        flycast
-        sameboy
-        ryujinx
-        dosbox-staging
-        xemu
-        duckstation # bit outdated
-        rpcs3
-        # cemu # Build currently broken
-        lime3ds
-        dolphin-emu
-        pcsx2 # bit outdated
-        melonDS
-        mame
-
-
+        # Emulators
+        mgba            # Game Boy Advance
+        ppsspp-qt       # PlayStation Portable
+        snes9x          # Super Nintendo Entertainment System
+        flycast         # Sega Dreamcast, Naomi/2 and Atomiswave
+        sameboy         # Game Boy & Game Boy Color
+        ryujinx         # Nintendo Switch
+        dosbox-staging  # DOS
+        xemu            # OG Xbox
+        duckstation     # PlayStation 1 (outdated - https://github.com/NixOS/nixpkgs/issues/335958)
+        rpcs3           # PlayStation 3
+        # cemu          # Wii U  (Build currently broken)
+        lime3ds         # Nintendo 3DS
+        dolphin-emu     # GameCube & Wii
+        pcsx2           # PlayStation 2 (Outdated - https://github.com/NixOS/nixpkgs/issues/335956)
+        melonDS         # Nintendo DS
+        mame            # Arcade games
+        rmg-wayland     # Nintendo 64
+        punes-qt6       # Nintendo Entertainment System
+        blastem         # Sega Genesis/Megadrive (outdated - https://github.com/NixOS/nixpkgs/issues/335953)
 
         # Terminal Utilities
         gh # GitHub CLI tool
@@ -105,7 +109,8 @@
         #"app.xemu.xemu" # OG Xbox
         #"org.duckstation.DuckStation" # PlayStation 1
         #"net.rpcs3.RPCS3" # PlayStation 3
-            "io.github.simple64.simple64" # Nintendo 64
+        #"io.github.simple64.simple64" # Nintendo 64
+        #"com.github.Rosalie241.RMG" # Nintendo 64
         "info.cemu.Cemu" # Wii U
         #"io.github.lime3ds.Lime3DS" # Nintendo 3DS
         #"org.DolphinEmu.dolphin-emu" # GameCube & Wii
@@ -120,6 +125,9 @@
         enable = true;
         binfmt = true;
     };
+
+    # PlayStation Vita = https://github.com/Vita3K/Vita3K/releases
+    # Sega = https://www.retrodev.com/blastem/nightlies/?C=M&O=D
 
     # ------------ Fonts ------------
 
@@ -167,6 +175,10 @@
     ];
 
     # ------------ Other ------------
+
+    # Cooling device control
+    programs.coolercontrol.enable = true;
+
 
 #   programs.steam = {
 #     # Some location that should be persistent:
