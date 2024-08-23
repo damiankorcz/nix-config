@@ -4,69 +4,97 @@
     # ------------ Nixpkgs ------------
 
     environment.systemPackages = with pkgs; [
-        # Software
-        kdePackages.kate # Text / Code Editor
-        vial # Keyboard Firmware Manager
-        arandr # Monitor / Resolution Manager (X11)
-        syncplay # Synchronise Media Players
-        krita
-        krita-plugin-gmic
-        github-desktop
-        displaycal # Display Calibration Tool
-        argyllcms # Color Management System
-        #xwaylandvideobridge # Allows streaming Wayland windows to X11 Applications (fixes screenshare in Discord)
+        # Applications
+        mpv                         # Video Player
+        mpvScripts.modernx-zydezu   # Modern OSC UI for MPV
+        vscode                      # Code Editor
+        bottles                     # Easy-to-use Wineprefix Manager
+        spotify                     # Music Streaming
+        vesktop                     # Discord (Alt Client)
+        foliate                     # Ebook Reader
+        komikku                     # Manga / Comic Reader
+        syncplay                    # Synchronise Media Players
+        obsidian                    # Note Taking
+        birdtray                    # Tray Icon for Thunderbird
+        gearlever                   # AppImage Manager
+        argyllcms                   # Colour Managment System
+        displaycal                  # Display Calibration Tool
+        microsoft-edge              # Web Browser
+        mission-center              # System Monitor
+        github-desktop              # Github Client
+        bitwarden-desktop           # Password Manager
+        libreoffice-qt6-fresh       # Office Suite
+        inkscape-with-extensions    # Vector Graphics Editor
 
-        libsForQt5.xp-pen-deco-01-v2-driver # XP-Pen Driver and Software (works with many XP-Pen Tablets)
+        samba
+        cifs-utils
 
-        # Flatpaks as nix
-        vscode
-        thunderbird
-        birdtray
-        bitwarden-desktop
-        firefox
-        microsoft-edge
-        obsidian
-        spotify
-        vesktop # Discord alt client
-        foliate
-        komikku
-        mpv
-        mission-center
-        libreoffice-qt6-fresh
-        zed-editor
-        gearlever
-        inkscape-with-extensions
+        # Peripherals
+        vial                                # Keyboard Firmware Manager
+        pipewire                            # Frontend for ratbagd (Gaming Mouse Configuration Library)
+        #libForQt5.xo-pen-deco-01-v2-driver # XP Pen Driver and Software (works with many XP-Pen Tablets)
+
+        # KDE Applications (QT)
+        haruna                                  # Video Player
+        krita                                   # Digital Painting
+        krita-plugin-gmic                       # Image Processing Plugin
+        kdePackages.kate                        # Text / Code Editor
+        kdePackages.kalk                        # Calculator
+        kdePackages.kclock                      # Clock
+        kdePackages.kweather                    # Weather
+        kdePackages.skanlite                    # Lite Image Scanning
+        kdePackages.skanpage                    # Multi-page Document Scanning
+        kdePackages.plasma-browser-integration  # Browser Integration in Plasma Desktop
+
+        # Gaming
+        mangohud    # Vulkan / OpenGL Overlay for System Monitoring and FPS
+        lutris      # Open Source Gaming Platform
+        protonup-qt # Install / Manager Proton-GE & Luxtorpeda for Steam / Wine-GE for Lutris
 
         # Emulators
-        mgba            # Game Boy Advance
-        ppsspp-qt       # PlayStation Portable
-        snes9x          # Super Nintendo Entertainment System
-        flycast         # Sega Dreamcast, Naomi/2 and Atomiswave
-        sameboy         # Game Boy & Game Boy Color
-        ryujinx         # Nintendo Switch
+        mame            # Arcade Games
         dosbox-staging  # DOS
-        xemu            # OG Xbox
-        duckstation     # PlayStation 1 (outdated - https://github.com/NixOS/nixpkgs/issues/335958)
-        rpcs3           # PlayStation 3
-        # cemu          # Wii U  (Build currently broken)
-        lime3ds         # Nintendo 3DS
-        dolphin-emu     # GameCube & Wii
+        duckstation     # PlayStation 1 (Outdated - https://github.com/NixOS/nixpkgs/issues/335958)
         pcsx2           # PlayStation 2 (Outdated - https://github.com/NixOS/nixpkgs/issues/335956)
-        melonDS         # Nintendo DS
-        mame            # Arcade games
+        rpcs3           # PlayStation 3
+        ppsspp-qt       # PlayStation Portable
+        lime3ds         # Nintendo 3DS
         rmg-wayland     # Nintendo 64
+        melonDS         # Nintendo DS
+        sameboy         # Nintendo Game Boy & Game Boy Color
+        mgba            # Nintendo Game Boy Advance
+        dolphin-emu     # Nintendo GameCube & Wii
+        #cemu           # Nintendo Wii U (Build currently broken)
+        ryujinx         # Nintendo Switch
         punes-qt6       # Nintendo Entertainment System
-        blastem         # Sega Genesis/Megadrive (outdated - https://github.com/NixOS/nixpkgs/issues/335953)
+        snes9x          # Super Nintendo Entertainment System
+        blastem         # Sega Genesis / Megadrive (Outdated - https://github.com/NixOS/nixpkgs/issues/335953)
+        flycast         # Sega Dreamcast, Naomi/2 and Atomiswave
+        xemu            # Xbox
 
         # Terminal Utilities
-        gh # GitHub CLI tool
-        wget # Download tool
-        btop # System Monitor
-        fastfetch # System Info
-        xorg.xrandr # Monitor / Resolution Manager (X11)
-        home-manager
-        pciutils
+        gh              # GitHub CLI Tool
+        wget            # Download Tool
+        btop            # System Monitor
+        pciutils        # PCI Device Utilities
+        libnotify       # Library for Sending Desktop Notifications to the Notification Daemon
+        fastfetch       # System Info
+        home-manager    # Nix-based User Environment Configurator
     ];
+
+    # Plasma Excludes
+    # https://github.com/NixOS/nixpkgs/blob/nixos-unstable/nixos/modules/services/desktop-managers/plasma6.nix#L135
+    environment.plasma6.excludePackages = with pkgs.kdePackages; [
+        khelpcenter # Help app
+        krdp # Remove Desktop (RDP)
+    ];
+
+    # Programs with Daemons
+    # Cooling device control
+    programs = {
+        coolercontrol.enable = true;
+        thunderbird.enable = true;
+    };
 
     # ------------ Flatpak ------------
 
@@ -77,46 +105,7 @@
     };
 
     services.flatpak.packages = [
-        # Software
-        #"com.visualstudio.code"
-        #"org.mozilla.Thunderbird"
-        #"com.ulduzsoft.Birdtray" # Tray icon for Thunderbird
-        #"com.bitwarden.desktop" # Password Manager
-        #"org.mozilla.firefox"
-        #"com.microsoft.Edge"
-        #"md.obsidian.Obsidian"
-        #"com.spotify.Client"
-        #"com.discordapp.Discord"
-        #"com.github.johnfactotum.Foliate" # EBook Reader
-        #"info.febvre.Komikku" # Manga / Comics Reader
-        #"io.mpv.Mpv" # Video Player
-        #"io.missioncenter.MissionCenter" # System Stats
-        #"org.libreoffice.LibreOffice" # Office Suite
-        # "io.github.shiftey.Desktop" # GitHub Desktop client
-        #"dev.zed.Zed" # Text / Code Editor
-        #"com.github.tchx84.Flatseal" # Flatpak Permissions Manager
-        #"it.mijorus.gearlever" # AppImage Manager
-        #"org.inkscape.Inkscape" # Vector Graphics Editor
-
-        # Emulators
-        #"io.mgba.mGBA" # Game Boy Advance
-        #"org.ppsspp.PPSSPP" # PlayStation Portable
-        #"com.snes9x.Snes9x" # Super Nintendo Entertainment System
-        #"org.flycast.Flycast" # Sega Dreamcast, Naomi/2 and Atomiswave
-        #"io.github.sameboy.SameBoy" # Game Boy & Game Boy Color
-        #"org.ryujinx.Ryujinx" # Nintendo Switch
-        #"io.github.dosbox-staging" # DOS
-        #"app.xemu.xemu" # OG Xbox
-        #"org.duckstation.DuckStation" # PlayStation 1
-        #"net.rpcs3.RPCS3" # PlayStation 3
-        #"io.github.simple64.simple64" # Nintendo 64
-        #"com.github.Rosalie241.RMG" # Nintendo 64
         "info.cemu.Cemu" # Wii U
-        #"io.github.lime3ds.Lime3DS" # Nintendo 3DS
-        #"org.DolphinEmu.dolphin-emu" # GameCube & Wii
-        #"net.pcsx2.PCSX2" # PlayStation 2
-        #"net.kuribo64.melonDS" # Nintendo DS
-        #"org.mamedev.MAME" # Arcade games
     ];
 
     # ------------ AppImage ------------
@@ -127,7 +116,6 @@
     };
 
     # PlayStation Vita = https://github.com/Vita3K/Vita3K/releases
-    # Sega = https://www.retrodev.com/blastem/nightlies/?C=M&O=D
 
     # ------------ Fonts ------------
 
@@ -167,29 +155,17 @@
         ];
     };
 
-    # ------------ Plasma Excludes ------------
-    # https://github.com/NixOS/nixpkgs/blob/nixos-unstable/nixos/modules/services/desktop-managers/plasma6.nix#L135
-    environment.plasma6.excludePackages = with pkgs.kdePackages; [
-        khelpcenter # Help app
-        krdp # Remove Desktop (RDP)
-    ];
-
     # ------------ Other ------------
 
-    # Cooling device control
-    programs.coolercontrol.enable = true;
-
-
-#   programs.steam = {
-#     # Some location that should be persistent:
-#     #   ~/.local/share/Steam - The default Steam install location
-#     #   ~/.local/share/Steam/steamapps/common - The default Game install location
-#     #   ~/.steam/root        - A symlink to ~/.local/share/Steam
-#     #   ~/.steam             - Some Symlinks & user info
-#     enable = true;
-#     remotePlay.openFirewall = true;
-#     dedicatedServer.openFirewall = true;
-#     gamescopeSession.enable = true;
-#   }
-
+    programs.steam = {
+        # Some location that should be persistent:
+        #   ~/.local/share/Steam - The default Steam install location
+        #   ~/.local/share/Steam/steamapps/common - The default Game install location
+        #   ~/.steam/root        - A symlink to ~/.local/share/Steam
+        #   ~/.steam             - Some Symlinks & user info
+        enable = true;
+        remotePlay.openFirewall = true;
+        dedicatedServer.openFirewall = true;
+        gamescopeSession.enable = true;
+    };
 }
