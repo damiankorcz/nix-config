@@ -19,12 +19,6 @@
             "rd.udev.log_level=3"
         ];
 
-        # Use GRUB boot loader
-        # loader.grub.enable = true;
-        # loader.grub.device = "/dev/sda";
-        # loader.grub.useOSProber = true;
-        # loader.grub.configurationLimit = 25;
-
         # Use the systemd-boot EFI boot loader.
         loader.systemd-boot.enable = true;
         loader.systemd-boot.configurationLimit = 5;
@@ -137,17 +131,27 @@
         # Potentially needed for Drawing Tablet Support (?)
         uinput.enable = true;
 
+        # Non-root acces to the firmware of QMK Keyboards
+        keyboard.qmk.enable = true;
+
         # User-mode tablet driver
         # opentabletdriver.enable = true;
 
         # Firmware
-#         enableAllFirmware = true;
-#         cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+        # enableAllFirmware = true;
+        # cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
     };
 
     services = {
         # Enable CUPS to print documents
         printing.enable = true;
+
+        # Allows auto detection of Network Printers
+        avahi = {
+            enable = true;
+            nssmdns4 = true;
+            openFirewall = true;
+        };
 
         # Enable Linux Vendor Firmware Service
         fwupd.enable = true;
@@ -160,11 +164,7 @@
         # Auto-mount USB drives
         udisks2.enable = true;
 
-        # Needed for auth tokens in Github Desktop to work (even when using KDE / Plasma). Also an issue with VSCode apparently.
-        # https://nixos.wiki/wiki/Visual_Studio_Code
-        gnome.gnome-keyring.enable = true;
-
-        # Enable touchpad support (enabled default in most desktopManager).
-        # xserver.libinput.enable = true;
+        # Gaming Mouse Configuration Library
+        ratbagd.enable = true;
     };
 }
