@@ -6,9 +6,10 @@
     nix-flatpak.url = "github:gmodena/nix-flatpak"; # unstable branch. Use github:gmodena/nix-flatpak?ref=<tag> to pin releases.
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
   };
 
-  outputs = inputs@{ self, nixpkgs, nix-flatpak, home-manager }:
+  outputs = inputs@{ self, nixpkgs, nix-flatpak, home-manager, chaotic }:
     let
       systemSettings = {
         system = "x86_64-linux";
@@ -47,6 +48,8 @@
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
             }
+
+            chaotic.nixosModules.default
           ];
 
           specialArgs = {

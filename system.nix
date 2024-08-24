@@ -32,6 +32,15 @@
         ];
 
         plymouth.enable = true;
+        kernelPackages = pkgs.linuxPackages_cachyos; # https://github.com/chaotic-cx/nyx
+    };
+
+    chaotic.scx = {
+        enable = true;
+
+        # https://github.com/chaotic-cx/nyx/blob/935a1f5935853e5b57f1a9432457d8bea4dbb7d7/modules/nixos/scx.nix#L15
+        # "scx_bpfland"
+        scheduler = "scx_lavd";
     };
 
     # ------------ Swap ------------
