@@ -9,9 +9,6 @@
     # ------------ Bootloader & Kernel ------------
 
     boot = {
-        # Use latest Kernel
-        kernelPackages = pkgs.linuxPackages_latest;
-
         consoleLogLevel = 3;
         kernelParams = [
             "quiet"
@@ -21,7 +18,7 @@
 
         # Use the systemd-boot EFI boot loader.
         loader.systemd-boot.enable = true;
-        loader.systemd-boot.configurationLimit = 5;
+        loader.systemd-boot.configurationLimit = 8;
         loader.systemd-boot.consoleMode = "max";
         loader.efi.canTouchEfiVariables = true;
 
@@ -31,7 +28,13 @@
             "btrfs"
         ];
 
+        # Boot Splash Screen
         plymouth.enable = true;
+
+        # Kernel
+        # pkgs.linuxPackages_xanmod_latest; # https://xanmod.org/
+        # pkgs.linuxPackages_latest; # Latest Stable
+        # pkgs.linuxPackages; # LTS
         kernelPackages = pkgs.linuxPackages_cachyos; # https://github.com/chaotic-cx/nyx
     };
 
@@ -52,12 +55,15 @@
     #   https://www.kernel.org/doc/Documentation/blockdev/zram.txt
     zramSwap = {
         enable = true;
+
         # one of "lzo", "lz4", "zstd"
         algorithm = "zstd";
+
         # Priority of the zram swap devices.
         # It should be a number higher than the priority of your disk-based swap devices
         # (so that the system will fill the zram swap devices before falling back to disk swap).
         priority = 5;
+
         # Maximum total amount of memory that can be stored in the zram swap devices (as a percentage of your total memory).
         # Defaults to 1/2 of your total RAM. Run zramctl to check how good memory is compressed.
         # This doesn’t define how much memory will be used by the zram swap devices.
@@ -175,5 +181,9 @@
 
         # Gaming Mouse Configuration Library
         ratbagd.enable = true;
+
+        # Duplicati
+        duplicati.enable = true;
+        # duplicati.port = 8200; # Default 8200
     };
 }
