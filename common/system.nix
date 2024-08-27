@@ -1,12 +1,7 @@
-{ config, pkgs, lib, systemSettings,  ... }:
+{ config, pkgs, ... }:
 
 {
-    imports = [
-        ./virtualisation.nix
-        ./graphics.nix
-    ];
-
-    # ------------ Bootloader & Kernel ------------
+    # ------------ Bootloader ------------
 
     boot = {
         consoleLogLevel = 3;
@@ -29,21 +24,22 @@
         ];
 
         # Boot Splash Screen
-        plymouth.enable = true;
-
-        # Kernel
-        # pkgs.linuxPackages_xanmod_latest; # https://xanmod.org/
-        # pkgs.linuxPackages_latest; # Latest Stable
-        # pkgs.linuxPackages; # LTS
-        kernelPackages = pkgs.linuxPackages_cachyos; # https://github.com/chaotic-cx/nyx
+        # plymouth.enable = true;        
     };
 
-    chaotic.scx = {
-        enable = true;
+    # ------------ Cleanup ------------
 
-        # https://github.com/chaotic-cx/nyx/blob/935a1f5935853e5b57f1a9432457d8bea4dbb7d7/modules/nixos/scx.nix#L15
-        # "scx_bpfland"
-        scheduler = "scx_lavd";
+    nix = {
+        # Optimisation of the Nix Store
+        optimise.automatic = true;
+        optimise.dates = [ "weekly" ];
+
+        # Garbage colection (Removes Old Snapshots)
+        gc = {
+            automatic = true;
+            dates = "weekly";
+            options = "--delete-older-than 14d";
+        };
     };
 
     # ------------ Swap ------------
@@ -73,33 +69,49 @@
     # ------------ Timezone & Locale ------------
 
     # Set your time zone
-    time.timeZone = systemSettings.timezone;
-
-    # Fixing time sync when dualbooting with Windows
-    time.hardwareClockInLocalTime = true;
+    time.timeZone = "Europe/London";
 
     # Select internationalisation properties
-    i18n = {
-        defaultLocale = systemSettings.locale;
-        extraLocaleSettings = {
-            LC_ADDRESS = systemSettings.locale;
-            LC_IDENTIFICATION = systemSettings.locale;
-            LC_MEASUREMENT = systemSettings.locale;
-            LC_MONETARY = systemSettings.locale;
-            LC_NAME = systemSettings.locale;
-            LC_NUMERIC = systemSettings.locale;
-            LC_PAPER = systemSettings.locale;
-            LC_TELEPHONE = systemSettings.locale;
-            LC_TIME = systemSettings.locale;
-        };
-    };
+    i18n.defaultLocale = "en_GB.UTF-8";
+    i18n.supportedLocales = ["all"];
 
-    # ------------ Keyboard ------------
+    # ------------ Fonts ------------
 
-    # Configure keymap in X11
-    services.xserver.xkb = {
-        layout = systemSettings.keyboard;
-        variant = "";
+    fonts = {
+        # use fonts specified by user rather than default ones
+        # enableDefaultPackages = false;
+
+        # Links all fonts to: `/run/current-system/sw/share/X11/font`
+        fontDir.enable = true;
+
+        packages = with pkgs; [
+            font-awesome
+            noto-fonts
+            noto-fonts-emoji
+            source-sans
+            source-serif
+            corefonts
+            vistafonts
+
+            # Nerdfonts
+            # https://github.com/NixOS/nixpkgs/blob/nixos-24.05/pkgs/data/fonts/nerdfonts/shas.nix
+            (nerdfonts.override {
+                fonts = [
+                    # symbols icon only
+                    "NerdFontsSymbolsOnly"
+
+                    # Characters
+                    "CascadiaCode"
+                    "FiraCode"
+                    "GeistMono"
+                    "IBMPlexMono"
+                    "Iosevka"
+                    "JetBrainsMono"
+                    "SourceCodePro"
+                    "UbuntuMono"
+                ];
+            })
+        ];
     };
 
     # ------------ Sound ------------
@@ -123,7 +135,6 @@
     # ------------ Networking ------------
 
     networking = {
-        hostName = systemSettings.hostname; # Define your hostname.
         networkmanager.enable = true;
 
         # wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -137,26 +148,7 @@
         #}
     };
 
-    # ------------ Other Hardware & Services ------------
-
-    hardware = {
-        # Enables Xbox One Controller Adapter support
-        xone.enable = true;
-
-        # Potentially needed for Drawing Tablet Support (?)
-        uinput.enable = true;
-
-        # Non-root acces to the firmware of QMK Keyboards
-        keyboard.qmk.enable = true;
-
-        # User-mode tablet driver
-        # opentabletdriver.enable = true;
-
-        # Firmware
-        # enableAllFirmware = true;
-        # cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
-    };
-
+    # ------------ Services ------------
     services = {
         # Enable CUPS to print documents
         printing.enable = true;
@@ -179,11 +171,14 @@
         # Auto-mount USB drives
         udisks2.enable = true;
 
-        # Gaming Mouse Configuration Library
-        ratbagd.enable = true;
-
-        # Duplicati
-        duplicati.enable = true;
-        # duplicati.port = 8200; # Default 8200
+        # Samba Client
+        samba = {
+            enable = true;
+            openFirewall = true;
+            extraConfig = ''
+                workgroup = WORKGROUP
+                server min protocol = CORE
+            '';
+        };
     };
 }

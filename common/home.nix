@@ -1,12 +1,13 @@
-{ config, pkgs, userSettings,  ... }:
+{ config, pkgs, userSettings, ... }:
 
 {
     # Define a user account. Don't forget to set a password with ‘passwd’.
     users.users.${userSettings.username} = {
+        uid = 1000;
         isNormalUser = true;
         description = userSettings.name;
+        initialHashedPassword = "changeme";
         extraGroups = [ "networkmanager" "wheel" ];
-        uid = 1000;
     };
 
     home-manager.users.${userSettings.username} =  { pkgs, ... }: {
@@ -54,29 +55,5 @@
                 };
             };
         };
-    };
-
-    services = {
-        displayManager = {
-            # Enable automatic login for the user.
-            autoLogin.enable = true;
-            autoLogin.user = userSettings.username;
-
-            # Declares default session (Wayland = plasma / X11 = plasmax11)
-            defaultSession = userSettings.defaultSession;
-
-            # Enable Display Manager for Plasma.
-            sddm = {
-                enable = true;
-                wayland.enable = true;
-            };
-        };
-
-        # Enable the KDE Plasma Desktop Environment.
-        desktopManager.plasma6.enable = true;
-
-        # Enable the X11 windowing system.
-        # You can disable this if you're only using the Wayland session.
-        # xserver.enable = true;
     };
 }
