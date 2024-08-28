@@ -6,7 +6,7 @@
         uid = 1000;
         isNormalUser = true;
         description = userSettings.name;
-        initialHashedPassword = "changeme";
+        initialPassword = "changeme";
         extraGroups = [ "networkmanager" "wheel" ];
     };
 
