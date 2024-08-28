@@ -4,16 +4,16 @@
 	imports = [
 		# Hardware Config
 		./hardware-configuration.nix
-		./common/system.nix
 		./system.nix
+		../../common/system.nix
 
 		# Common Config Modules
-		./common/home.nix
-		./common/samba.nix
-		./common/software/default.nix
-		./common/software/gaming.nix
-		./common/software/terminal.nix
-		./common/software/emulators.nix
+		../../common/home.nix
+		../../common/samba.nix
+		../../common/software/default.nix
+		../../common/software/gaming.nix
+		../../common/software/terminal.nix
+		../../common/software/emulators.nix
 	];
 
 	# Enable Nix Flakes

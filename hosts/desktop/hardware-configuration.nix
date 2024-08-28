@@ -50,7 +50,6 @@
 
 	swapDevices = [ { device = "/dev/disk/by-label/swap"; } ];
 
-	#services.fstrim.enable = true;  # Enable periodic SSD TRIM of mounted partitions in background
 
 	# ------------ Hardware ------------
 
@@ -95,6 +94,7 @@
 	};
 
 	services.xserver.videoDrivers = [ "nvidia" ];
+	#services.fstrim.enable = true;  # Enable periodic SSD TRIM of mounted partitions in background
 
 	# ------------ Other ------------
 
