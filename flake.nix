@@ -38,6 +38,11 @@
 
 					chaotic.nixosModules.default
 				];
+
+				specialArgs = {
+					# Pass config variables from above
+					inherit userSettings;
+				};
 			};
 
 			# Laptop
@@ -53,6 +58,11 @@
 						home-manager.useGlobalPkgs = true;
 					}
 				];
+
+				specialArgs = {
+					# Pass config variables from above
+					inherit userSettings;
+				};
 			};
 
 			# Raspberry Pi 4
@@ -68,6 +78,11 @@
 						home-manager.useGlobalPkgs = true;
 					}
 				];
+
+				specialArgs = {
+					# Pass config variables from above
+					inherit userSettings;
+				};
 			};
 		};
 	};
