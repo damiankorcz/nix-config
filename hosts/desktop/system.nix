@@ -2,7 +2,7 @@
 
 {
     # System Name / Host name
-    networking.hostName = "desktop-nixos";
+    networking.hostName = "nixos-desktop";
 
     # Fixing time sync when dualbooting with Windows
     time.hardwareClockInLocalTime = true;

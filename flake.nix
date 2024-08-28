@@ -23,7 +23,7 @@
 	in {
 		nixosConfigurations = {
 			# Desktop
-			desktop-nixos = nixpkgs.lib.nixosSystem {
+			nixos-desktop = nixpkgs.lib.nixosSystem {
 				system = "x86_64-linux";
 				modules = [
 					./hosts/desktop/default.nix
@@ -41,7 +41,7 @@
 			};
 
 			# Laptop
-			laptop-nixos = nixpkgs.lib.nixosSystem {
+			nixos-laptop = nixpkgs.lib.nixosSystem {
 				system = "x86_64-linux";
 				modules = [
 					./hosts/laptop/default.nix
@@ -56,7 +56,7 @@
 			};
 
 			# Raspberry Pi 4
-			pi4-nixos = nixpkgs.lib.nixosSystem {
+			nixos-pi4 = nixpkgs.lib.nixosSystem {
 				system = "aarch64-linux";
 				modules = [
 					./hosts/pi4/default.nix
