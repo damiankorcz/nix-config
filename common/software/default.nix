@@ -42,7 +42,18 @@
         kdePackages.kweather                    # Weather
         kdePackages.skanlite                    # Lite Image Scanning
         kdePackages.skanpage                    # Multi-page Document Scanning
-        kdePackages.plasma-browser-integration  # Browser Integration in Plasma Desktop
+        kdePackages.plasma-browser-integration  # Browser Integration in Plasma
+
+        # Spellchecker
+        hunspell                                # Spell checker
+        hunspellDicts.pl_PL                     # Dictionary for Polish
+        hunspellDicts.en_GB-large               # Dictionary for British English
+
+        #aspell                                 # Spell checker
+        #aspellDicts.en                         # Dictionary for English
+        #aspellDicts.en-science                 # Dictionary for English Scientific Jargon
+        #aspellDicts.en-computers               # Dictionary for English Computer Jargon
+        #aspellDicts.pl                         # Dictionary for Polish
     ];
 
     # Plasma Excludes
@@ -55,8 +66,9 @@
     # Programs with Daemons
     programs = {
         thunderbird.enable = true;      # Email Client
-        home-manager.enable = true;     # Nix User Environment Configurator
-        coolercontrol.enable = true;    # Cooling Device Control 
+        #home-manager.enable = true;     # Nix User Environment Configurator
+        coolercontrol.enable = true;    # Cooling Device Control
+        gnupg.agent.enable = true;
     };
 
     # ------------ Flatpak ------------
