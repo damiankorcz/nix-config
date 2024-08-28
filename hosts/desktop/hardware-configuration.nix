@@ -18,37 +18,39 @@
 
 	fileSystems = {
 		"/" = { 
-			device = "/dev/disk/by-uuid/4938c06f-c759-4a6d-9394-3b42b56e6c1a";
+			device = "/dev/disk/by-label/nixos";
 			fsType = "btrfs";
 			options = [ "subvol=@" "noatime" ];
 		};
 
 		"/boot" = {
-			device = "/dev/disk/by-uuid/53AE-45E9";
+			device = "/dev/disk/by-label/boot";
 			fsType = "vfat";
 			options = [ "fmask=0022" "dmask=0022" ];
 		};
 
 		"/home" = {
-			device = "/dev/disk/by-uuid/4938c06f-c759-4a6d-9394-3b42b56e6c1a";
+			device = "/dev/disk/by-label/nixos";
 			fsType = "btrfs";
 			options = [ "subvol=@home" ];
 		};
 
 		"/nix" = {
-			device = "/dev/disk/by-uuid/4938c06f-c759-4a6d-9394-3b42b56e6c1a";
+			device = "/dev/disk/by-label/nixos";
 			fsType = "btrfs";
 			options = [ "subvol=@nix" "noatime" "compress=zstd" ];
 		};
 
 		"/var/log" = {
-			device = "/dev/disk/by-uuid/4938c06f-c759-4a6d-9394-3b42b56e6c1a";
+			device = "/dev/disk/by-label/nixos";
 			fsType = "btrfs";
 			options = [ "subvol=@log" "noatime" "compress=zstd" ];
 		};
 	};
 
 	swapDevices = [ { device = "/dev/disk/by-label/swap"; } ];
+
+	#services.fstrim.enable = true;  # Enable periodic SSD TRIM of mounted partitions in background
 
 	# ------------ Hardware ------------
 
