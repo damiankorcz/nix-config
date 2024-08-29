@@ -50,6 +50,11 @@
         hunspellDicts.pl_PL                     # Dictionary for Polish
         hunspellDicts.en_GB-large               # Dictionary for British English
 
+        aspell                                  # Spell checker
+        aspellDicts.en                          # Dictionary for English
+        aspellDicts.en-science                  # Dictionary for English Scientific Jargon
+        aspellDicts.en-computers                # Dictionary for English Computer Jargon
+        aspellDicts.pl                          # Dictionary for Polish
     ];
 
     # Plasma Excludes
