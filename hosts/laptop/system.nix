@@ -44,6 +44,13 @@
         # duplicati.port = 8200; # Default 8200
     };
 
+    # Enables wireless and changes the backend to iwd
+    # https://nixos.wiki/wiki/Iwd
+    networking = {
+        wireless.iwd.enable = true;
+        networkmanager.wifi.backend = "iwd";
+    };
+
     # boot.kernelPackages = pkgs.linuxPackages_xanmod_latest; # https://xanmod.org/
     boot.kernelPackages = pkgs.linuxPackages_latest; # Latest Stable
     # boot.kernelPackages = pkgs.linuxPackages; # LTS
