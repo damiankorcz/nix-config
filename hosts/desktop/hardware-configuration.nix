@@ -12,6 +12,7 @@
 		initrd.kernelModules = [ ];
 		kernelModules = [ "kvm-amd" ];
 		extraModulePackages = [ ];
+		#blacklistedKernelModules = [ "amdgpu" ]; # TEMP
 	};
 
 	# ------------ Storage ------------
@@ -68,6 +69,7 @@
 		};
 
 		# Nvidia configuration
+		# https://nixos.wiki/wiki/Nvidia
 		nvidia = {
 			open = false;
 			nvidiaSettings = true;
@@ -75,6 +77,15 @@
 			powerManagement.enable = false;
 			powerManagement.finegrained = false;
 			package = config.boot.kernelPackages.nvidiaPackages.latest;
+			
+			prime = {
+				# Enable render offload support using the NVIDIA proprietary driver via PRIME.
+				offload.enable = true;
+				
+				# Found with `lspci | grep VGA` then convert values from hex to dec
+				nvidiaBusId = "PCI:9:0:0";
+				amdgpuBusId = "PCI:10:0:0";
+			};
 		};
 
 		# AMD Configuration
