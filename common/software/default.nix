@@ -55,6 +55,8 @@
         aspellDicts.en-science                  # Dictionary for English Scientific Jargon
         aspellDicts.en-computers                # Dictionary for English Computer Jargon
         aspellDicts.pl                          # Dictionary for Polish
+        
+        
         arandr                                  # Frontend for XRandR
         #xorg.xf86videoati                       # DDX driver for ATI Cards
     ];
@@ -72,6 +74,8 @@
         #home-manager.enable = true;    # Nix User Environment Configurator
         coolercontrol.enable = true;    # Cooling Device Control
         gnupg.agent.enable = true;
+        kde-pim.kmail = true;           # Email Client
+        
         nix-ld.enable  = true;          # TEMP
     };
 
