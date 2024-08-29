@@ -8,6 +8,7 @@
         mpv                                     # Video Player
         mpvScripts.modernx-zydezu               # Modern OSC UI for MPV
         vscode                                  # Code Editor
+        firefox                                 # Web Browser
         bottles                                 # Easy-to-use Wineprefix Manager
         spotify                                 # Music Streaming
         vesktop                                 # Discord (Alt Client)
@@ -49,11 +50,6 @@
         hunspellDicts.pl_PL                     # Dictionary for Polish
         hunspellDicts.en_GB-large               # Dictionary for British English
 
-        #aspell                                 # Spell checker
-        #aspellDicts.en                         # Dictionary for English
-        #aspellDicts.en-science                 # Dictionary for English Scientific Jargon
-        #aspellDicts.en-computers               # Dictionary for English Computer Jargon
-        #aspellDicts.pl                         # Dictionary for Polish
     ];
 
     # Plasma Excludes
@@ -66,7 +62,6 @@
     # Programs with Daemons
     programs = {
         thunderbird.enable = true;      # Email Client
-        #home-manager.enable = true;     # Nix User Environment Configurator
         coolercontrol.enable = true;    # Cooling Device Control
         gnupg.agent.enable = true;
     };
