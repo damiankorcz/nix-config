@@ -51,6 +51,11 @@
         networkmanager.wifi.backend = "iwd";
     };
 
+    # Enable bluetooth
+    hardware.bluetooth.enable = true;
+    hardware.bluetooth.powerOnBoot = false; # powers up the default Bluetooth controller on boot
+    services.blueman.enable = true;
+
     # boot.kernelPackages = pkgs.linuxPackages_xanmod_latest; # https://xanmod.org/
     boot.kernelPackages = pkgs.linuxPackages_latest; # Latest Stable
     # boot.kernelPackages = pkgs.linuxPackages; # LTS
