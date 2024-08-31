@@ -106,8 +106,8 @@
 	#services.fstrim.enable = true;  # Enable periodic SSD TRIM of mounted partitions in background
 
 
-	networking.useDHCP = lib.mkDefault true;
-	#networking.interfaces.wlo1.useDHCP = lib.mkDefault true;
+	networking.useDHCP = lib.mkDefault false;
+	networking.interfaces.wlan0.useDHCP = lib.mkDefault true;
 
 	nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
 }
