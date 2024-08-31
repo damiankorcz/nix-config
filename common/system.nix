@@ -180,5 +180,14 @@
                 server min protocol = CORE
             '';
         };
+        
+        # Needed for some apps
+        gnome.gnome-keyring.enable = true;
+    };
+
+    # Automatically unlock the user’s default Kwallet / Gnome Keyring upon login
+    security.pam.services.${userSettings.username} = {
+        kwallet.enable = true;
+        enableGnomeKeyring = true;
     };
 }
