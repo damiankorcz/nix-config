@@ -103,8 +103,8 @@
 	};
 
 	services.xserver.videoDrivers = [ "nvidia" ];
-	#services.fstrim.enable = true;  # Enable periodic SSD TRIM of mounted partitions in background
-
+	
+	services.fstrim.enable = true; # Enable periodic SSD TRIM of mounted partitions in background
 
 	networking.useDHCP = lib.mkDefault false;
 	networking.interfaces.wlan0.useDHCP = lib.mkDefault true;
