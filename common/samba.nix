@@ -13,4 +13,13 @@
 
         in ["${automount_opts},credentials=~/.config/samba/smb-secrets"];
     };
+
+    # https://discourse.nixos.org/t/cant-mount-samba-share-as-a-user/49171/3
+    security.wrappers."mount.cifs" = {
+      program = "mount.cifs";
+      source = "${lib.getBin pkgs.cifs-utils}/bin/mount.cifs";
+      owner = "root";
+      group = "root";
+      setuid = true;
+    };
 }
