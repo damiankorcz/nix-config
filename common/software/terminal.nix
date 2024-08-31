@@ -7,6 +7,7 @@
         btop                # System Monitor
         libnotify           # Library for Sending Desktop Notifications to the Notification Daemon
         fastfetch           # System Info
+        mc                  # File Manager
 
         pciutils            # PCI Device Utilities
         wlr-randr           # Manage monitor resolution, rotation, refresh rate, etc.
