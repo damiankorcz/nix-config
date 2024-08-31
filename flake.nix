@@ -57,7 +57,7 @@
 						#home-manager.useUserPackages = true;
 					}
 
-					sosp-nix.nixosModules.sops
+					sops-nix.nixosModules.sops
 
 					chaotic.nixosModules.default
 				];
@@ -81,7 +81,7 @@
 						home-manager.useGlobalPkgs = true;
 					}
 
-					sosp-nix.nixosModules.sops
+					sops-nix.nixosModules.sops
 				];
 
 				specialArgs = {
@@ -103,7 +103,7 @@
 						home-manager.useGlobalPkgs = true;
 					}
 
-					sosp-nix.nixosModules.sops
+					sops-nix.nixosModules.sops
 				];
 
 				specialArgs = {
