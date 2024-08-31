@@ -53,7 +53,6 @@
 
     # Enable bluetooth
     hardware.bluetooth.enable = true;
-    hardware.bluetooth.powerOnBoot = false; # Powers up the default Bluetooth controller on boot
 
     # boot.kernelPackages = pkgs.linuxPackages_xanmod_latest; # https://xanmod.org/
     boot.kernelPackages = pkgs.linuxPackages_latest; # Latest Stable
