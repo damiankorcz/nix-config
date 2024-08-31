@@ -80,8 +80,8 @@
 			package = config.boot.kernelPackages.nvidiaPackages.latest;
 			
 			prime = {
-				# Enable render offload support using the NVIDIA proprietary driver via PRIME.
-				offload.enable = true;
+				# Enable NVIDIA Optimus support using the NVIDIA proprietary driver via PRIME
+				sync.enable = true;
 				
 				# Found with `lspci` then convert values from hex to dec
 				nvidiaBusId = "PCI:1:0:0";
