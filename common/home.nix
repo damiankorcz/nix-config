@@ -56,4 +56,7 @@
             };
         };
     };
+
+    # Automatically unlock the user’s default Kwallet upon login
+    security.pam.services.${userSettings.username}.kwallet.enable = true;
 }
