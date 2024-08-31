@@ -73,6 +73,7 @@
         kde-pim.kmail = true;           # Email Client
         
         nix-ld.enable  = true;          # TEMP
+        adb.enable = true;              # Android Debug Bridge (ADB)
     };
 
     # ------------ Flatpak ------------
