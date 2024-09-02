@@ -20,7 +20,7 @@
 		# Chaotic's Nyx - collection of bleeding-edge and unreleased packages
 		# e.g. linux_cachyos kernel, mesa_git, etc.
 		# https://www.nyx.chaotic.cx/
-		chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
+		#chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
 
 		# Secrets Management
 		# https://github.com/mic92/sops-nix
@@ -30,7 +30,7 @@
 		};
 	};
 
-	outputs = inputs@{ self, nixpkgs, nix-flatpak, home-manager, chaotic, sops-nix }:
+	outputs = inputs@{ self, nixpkgs, nix-flatpak, home-manager, sops-nix }: #chaotic
 	let
 		userSettings = {
 			username = "damian"; # Username
@@ -59,7 +59,7 @@
 
 					sops-nix.nixosModules.sops
 
-					chaotic.nixosModules.default
+					#chaotic.nixosModules.default
 				];
 
 				specialArgs = {
