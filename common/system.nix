@@ -163,6 +163,9 @@
         # Enable Linux Vendor Firmware Service
         fwupd.enable = true;
 
+        # Manage, install and generate color profiles
+        colord.enable = true;
+
         # Enable the OpenSSH daemon
         openssh.enable = true;
         openssh.settings.PasswordAuthentication = true;
