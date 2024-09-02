@@ -15,6 +15,5 @@
         lshw                # Detailed information on the hardware configuration
         glxinfo             # Test utilities for OpenGL
         arandr              # Frontend for XRandR
-        xorg.xf86videoati   # DDX driver for ATI Cards
     ];
 }
