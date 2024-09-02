@@ -79,7 +79,7 @@
 			
 			prime = {
 				# Enable render offload support using the NVIDIA proprietary driver via PRIME.
-				offload.enable = true;
+				sync.enable = true;
 				
 				# Found with `lspci | grep VGA` then convert values from hex to dec
 				nvidiaBusId = "PCI:9:0:0";
