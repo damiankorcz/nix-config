@@ -19,7 +19,7 @@
             # Enable Display Manager for Plasma.
             sddm = {
                 enable = true;
-                wayland.enable = true;
+                #wayland.enable = true;
             };
         };
 
@@ -59,22 +59,24 @@
     # };
 
     environment.etc."X11/xorg.conf.d/20-radeon.conf".text = lib.mkForce ''
-    Section "Device"
-        Identifier             "Screen0"
-        Driver                 "radeon"
-        BusID                  "PCI:10:0:0"
-    EndSection
+Section "Device"
+    Identifier             "Screen0"
+    Driver                 "radeon"
+    BusID                  "PCI:10:0:0"
+EndSection
 
-    Section "Device"
-        Identifier             "Screen1"
-        Driver                 "nvidia"
-        BusID                  "PCI:9:0:0"
-    EndSection
+Section "Device"
+    Identifier             "Screen1"
+    Driver                 "nvidia"
+    BusID                  "PCI:9:0:0"
+EndSection
     '';
 
     boot = {
         kernelParams = [
             "video=VGA-1:640x480ieS"
+            #"video=VGA-1:320x240eS"
+            "radeon.modeset=0"
         ];
 
         blacklistedKernelModules = [ "amdgpu" ];
@@ -106,27 +108,28 @@
                             sha256 = "fa5c70fb7557107fe06965213a0e15f3be55f13b6cfefef3c6455a33d1a36852";
                         };
                     }
-                    {
-                        name = "D0023R's 03 linux 15khz dcn1 dcn2 interlaced mode fix patch";
-                        patch = builtins.fetchurl {
-                            url = "https://raw.githubusercontent.com/D0023R/linux_kernel_15khz/master/linux-6.10/03_linux_15khz_dcn1_dcn2_interlaced_mode_fix.patch";
-                            sha256 = "b0cb5bbb5427512111b7ce60ab35efb3bdc3d505111d618e93dd352f4f5bcd29";
-                        };
-                    }
-                    {
-                        name = "D0023R's 04 linux 15khz dce interlaced mode fix patch";
-                        patch = builtins.fetchurl {
-                            url = "https://raw.githubusercontent.com/D0023R/linux_kernel_15khz/master/linux-6.10/04_linux_15khz_dce_interlaced_mode_fix.patch";
-                            sha256 = "0510c696d6eaf65e2893f2103ce695038f8665eccc4fb8d23916bbbebe1e3d5f";
-                        };
-                    }
-                    {
-                        name = "D0023R's 05 linux 15khz amdgpu pll fix patch";
-                        patch = builtins.fetchurl {
-                            url = "https://raw.githubusercontent.com/D0023R/linux_kernel_15khz/master/linux-6.10/05_linux_15khz_amdgpu_pll_fix.patch";
-                            sha256 = "eb415e7744def267770ee89f41f658fc3b16fb444936830330355a89564373b1";
-                        };
-                    }
+                    # amdgpu specific patches
+                    # {
+                    #     name = "D0023R's 03 linux 15khz dcn1 dcn2 interlaced mode fix patch";
+                    #     patch = builtins.fetchurl {
+                    #         url = "https://raw.githubusercontent.com/D0023R/linux_kernel_15khz/master/linux-6.10/03_linux_15khz_dcn1_dcn2_interlaced_mode_fix.patch";
+                    #         sha256 = "b0cb5bbb5427512111b7ce60ab35efb3bdc3d505111d618e93dd352f4f5bcd29";
+                    #     };
+                    # }
+                    # {
+                    #     name = "D0023R's 04 linux 15khz dce interlaced mode fix patch";
+                    #     patch = builtins.fetchurl {
+                    #         url = "https://raw.githubusercontent.com/D0023R/linux_kernel_15khz/master/linux-6.10/04_linux_15khz_dce_interlaced_mode_fix.patch";
+                    #         sha256 = "0510c696d6eaf65e2893f2103ce695038f8665eccc4fb8d23916bbbebe1e3d5f";
+                    #     };
+                    # }
+                    # {
+                    #     name = "D0023R's 05 linux 15khz amdgpu pll fix patch";
+                    #     patch = builtins.fetchurl {
+                    #         url = "https://raw.githubusercontent.com/D0023R/linux_kernel_15khz/master/linux-6.10/05_linux_15khz_amdgpu_pll_fix.patch";
+                    #         sha256 = "eb415e7744def267770ee89f41f658fc3b16fb444936830330355a89564373b1";
+                    #     };
+                    # }
                     {
                         name = "D0023R's 06 linux switchres kms drm modesetting patch";
                         patch = builtins.fetchurl {

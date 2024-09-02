@@ -12,7 +12,6 @@
 		initrd.kernelModules = [ ];
 		kernelModules = [ "kvm-amd" ];
 		extraModulePackages = [ ];
-		#blacklistedKernelModules = [ "amdgpu" ]; # TEMP
 	};
 
 	# ------------ Storage ------------
@@ -54,6 +53,7 @@
 	# ------------ Hardware ------------
 
 	hardware = {
+		enableAllFirmware = true;
 		cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 
 		graphics = {
@@ -77,14 +77,14 @@
 			powerManagement.finegrained = false;
 			package = config.boot.kernelPackages.nvidiaPackages.stable;
 			
-			prime = {
-				# Enable render offload support using the NVIDIA proprietary driver via PRIME.
-				sync.enable = true;
-				
-				# Found with `lspci | grep VGA` then convert values from hex to dec
-				nvidiaBusId = "PCI:9:0:0";
-				amdgpuBusId = "PCI:10:0:0";
-			};
+			# prime = {
+			# 	# Enable render offload support using the NVIDIA proprietary driver via PRIME.
+			# 	sync.enable = true;
+			
+			# 	# Found with `lspci | grep VGA` then convert values from hex to dec
+			# 	nvidiaBusId = "PCI:9:0:0";
+			# 	amdgpuBusId = "PCI:10:0:0";
+			# };
 		};
 
 		# AMD Configuration
@@ -103,7 +103,7 @@
 		# opentabletdriver.enable = true;
 	};
 
-	services.xserver.videoDrivers = [ "nvidia" ];
+	services.xserver.videoDrivers = [ "nvidia" ]; # "radeon" "modesetting" "fbdev"
 	#services.fstrim.enable = true;  # Enable periodic SSD TRIM of mounted partitions in background
 
 	# ------------ Other ------------
