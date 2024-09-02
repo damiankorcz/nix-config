@@ -75,7 +75,7 @@
 			modesetting.enable = true;
 			powerManagement.enable = false;
 			powerManagement.finegrained = false;
-			package = config.boot.kernelPackages.nvidiaPackages.latest;
+			package = config.boot.kernelPackages.nvidiaPackages.stable;
 			
 			prime = {
 				# Enable render offload support using the NVIDIA proprietary driver via PRIME.
