@@ -86,7 +86,7 @@
 		kernelModules = [ "kvm-intel" ];
 		extraModulePackages = [ ];
 
-		kernelParams = [ ];
+		kernelParams = [ "acpi_osi=Linux" ]; # TEMP: This might help with some FN keys now working
 
 		# kernelPackages = pkgs.linuxPackages_xanmod_latest; # https://xanmod.org/
 		# kernelPackages = pkgs.linuxPackages; # LTS
