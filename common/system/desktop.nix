@@ -43,16 +43,15 @@
         memoryPercent = 50;
     };
 
-    # ------------ Automatic Login ------------
-
-    displayManager = {
-        autoLogin.enable = true;
-        autoLogin.user = userSettings.username;
-    };
-
     # ------------ Services ------------
 
     services = {
+        # Automatic Login
+        displayManager = {
+            autoLogin.enable = true;
+            autoLogin.user = userSettings.username;
+        };
+
         # Enable CUPS to print documents
         printing.enable = true;
 
