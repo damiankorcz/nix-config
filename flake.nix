@@ -134,13 +134,11 @@
 
 				specialArgs = {
 					inherit inputs;
-					
+
 					# Pass config variables from above
 					inherit userSettings;
 				};
 			};
-
-			disko.nixosModules.disko
 		};
 	};
 }
