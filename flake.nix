@@ -28,9 +28,15 @@
 			url = "github:mic92/sops-nix";
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
+
+		# Declarative Disk Partitioning
+		disko = {
+			url = "github:nix-community/disko";
+			inputs.nixpkgs.follows = "nixpkgs";
+		};
 	};
 
-	outputs = inputs@{ self, nixpkgs, nix-flatpak, home-manager, sops-nix }: #chaotic
+	outputs = inputs@{ self, nixpkgs, nix-flatpak, home-manager, sops-nix, disko }: #chaotic
 	let
 		userSettings = {
 			username = "damian"; # Username
@@ -110,6 +116,31 @@
 					inherit userSettings;
 				};
 			};
+
+			# Headless VM
+			nixos-vm-headless = nixpkgs.lib.nixosSystem {
+				system = "x86_64-linux";
+				modules = [
+					./hosts/vm-headless/default.nix
+
+					home-manager.nixosModules.home-manager
+					{
+						home-manager.useGlobalPkgs = true;
+					}
+
+					#sops-nix.nixosModules.sops
+					disko.nixosModules.disko
+				];
+
+				specialArgs = {
+					inherit inputs;
+					
+					# Pass config variables from above
+					inherit userSettings;
+				};
+			};
+
+			disko.nixosModules.disko
 		};
 	};
 }
