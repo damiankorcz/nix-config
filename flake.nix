@@ -20,7 +20,7 @@
 		# Chaotic's Nyx - collection of bleeding-edge and unreleased packages
 		# e.g. linux_cachyos kernel, mesa_git, etc.
 		# https://www.nyx.chaotic.cx/
-		chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
+		#chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
 
 		# Secrets Management
 		# https://github.com/mic92/sops-nix
@@ -28,9 +28,15 @@
 			url = "github:mic92/sops-nix";
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
+
+		# Declarative Disk Partitioning
+		disko = {
+			url = "github:nix-community/disko";
+			inputs.nixpkgs.follows = "nixpkgs";
+		};
 	};
 
-	outputs = inputs@{ self, nixpkgs, nix-flatpak, home-manager, chaotic, sops-nix }:
+	outputs = inputs@{ self, nixpkgs, nix-flatpak, home-manager, sops-nix, disko }: #chaotic
 	let
 		userSettings = {
 			username = "damian"; # Username
@@ -54,12 +60,11 @@
 					home-manager.nixosModules.home-manager
 					{
 						home-manager.useGlobalPkgs = true;
-						#home-manager.useUserPackages = true;
 					}
 
 					sops-nix.nixosModules.sops
 
-					chaotic.nixosModules.default
+					#chaotic.nixosModules.default
 				];
 
 				specialArgs = {
@@ -107,6 +112,29 @@
 				];
 
 				specialArgs = {
+					# Pass config variables from above
+					inherit userSettings;
+				};
+			};
+
+			# Headless VM
+			nixos-vm-headless = nixpkgs.lib.nixosSystem {
+				system = "x86_64-linux";
+				modules = [
+					./hosts/vm-headless/default.nix
+
+					home-manager.nixosModules.home-manager
+					{
+						home-manager.useGlobalPkgs = true;
+					}
+
+					#sops-nix.nixosModules.sops
+					disko.nixosModules.disko
+				];
+
+				specialArgs = {
+					inherit inputs;
+
 					# Pass config variables from above
 					inherit userSettings;
 				};

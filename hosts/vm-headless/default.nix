@@ -5,15 +5,11 @@
 		# Hardware Config
 		./hardware-configuration.nix
 		../../common/system/default.nix
-		../../common/system/desktop.nix
 
 		# Common Config Modules
 		../../common/home.nix
 		../../common/samba.nix
-		../../common/software/desktop.nix
-		../../common/software/gaming.nix
 		../../common/software/terminal.nix
-		# ../../common/software/emulators.nix
 	];
 
 	# ------------ Base System ------------
@@ -21,43 +17,20 @@
 	
 	networking = {
 		# System Name / Host name
-		hostName = "nixos-laptop";
+		hostName = "nixos-vm-headless";
 
 		useDHCP = lib.mkDefault false;
-		interfaces.wlan0.useDHCP = lib.mkDefault true;
-
-		# Enables wireless and changes the backend to iwd
-		# https://nixos.wiki/wiki/Iwd
-		wireless.iwd.enable = true;
-        networkmanager.wifi.backend = "iwd";
 	};
 
-    # Fixing time sync when dualbooting with Windows
-    time.hardwareClockInLocalTime = true;
+	virtualisation.vmware.guest.enable = true;
 
     services = {
         # Enable the X11 windowing system.
         # You can disable this if you're only using the Wayland session.
         # xserver.enable = true;
 
-        xserver.videoDrivers = [ "nvidia" ]; # "modesetting" "fbdev"
+		services.xserver.videoDrivers = [ "vmware" ];
 	
-        fstrim.enable = true; # Enable periodic SSD TRIM of mounted partitions in background
-
-        # Enable the KDE Plasma Desktop Environment.
-        desktopManager.plasma6.enable = true;
-
-        displayManager = {
-            # Declares default session (Wayland = plasma / X11 = plasmax11)
-            defaultSession = "plasma";
-
-            # Enable Display Manager for Plasma.
-            sddm = {
-                enable = true;
-                wayland.enable = true;
-            };
-        };
-
         # Configure keymap in X11
         xserver.xkb = {
             layout = "gb";
