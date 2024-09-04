@@ -99,7 +99,7 @@
                 };
 
                 # Source: https://github.com/D0023R/linux_kernel_15khz
-                # Get sha256: ` curl *patch link* | sha256sum`
+                # Get sha256: `nix-prefetch-url --type sha256 *patch link*`
                 kernelPatches = [
                     {
                         name = "D0023R's 01 linux 15khz patch";
@@ -178,5 +178,20 @@
 #     BusID                  "PCI:9:0:0"
 # EndSection
 #     '';      
+
+# services.xserver.config = {
+#   Device = [
+#     {
+#       Identifier = "AMD";
+#       Driver = "amdgpu";
+#       BusID = "PCI:10:0:0"; # Adjust according to your system
+#     }
+#     {
+#       Identifier = "Nvidia";
+#       Driver = "nvidia";
+#       BusID = "PCI:9:0:0"; # Adjust according to your system
+#     }
+#   ];
+# };
 
 }
