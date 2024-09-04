@@ -104,6 +104,23 @@
         #}
     };
 
+    # ------------ Hardware ------------
+
+    hardware = {
+        enableAllFirmware = true;
+
+        graphics = {
+			enable = true;
+
+			# Vulkan support for 32bit programs
+			enable32Bit = true;
+
+			## amdvlk: an open-source Vulkan driver from AMD
+			extraPackages = [ pkgs.amdvlk ];
+			extraPackages32 = [ pkgs.driversi686Linux.amdvlk ];
+		};
+    };
+
     # ------------ Services ------------
     
     services = {

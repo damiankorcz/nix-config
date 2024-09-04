@@ -1,10 +1,9 @@
-{ config, pkgs, userSettings, ... }:
+{ config, pkgs, ... }:
 
 {
 	imports = [
 		# Hardware Config
 		./hardware-configuration.nix
-		./system.nix
 		../../common/system/default.nix
 		../../common/system/desktop.nix
 
@@ -49,10 +48,6 @@
         desktopManager.plasma6.enable = true;
 
         displayManager = {
-            # Enable automatic login for the user.
-            autoLogin.enable = true;
-            autoLogin.user = userSettings.username;
-
             # Declares default session (Wayland = plasma / X11 = plasmax11)
             defaultSession = "plasma";
 

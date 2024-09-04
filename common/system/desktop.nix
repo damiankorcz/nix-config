@@ -43,6 +43,13 @@
         memoryPercent = 50;
     };
 
+    # ------------ Automatic Login ------------
+
+    displayManager = {
+        autoLogin.enable = true;
+        autoLogin.user = userSettings.username;
+    };
+
     # ------------ Services ------------
 
     services = {
@@ -92,19 +99,6 @@
     # ------------ Hardware ------------
 
     hardware = {
-        enableAllFirmware = true;
-
-        graphics = {
-			enable = true;
-
-			# Vulkan support for 32bit programs
-			enable32Bit = true;
-
-			## amdvlk: an open-source Vulkan driver from AMD
-			extraPackages = [ pkgs.amdvlk ];
-			extraPackages32 = [ pkgs.driversi686Linux.amdvlk ];
-		};
-
         # Enables Xbox One Controller Adapter support
 		xone.enable = true;
 
