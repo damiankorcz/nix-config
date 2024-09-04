@@ -5,6 +5,7 @@
     
     environment.systemPackages = with pkgs; [
         # emulationstation-de # Frontend for browsing and launching games from your multi-platform game collection (Outdated - https://github.com/NixOS/nixpkgs/pull/299298)
+        
         mame                # Arcade Games
         dosbox-staging      # DOS
         duckstation         # PlayStation 1 (Outdated - https://github.com/NixOS/nixpkgs/issues/335958)

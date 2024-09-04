@@ -5,14 +5,7 @@
 		(modulesPath + "/installer/scan/not-detected.nix")
 	];
 
-	# ------------ Kernel Modules ------------
-
-	boot = {
-		initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usb_storage" "sd_mod" "rtsx_pci_sdmmc" ];
-		initrd.kernelModules = [ ];
-		kernelModules = [ "kvm-intel" ];
-		extraModulePackages = [ ];
-	};
+	# ------------ Storage ------------
 
 	fileSystems = {
 		"/" =
@@ -56,19 +49,7 @@
 	# ------------ Hardware ------------
 
 	hardware = {
-		#enableAllFirmware = true;
 		cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
-
-		graphics = {
-			enable = true;
-
-			# Vulkan support for 32bit programs
-			enable32Bit = true;
-
-			## amdvlk: an open-source Vulkan driver from AMD
-			extraPackages = [ pkgs.amdvlk ];
-			extraPackages32 = [ pkgs.driversi686Linux.amdvlk ];
-		};
 
 		# Nvidia configuration
 		# https://nixos.wiki/wiki/Nvidia
@@ -90,25 +71,50 @@
 			};
 		};
 
-		# Enables Xbox One Controller Adapter support
-		xone.enable = true;
-
-		# Potentially needed for Drawing Tablet Support (?)
-		uinput.enable = true;
-
-		# Non-root acces to the firmware of QMK Keyboards
-		keyboard.qmk.enable = true;
+		# Enable bluetooth
+    	bluetooth.enable = true;
 
 		# User-mode tablet driver
 		# opentabletdriver.enable = true;
 	};
 
-	services.xserver.videoDrivers = [ "nvidia" ];
-	
-	services.fstrim.enable = true; # Enable periodic SSD TRIM of mounted partitions in background
+	# ------------ Kernel Modules ------------
 
-	networking.useDHCP = lib.mkDefault false;
-	networking.interfaces.wlan0.useDHCP = lib.mkDefault true;
+	boot = {
+		initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usb_storage" "sd_mod" "rtsx_pci_sdmmc" ];
+		initrd.kernelModules = [ ];
+		kernelModules = [ "kvm-intel" ];
+		extraModulePackages = [ ];
 
-	nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
+		kernelParams = [ ];
+
+		# kernelPackages = pkgs.linuxPackages_xanmod_latest; # https://xanmod.org/
+		# kernelPackages = pkgs.linuxPackages; # LTS
+		# kernelPackages = pkgs.linuxPackages_cachyos; # https://github.com/chaotic-cx/nyx
+		kernelPackages = pkgs.linuxPackages_latest; # Latest Stable
+	};
+
+    
+    # chaotic.scx = {
+    #     enable = true;
+
+    #     # https://github.com/chaotic-cx/nyx/blob/935a1f5935853e5b57f1a9432457d8bea4dbb7d7/modules/nixos/scx.nix#L15
+    #     # "scx_bpfland"
+    #     scheduler = "scx_lavd";
+    # };
+
+#     environment.etc."X11/xorg.conf.d/20-radeon.conf".text = lib.mkForce ''
+# Section "Device"
+#     Identifier             "Screen0"
+#     Driver                 "amdgpu"
+#     BusID                  "PCI:10:0:0"
+# EndSection
+
+# Section "Device"
+#     Identifier             "Screen1"
+#     Driver                 "nvidia"
+#     BusID                  "PCI:9:0:0"
+# EndSection
+#     '';      
+
 }
