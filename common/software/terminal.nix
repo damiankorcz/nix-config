@@ -2,6 +2,12 @@
 
 {
     environment.systemPackages = with pkgs; [
+        foot                # Lightweight Wayland Terminal Emulator
+        micro               # Terminal-based Text Editor
+        superfile           # Terminal File Manager
+        #nnn                # Ncurses-based File Browser
+        ripgrep             # Regex Recursive Directory Search
+
         gh                  # GitHub CLI Tool
         wget                # Download Tool
         btop                # System Monitor

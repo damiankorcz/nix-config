@@ -43,8 +43,8 @@
 			name = "Damian Korcz"; # Name  / Identifier
 			email = "damiankorcz28@gmail.com"; # Email
 			editor = "kate";
-			spawnEditor = "exec $(userSettings.terminal) -e nano";
-			terminal = "konsole";
+			spawnEditor = "exec $(userSettings.terminal) -e micro";
+			terminal = "foot";
 			browser = "edge"; # Default browser; must select one from ./user/app/browser/
 		};
 	in {
