@@ -52,12 +52,12 @@
 		# Nvidia configuration
 		# https://nixos.wiki/wiki/Nvidia
 		nvidia = {
-			open = false;
+            open = true;
 			nvidiaSettings = true;
 			modesetting.enable = true;
 			powerManagement.enable = false;
 			powerManagement.finegrained = false;
-			package = config.boot.kernelPackages.nvidiaPackages.stable;
+			package = config.boot.kernelPackages.nvidiaPackages.latest;
 			
 			# prime = {
 			# 	# Enable render offload support using the NVIDIA proprietary driver via PRIME.
