@@ -19,6 +19,7 @@
         obsidian                                # Note Taking
         birdtray                                # Tray Icon for Thunderbird
         gearlever                               # AppImage Manager
+        timeshift                               # BTRFS Snapshots / System Restore Tool
         argyllcms                               # Colour Managment System
         displaycal                              # Display Calibration Tool
         microsoft-edge                          # Web Browser
@@ -63,6 +64,7 @@
     environment.plasma6.excludePackages = with pkgs.kdePackages; [
         krdp            # Remove Desktop (RDP)
         khelpcenter     # Help app
+        #konsole
     ];
 
     # Programs with Daemons
