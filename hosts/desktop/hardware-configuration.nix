@@ -59,14 +59,14 @@
 			powerManagement.finegrained = false;
 			package = config.boot.kernelPackages.nvidiaPackages.latest;
 			
-			# prime = {
-			# 	# Enable render offload support using the NVIDIA proprietary driver via PRIME.
-			# 	sync.enable = true;
-			
-			# 	# Found with `lspci | grep VGA` then convert values from hex to dec
-			# 	nvidiaBusId = "PCI:9:0:0";
-			# 	amdgpuBusId = "PCI:10:0:0";
-			# };
+			prime = {
+				# Enable render offload support using the NVIDIA proprietary driver via PRIME.
+				sync.enable = true;
+			 
+			  	# Found with `lspci | grep VGA` then convert values from hex to dec
+			  	nvidiaBusId = "PCI:9:0:0";
+			  	amdgpuBusId = "PCI:10:0:0";
+			};
 		};
 	};
 
@@ -78,9 +78,14 @@
 		kernelModules = [ "kvm-amd" ];
 		extraModulePackages = [ ];
 
+		
+
 		kernelParams = [
-            #"video=VGA-1:640x480ieS"
-            #"video=VGA-1:320x240eS"
+            "video=DVI-I-1:640x480ieS"
+            #"video=HDMI-1-0:2560x1440@60"
+            #"video=DP-1-2:2560x1440@144"
+            #"video=DP-1-4:2560x1440"
+            #"video=DVI-I-1:320x240eS"
             # "radeon.modeset=0"
         ];
 
@@ -165,21 +170,21 @@
     #     scheduler = "scx_lavd";
     # };
 
-#     environment.etc."X11/xorg.conf.d/20-radeon.conf".text = lib.mkForce ''
-# Section "Device"
-#     Identifier             "Screen0"
-#     Driver                 "amdgpu"
-#     BusID                  "PCI:10:0:0"
-# EndSection
+# environment.etc."X11/xorg.conf.d/20-radeon.conf".text = lib.mkForce ''
+#  Section "Device"
+#      Identifier             "Screen0"
+#      Driver                 "amdgpu"
+#      BusID                  "PCI:10:0:0"
+#  EndSection
+# 
+#  Section "Device"
+#      Identifier             "Screen1"
+#      Driver                 "nvidia"
+#      BusID                  "PCI:9:0:0"
+#  EndSection
+# '';      
 
-# Section "Device"
-#     Identifier             "Screen1"
-#     Driver                 "nvidia"
-#     BusID                  "PCI:9:0:0"
-# EndSection
-#     '';      
-
-# services.xserver.config = {
+#services.xserver.config = ''
 #   Device = [
 #     {
 #       Identifier = "AMD";
@@ -192,6 +197,109 @@
 #       BusID = "PCI:9:0:0"; # Adjust according to your system
 #     }
 #   ];
-# };
+# '';
+# 
+#services.xserver.xrandrHeads = [
+#  {
+#     output = "DVI-I-0";
+#     name = "CRT";
+#     mode = "640x480ieS";
+#     position = {
+#       x = 4000;
+#       y = 2472;
+#     };
+#     rotation = "normal";
+#   }
+ #   {
+ #     output = "HDMI-A-1";
+ #     name = "Portrait";
+ #     mode = "2560x1440";
+ #     position = {
+ #       x = 0;
+ #       y = 392;
+ #     };
+ #     rotation = "left";
+ #   }
+ #   {
+ #     output = "DP-3";
+ #     name = "Main";
+ #     primary = true;
+ #     mode = "2560x1440";
+ #     position = {
+ #       x = 1440;
+ #       y = 72;
+ #     };
+ #     rotation = "normal";
+ #   }
+ #   {
+ #     output = "DP-4";
+ #     name = "Top";
+ #     mode = "2560x1440";
+ #     position = {
+ #       x = 1440;
+ #       y = 1512;
+ #     };
+ #     rotation = "normal";
+ #   }
+ # ];
 
+# services.xserver.monitorSection = ''
+# 	Section "Monitor"
+# 	    Identifier "DVI-I-0"
+# 	    Option "Position" "4000 2472"
+# 	    Option "Rotate" "normal"
+# 	EndSection
+# 
+# 	Section "Monitor"
+# 	    Identifier "HDMI-1-0"
+# 	    Option "PreferredMode" "2560x1440"
+# 	    Option "Position" "0 392"
+# 	    Option "Rotate" "left"
+# 	EndSection
+# 
+# 	Section "Monitor"
+# 	    Identifier "DP-1-2"
+# 	    Option "Primary" "true"
+# 	    Option "PreferredMode" "2560x1440"
+# 	    Option "Position" "1440 72"
+# 	    Option "Rotate" "normal"
+# 	EndSection
+# 
+# 	Section "Monitor"
+# 	    Identifier "DP-1-4"
+# 	    Option "PreferredMode" "2560x1440"
+# 	    Option "Position" "1440 1512"
+# 	    Option "Rotate" "normal"
+# 	EndSection
+# '';
+
+# environment.etc."X11/xorg.conf.d/10-monitor.conf".text = ''
+#   Section "Monitor"
+#     Identifier "DVI-I-0"
+#     Option "Position" "4000 2472"
+#     Option "Rotate" "normal"
+#   EndSection
+
+#   Section "Monitor"
+#     Identifier "HDMI-1-0"
+#     Option "PreferredMode" "2560x1440"
+#     Option "Position" "0 392"
+#     Option "Rotate" "left"
+#   EndSection
+
+#   Section "Monitor"
+#     Identifier "DP-1-2"
+#     Option "Primary" "true"
+#     Option "PreferredMode" "2560x1440"
+#     Option "Position" "1440 72"
+#     Option "Rotate" "normal"
+#   EndSection
+
+#   Section "Monitor"
+#     Identifier "DP-1-4"
+#     Option "PreferredMode" "2560x1440"
+#     Option "Position" "1440 1512"
+#     Option "Rotate" "normal"
+#   EndSection
+# '';
 }
