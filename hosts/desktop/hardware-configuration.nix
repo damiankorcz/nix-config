@@ -95,12 +95,12 @@
         # boot.kernelPackages = pkgs.linuxPackages_cachyos; # https://github.com/chaotic-cx/nyx
         kernelPackages = pkgs.linuxPackagesFor (pkgs.linux_6_10.override {
             argsOverride = rec {
-                version = "6.10.6";
-                modDirVersion = "6.10.6";
+                version = "6.10.8";
+                modDirVersion = "6.10.8";
 
                 src = pkgs.fetchurl {
                     url = "mirror://kernel/linux/kernel/v6.x/linux-${version}.tar.xz";
-                    sha256 = "4NUNW3T4WZN1Zg558YevdJOGTbpf9mcbFJgzdqBws9E=";
+                    sha256 = "wJIyNXedRga7qH9ytv4R95bp5AwcqfTV2+BM1H7jxZU=";
                 };
 
                 # Source: https://github.com/D0023R/linux_kernel_15khz
@@ -110,50 +110,49 @@
                         name = "D0023R's 01 linux 15khz patch";
                         patch = builtins.fetchurl {
                             url = "https://raw.githubusercontent.com/D0023R/linux_kernel_15khz/master/linux-6.10/01_linux_15khz.patch";
-                            sha256 = "54cd58823871167adec52401ad1b6df1a36f865c6e6a5b92e9a0d711c82cde18";
+                            sha256 = "066y5k413mx0x695nskfbj36z8zidldss094qpg7l5ki7215ikal";
                         };
                     }
                     # {
                     #     name = "D0023R's 02 linux 15khz interlaced mode fix patch";
                     #     patch = builtins.fetchurl {
                     #         url = "https://raw.githubusercontent.com/D0023R/linux_kernel_15khz/master/linux-6.10/02_linux_15khz_interlaced_mode_fix.patch";
-                    #         sha256 = "fa5c70fb7557107fe06965213a0e15f3be55f13b6cfefef3c6455a33d1a36852";
+                    #         sha256 = "0lk8lg8k6nj5qvrzxzkc7gqmbgpk2l73l8b5d7h7y42pfpxp0p7s";
                     #     };
                     # }
-                    # amdgpu specific patches
                     {
                         name = "D0023R's 03 linux 15khz dcn1 dcn2 interlaced mode fix patch";
                         patch = builtins.fetchurl {
                             url = "https://raw.githubusercontent.com/D0023R/linux_kernel_15khz/master/linux-6.10/03_linux_15khz_dcn1_dcn2_interlaced_mode_fix.patch";
-                            sha256 = "b0cb5bbb5427512111b7ce60ab35efb3bdc3d505111d618e93dd352f4f5bcd29";
+                            sha256 = "07r0c7zmv9nd2258hs5i6jz3v3jna5g05cbf20k8lafalacrcjal";
                         };
                     }
                     {
                         name = "D0023R's 04 linux 15khz dce interlaced mode fix patch";
                         patch = builtins.fetchurl {
                             url = "https://raw.githubusercontent.com/D0023R/linux_kernel_15khz/master/linux-6.10/04_linux_15khz_dce_interlaced_mode_fix.patch";
-                            sha256 = "0510c696d6eaf65e2893f2103ce695038f8665eccc4fb8d23916bbbebe1e3d5f";
+                            sha256 = "0prx3szbxfqn779bhkycxijqd3q3jpk3q47jjcl5xxpassbcc405";
                         };
                     }
                     {
                         name = "D0023R's 05 linux 15khz amdgpu pll fix patch";
                         patch = builtins.fetchurl {
                             url = "https://raw.githubusercontent.com/D0023R/linux_kernel_15khz/master/linux-6.10/05_linux_15khz_amdgpu_pll_fix.patch";
-                            sha256 = "eb415e7744def267770ee89f41f658fc3b16fb444936830330355a89564373b1";
+                            sha256 = "1cbk8db8jnim601q6dj98kxicfzwb3v437z81rvngwny8ivmwhgb";
                         };
                     }
                     {
                         name = "D0023R's 06 linux switchres kms drm modesetting patch";
                         patch = builtins.fetchurl {
                             url = "https://raw.githubusercontent.com/D0023R/linux_kernel_15khz/master/linux-6.10/06_linux_switchres_kms_drm_modesetting.patch";
-                            sha256 = "07607fdd6911bfd47d3497dea7b456a3c6351b325a552592d2c7bb0381015ee3";
+                            sha256 = "1qsy060h7fy7sa92amas68dkbim3assagplp6iyx9gqid7fpyq07";
                         };
                     }
                     {
                         name = "D0023R's 07 linux 15khz fix ddc patch";
                         patch = builtins.fetchurl {
                             url = "https://raw.githubusercontent.com/D0023R/linux_kernel_15khz/master/linux-6.10/07_linux_15khz_fix_ddc.patch";
-                            sha256 = "016a9d7a44357c25f284df80ceb1661a6fb17f2634e6920427ff79488c9cbb9a";
+                            sha256 = "16mvkj64hygz4w295ril4rzv2vqscsqwx06zhkr2az1m8ix9ssh1";
                         };
                     }
                 ];
