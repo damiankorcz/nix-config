@@ -20,6 +20,7 @@
         birdtray                                # Tray Icon for Thunderbird
         gearlever                               # AppImage Manager
         timeshift                               # BTRFS Snapshots / System Restore Tool
+        lan-mouse                               # Software KVM switch via the network
         argyllcms                               # Colour Managment System
         displaycal                              # Display Calibration Tool
         microsoft-edge                          # Web Browser
@@ -34,6 +35,9 @@
         piper                                   # Frontend for ratbagd (Gaming Mouse Configuration Library)
         jamesdsp                                # Audio effect processor for PipeWire clients (EQ for Headphones)
         #libForQt5.xo-pen-deco-01-v2-driver     # XP Pen Driver and Software (works with many XP-Pen Tablets)
+
+        wineWowPackages.stagingFull             # Run Windows Apps on Linux
+        winetricks                              # Script to install DLLs needed to work around problems in Wine
 
         # KDE Applications (QT)
         haruna                                  # Video Player
