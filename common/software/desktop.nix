@@ -70,13 +70,13 @@
     # Programs with Daemons
     programs = {
         thunderbird.enable = true;      # Email Client
-        #home-manager.enable = true;    # Nix User Environment Configurator
         coolercontrol.enable = true;    # Cooling Device Control
         gnupg.agent.enable = true;
         kde-pim.kmail = true;           # Email Client
         adb.enable = true;              # Android Debug Bridge (ADB)
         
-        #nix-ld.enable  = true;          # TEMP
+        #home-manager.enable = true;    # Nix User Environment Configurator
+        #nix-ld.enable  = true;         # TEMP
     };
 
     # ------------ Flatpak ------------
