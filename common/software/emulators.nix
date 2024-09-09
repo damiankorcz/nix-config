@@ -18,7 +18,7 @@
         sameboy             # Nintendo Game Boy & Game Boy Color
         mgba                # Nintendo Game Boy Advance
         dolphin-emu         # Nintendo GameCube & Wii
-        #cemu               # Nintendo Wii U (Build currently broken)
+        cemu                # Nintendo Wii U (Build currently broken)
         ryujinx             # Nintendo Switch
         punes-qt6           # Nintendo Entertainment System
         snes9x              # Super Nintendo Entertainment System
@@ -30,7 +30,7 @@
     # ------------ Flatpak ------------
 
     services.flatpak.packages = [
-        "info.cemu.Cemu"    # Wii U
+        #"info.cemu.Cemu"    # Wii U
     ];
 
     # App Images
