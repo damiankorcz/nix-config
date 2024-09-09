@@ -7,7 +7,7 @@
         isNormalUser = true;
         description = userSettings.name;
         initialPassword = "changeme";
-        extraGroups = [ "networkmanager" "wheel" "adbusers" "kvm" ];
+        extraGroups = [ "networkmanager" "wheel" "adbusers" "kvm" "video" ];
     };
 
     home-manager.users.${userSettings.username} =  { pkgs, ... }: {
