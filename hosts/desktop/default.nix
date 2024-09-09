@@ -33,7 +33,7 @@
         xserver.enable = true;
 
         # Video Drivers
-        xserver.videoDrivers = [ "amdgpu" "nvidia" ]; # "radeon" "modesetting" "fbdev"
+        xserver.videoDrivers = [ "nvidia" ]; # "radeon" "modesetting" "fbdev"
 	    
         fstrim.enable = true;  # Enable periodic SSD TRIM of mounted partitions in background
 
