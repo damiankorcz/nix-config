@@ -88,9 +88,12 @@
         # Syncthing
         syncthing = {
             enable = true;
-            user = "NixOS-Desktop";
+            openDefaultPorts = true;
+            user = "${userSettings.username}";
+            group = "users";
             dataDir = "/home/${userSettings.username}/Syncthing";    # Default folder for new synced folders
             configDir = "/home/${userSettings.username}/.config/syncthing";   # Folder for Syncthing's settings and keys
+            guiAddress = "0.0.0.0:8384";
         };
 
         # Needed for some apps
