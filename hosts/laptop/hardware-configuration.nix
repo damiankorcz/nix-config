@@ -102,19 +102,4 @@
     #     # "scx_bpfland"
     #     scheduler = "scx_lavd";
     # };
-
-#     environment.etc."X11/xorg.conf.d/20-radeon.conf".text = lib.mkForce ''
-# Section "Device"
-#     Identifier             "Screen0"
-#     Driver                 "amdgpu"
-#     BusID                  "PCI:10:0:0"
-# EndSection
-
-# Section "Device"
-#     Identifier             "Screen1"
-#     Driver                 "nvidia"
-#     BusID                  "PCI:9:0:0"
-# EndSection
-#     '';      
-
 }

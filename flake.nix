@@ -44,7 +44,7 @@
 			email = "damiankorcz28@gmail.com"; # Email
 			editor = "kate";
 			spawnEditor = "exec $(userSettings.terminal) -e micro";
-			terminal = "foot";
+			terminal = "konsole";
 			browser = "edge"; # Default browser; must select one from ./user/app/browser/
 		};
 	in {

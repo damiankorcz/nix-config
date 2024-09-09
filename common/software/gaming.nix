@@ -6,7 +6,7 @@
         lutris          # Open Source Gaming Platform
         protonup-qt     # Install / Manage Proton-GE & Luxtorpeda for Steam / Wine-GE for Lutris
 
-        libnotify           # Library for Sending Desktop Notifications to the Notification Daemon
+        libnotify       # Library for Sending Desktop Notifications to the Notification Daemon
     ];
 
     # Steam locations that should be persistent:

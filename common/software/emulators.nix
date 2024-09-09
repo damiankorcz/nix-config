@@ -5,8 +5,6 @@
     
     environment.systemPackages = with pkgs; [
         # emulationstation-de # Frontend for browsing and launching games from your multi-platform game collection (Outdated - https://github.com/NixOS/nixpkgs/pull/299298)
-
-
         retroarch           # Multi-platform emulator frontend for libretro cores
         mame                # Arcade Games
         dosbox-staging      # DOS
@@ -31,9 +29,7 @@
     
     # ------------ Flatpak ------------
 
-    services.flatpak.packages = [
-        #"info.cemu.Cemu"    # Wii U
-    ];
+    services.flatpak.packages = [ ];
 
     # App Images
     # - PlayStation Vita = https://github.com/Vita3K/Vita3K/releases
