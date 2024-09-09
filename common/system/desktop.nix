@@ -85,8 +85,17 @@
         duplicati.enable = true;
         # duplicati.port = 8200; # Default 8200
         
+        # Syncthing
+        syncthing = {
+            enable = true;
+            user = "NixOS-Desktop";
+            dataDir = "/home/${userSettings.username}/Syncthing";    # Default folder for new synced folders
+            configDir = "/home/${userSettings.username}/.config/syncthing";   # Folder for Syncthing's settings and keys
+        };
+
         # Needed for some apps
         gnome.gnome-keyring.enable = true;
+
     };
 
     # Automatically unlock the user’s default Kwallet / Gnome Keyring upon login
