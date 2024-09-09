@@ -6,7 +6,7 @@
     environment.systemPackages = with pkgs; [
         # Applications
         mpv                                     # Video Player
-        mpvScripts.modernx-zydezu               # Modern OSC UI for MPV
+        #mpvScripts.modernx-zydezu               # Modern OSC UI for MPV
         arandr                                  # Frontend for XRandR
         vscode                                  # Code Editor
         firefox                                 # Web Browser
@@ -17,17 +17,17 @@
         komikku                                 # Manga / Comic Reader
         syncplay                                # Synchronise Media Players
         obsidian                                # Note Taking
-        birdtray                                # Tray Icon for Thunderbird
+        #birdtray                                # Tray Icon for Thunderbird
         gearlever                               # AppImage Manager
         timeshift                               # BTRFS Snapshots / System Restore Tool
         lan-mouse                               # Software KVM switch via the network
         argyllcms                               # Colour Managment System
         displaycal                              # Display Calibration Tool
         microsoft-edge                          # Web Browser
-        mission-center                          # System Monitor
+        #mission-center                          # System Monitor
         github-desktop                          # Github Client
         bitwarden-desktop                       # Password Manager
-        libreoffice-qt6-fresh                   # Office Suite
+        #libreoffice-qt6-fresh                   # Office Suite
         inkscape-with-extensions                # Vector Graphics Editor
 
         # Peripherals
@@ -52,15 +52,15 @@
         kdePackages.plasma-browser-integration  # Browser Integration in Plasma
 
         # Spellchecker
-        hunspell                                # Spell checker
-        hunspellDicts.pl_PL                     # Dictionary for Polish
-        hunspellDicts.en_GB-large               # Dictionary for British English
+        #hunspell                                # Spell checker
+        #hunspellDicts.pl_PL                     # Dictionary for Polish
+        #hunspellDicts.en_GB-large               # Dictionary for British English
 
-        aspell                                  # Spell checker
-        aspellDicts.en                          # Dictionary for English
-        aspellDicts.en-science                  # Dictionary for English Scientific Jargon
-        aspellDicts.en-computers                # Dictionary for English Computer Jargon
-        aspellDicts.pl                          # Dictionary for Polish
+        #aspell                                  # Spell checker
+        #aspellDicts.en                          # Dictionary for English
+        #aspellDicts.en-science                  # Dictionary for English Scientific Jargon
+        #aspellDicts.en-computers                # Dictionary for English Computer Jargon
+        #aspellDicts.pl                          # Dictionary for Polish
     ];
 
     # Plasma Excludes
@@ -73,7 +73,7 @@
 
     # Programs with Daemons
     programs = {
-        thunderbird.enable = true;      # Email Client
+        #thunderbird.enable = true;      # Email Client
         coolercontrol.enable = true;    # Cooling Device Control
         gnupg.agent.enable = true;
         kde-pim.kmail = true;           # Email Client
