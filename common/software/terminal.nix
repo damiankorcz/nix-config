@@ -23,5 +23,8 @@
         pciutils            # PCI Device Utilities
         lshw                # Detailed information on the hardware configuration
         glxinfo             # Test utilities for OpenGL
+        wmctrl              # X WM Interaction Tool
+        xdotool             # Fake keyboard/mouse input, window management, and more
+        xautomation         # Control X from the command line for scripts, and do "visual scraping" to find things on the screen
     ];
 }
