@@ -50,6 +50,7 @@
         kdePackages.skanlite                    # Lite Image Scanning
         kdePackages.skanpage                    # Multi-page Document Scanning
         kdePackages.plasma-browser-integration  # Browser Integration in Plasma
+        kdePackages.partitionmanager            # Manage disks, partitions and file systems
 
         # Spellchecker
         #hunspell                                # Spell checker
