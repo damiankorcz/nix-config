@@ -13,7 +13,7 @@
         rpcs3               # PlayStation 3
         ppsspp-qt           # PlayStation Portable
         lime3ds             # Nintendo 3DS
-        rmg-wayland         # Nintendo 64
+        rmg                 # Nintendo 64
         melonDS             # Nintendo DS
         sameboy             # Nintendo Game Boy & Game Boy Color
         mgba                # Nintendo Game Boy Advance
@@ -21,7 +21,7 @@
         cemu                # Nintendo Wii U (Build currently broken)
         ryujinx             # Nintendo Switch
         punes-qt6           # Nintendo Entertainment System
-        snes9x              # Super Nintendo Entertainment System
+        snes9x-gtk          # Super Nintendo Entertainment System
         blastem             # Sega Genesis / Megadrive
         flycast             # Sega Dreamcast, Naomi/2 and Atomiswave
         xemu                # Xbox
