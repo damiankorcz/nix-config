@@ -20,11 +20,15 @@
         dolphin-emu         # Nintendo GameCube & Wii
         cemu                # Nintendo Wii U (Build currently broken)
         ryujinx             # Nintendo Switch
-        punes-qt6           # Nintendo Entertainment System
+        #punes-qt6          # Nintendo Entertainment System
+        nestopia-ue         # Nintendo Entertainment System
+        fceux               # Nintendo Entertainment System
         snes9x-gtk          # Super Nintendo Entertainment System
         blastem             # Sega Genesis / Megadrive
         flycast             # Sega Dreamcast, Naomi/2 and Atomiswave
         xemu                # Xbox
+
+        mednafen            # Sega Saturn (Many others supported)
     ];
     
     # ------------ Flatpak ------------
