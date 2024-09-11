@@ -13,6 +13,9 @@
         btop                # System Monitor
         fastfetch           # System Info
         mc                  # File Manager
+        unrar               # Utility for RAR archives
+
+        nixpkgs-review      # Review pull-requests on https://github.com/NixOS/nixpkgs
 
         # Secret / Keys
         sops                # Managing Secrets Tool
