@@ -29,6 +29,7 @@
         xemu                # Xbox
 
         mednafen            # Sega Saturn (Many others supported)
+        mednaffe            # GTK-based frontend for mednafen emulator
     ];
     
     # ------------ Flatpak ------------
