@@ -8,6 +8,7 @@
         retroarch           # Multi-platform emulator frontend for libretro cores
         mame                # Arcade Games
         dosbox-staging      # DOS
+        dosbox-x            # DOS
         duckstation         # PlayStation 1 (Outdated - https://github.com/NixOS/nixpkgs/issues/335958)
         pcsx2               # PlayStation 2
         rpcs3               # PlayStation 3
@@ -20,9 +21,7 @@
         dolphin-emu         # Nintendo GameCube & Wii
         cemu                # Nintendo Wii U (Build currently broken)
         ryujinx             # Nintendo Switch
-        #punes-qt6          # Nintendo Entertainment System
-        nestopia-ue         # Nintendo Entertainment System
-        fceux               # Nintendo Entertainment System
+        punes-qt6           # Nintendo Entertainment System
         snes9x-gtk          # Super Nintendo Entertainment System
         blastem             # Sega Genesis / Megadrive
         flycast             # Sega Dreamcast, Naomi/2 and Atomiswave
