@@ -17,18 +17,17 @@
         komikku                                 # Manga / Comic Reader
         syncplay                                # Synchronise Media Players
         obsidian                                # Note Taking
-        #birdtray                                # Tray Icon for Thunderbird
         gearlever                               # AppImage Manager
         timeshift                               # BTRFS Snapshots / System Restore Tool
         lan-mouse                               # Software KVM switch via the network
         argyllcms                               # Colour Managment System
         displaycal                              # Display Calibration Tool
         microsoft-edge                          # Web Browser
-        #mission-center                          # System Monitor
         github-desktop                          # Github Client
         bitwarden-desktop                       # Password Manager
-        #libreoffice-qt6-fresh                   # Office Suite
+        #libreoffice-qt6-fresh                  # Office Suite
         inkscape-with-extensions                # Vector Graphics Editor
+        vivaldi                                 # Web Browser
 
         # Peripherals
         vial                                    # Keyboard Firmware Manager
