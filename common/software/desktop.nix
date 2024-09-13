@@ -27,7 +27,6 @@
         bitwarden-desktop                       # Password Manager
         #libreoffice-qt6-fresh                  # Office Suite
         inkscape-with-extensions                # Vector Graphics Editor
-        vivaldi                                 # Web Browser
 
         # Peripherals
         vial                                    # Keyboard Firmware Manager
@@ -85,10 +84,16 @@
 
     # ------------ Flatpak ------------
 
-    services.flatpak.enable = true;
-    services.flatpak.update.auto = {
+    services.flatpak = {
         enable = true;
-        onCalendar = "weekly";
+        update.auto = {
+            enable = true;
+            onCalendar = "weekly";
+        };
+
+        packages = [ 
+            "com.vivaldi.Vivaldi"   # Web Browser (Issues with packaging in nix)
+        ];
     };
 
     # ------------ AppImage ------------
