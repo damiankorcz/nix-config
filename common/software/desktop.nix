@@ -6,7 +6,7 @@
     environment.systemPackages = with pkgs; [
         # Applications
         mpv                                     # Video Player
-        #mpvScripts.modernx-zydezu               # Modern OSC UI for MPV
+        #mpvScripts.modernx-zydezu              # Modern OSC UI for MPV
         arandr                                  # Frontend for XRandR
         vscode                                  # Code Editor
         firefox                                 # Web Browser
@@ -22,6 +22,7 @@
         lan-mouse                               # Software KVM switch via the network
         argyllcms                               # Colour Managment System
         displaycal                              # Display Calibration Tool
+        trackma-qt                              # AniList Client
         microsoft-edge                          # Web Browser
         github-desktop                          # Github Client
         bitwarden-desktop                       # Password Manager
