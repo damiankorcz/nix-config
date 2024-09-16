@@ -35,6 +35,7 @@
         piper                                   # Frontend for ratbagd (Gaming Mouse Configuration Library)
         jamesdsp                                # Audio effect processor for PipeWire clients (EQ for Headphones)
         #libForQt5.xo-pen-deco-01-v2-driver     # XP Pen Driver and Software (works with many XP-Pen Tablets)
+        naps2
 
         wineWowPackages.stagingFull             # Run Windows Apps on Linux
         winetricks                              # Script to install DLLs needed to work around problems in Wine
