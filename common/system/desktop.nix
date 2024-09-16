@@ -75,10 +75,12 @@
         samba = {
             enable = true;
             openFirewall = true;
-            extraConfig = ''
-                workgroup = WORKGROUP
-                server min protocol = CORE
-            '';
+            settings = {
+                global = {
+                    "workgroup" = "WORKGROUP";
+                    "server min protocol" = "CORE";
+                };
+            };
         };
 
         # Duplicati
