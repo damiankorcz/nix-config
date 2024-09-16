@@ -93,7 +93,7 @@
                 modDirVersion = "6.10.8";
 
                 src = pkgs.fetchurl {
-                    url = "mirror://kernel/linux/kernel/v6.x/linux-${version}.tar.xz";
+                    url = "https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-${version}.tar.xz";
                     sha256 = "wJIyNXedRga7qH9ytv4R95bp5AwcqfTV2+BM1H7jxZU=";
                 };
 
