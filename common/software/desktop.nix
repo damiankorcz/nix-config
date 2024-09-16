@@ -13,6 +13,7 @@
         bottles                                 # Easy-to-use Wineprefix Manager
         spotify                                 # Music Streaming
         vesktop                                 # Discord (Alt Client)
+        wezterm                                 # GPU Accelerated Terminal Emulator
         foliate                                 # Ebook Reader
         komikku                                 # Manga / Comic Reader
         syncplay                                # Synchronise Media Players
@@ -73,7 +74,7 @@
 
     # Programs with Daemons
     programs = {
-        #thunderbird.enable = true;      # Email Client
+        thunderbird.enable = true;      # Email Client
         coolercontrol.enable = true;    # Cooling Device Control
         gnupg.agent.enable = true;
         kde-pim.kmail = true;           # Email Client
