@@ -21,4 +21,6 @@
         localNetworkGameTransfers.openFirewall = true;  # Ports for Steam Local Network Game Transfers
         # dedicatedServer.openFirewall = true;          # Ports for Source Dedicated Server
     };
+
+    programs.gamemode.enable = true; # Optimise system performance on demand
 }
