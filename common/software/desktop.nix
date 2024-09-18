@@ -6,6 +6,7 @@
     environment.systemPackages = with pkgs; [
         # Applications
         mpv                                     # Video Player
+        svp                                     # SmoothVideo Project 4 - Converts any video to 60 fps
         #mpvScripts.modernx-zydezu              # Modern OSC UI for MPV
         arandr                                  # Frontend for XRandR
         vscode                                  # Code Editor
@@ -46,6 +47,7 @@
         krita-plugin-gmic                       # Image Processing Plugin
         kdePackages.kate                        # Text / Code Editor
         kdePackages.kalk                        # Calculator
+        kdePackages.elisa                       # Music Player
         kdePackages.kclock                      # Clock
         kdePackages.kweather                    # Weather
         kdePackages.skanlite                    # Lite Image Scanning
