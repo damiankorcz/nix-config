@@ -3,10 +3,8 @@
 {
     environment.systemPackages = with pkgs; [
         # Terminal App Alternatives
-        foot                # Lightweight Wayland Terminal Emulator
         micro               # Terminal-based Text Editor
-        superfile           # Terminal File Manager
-        #nnn                # Ncurses-based File Browser
+        nnn                 # Ncurses-based File Browser
         ripgrep             # Regex Recursive Directory Search
         gh                  # GitHub CLI Tool
         wget                # Download Tool
@@ -14,6 +12,7 @@
         fastfetch           # System Info
         mc                  # File Manager
         unrar               # Utility for RAR archives
+        imagemagick         # Image Manipulation Tool
 
         nixpkgs-review      # Review pull-requests on https://github.com/NixOS/nixpkgs
 
