@@ -16,12 +16,13 @@
         lime3ds             # Nintendo 3DS
         rmg                 # Nintendo 64
         melonDS             # Nintendo DS
+        fceux               # Nintendo Entertainment System
         sameboy             # Nintendo Game Boy & Game Boy Color
         mgba                # Nintendo Game Boy Advance
         dolphin-emu         # Nintendo GameCube & Wii
-        cemu                # Nintendo Wii U (Build currently broken)
+        cemu                # Nintendo Wii U
         ryujinx             # Nintendo Switch
-        punes-qt6           # Nintendo Entertainment System
+
         snes9x-gtk          # Super Nintendo Entertainment System
         blastem             # Sega Genesis / Megadrive
         flycast             # Sega Dreamcast, Naomi/2 and Atomiswave
