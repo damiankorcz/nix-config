@@ -28,6 +28,7 @@
         microsoft-edge                          # Web Browser
         github-desktop                          # Github Client
         bitwarden-desktop                       # Password Manager
+        gimp-with-plugins                       # Image Manipulation Program
         #libreoffice-qt6-fresh                  # Office Suite
         inkscape-with-extensions                # Vector Graphics Editor
 
@@ -48,10 +49,14 @@
         kdePackages.kate                        # Text / Code Editor
         kdePackages.kalk                        # Calculator
         kdePackages.elisa                       # Music Player
+        #kdePackages.kamoso                     # Webcam Utility (Marked as Broken)
         kdePackages.kclock                      # Clock
+        kdePackages.arianna                     # Epub Reader
+        kdePackages.yakuake                     # Drop-down Terminal Emulator
         kdePackages.kweather                    # Weather
         kdePackages.skanlite                    # Lite Image Scanning
         kdePackages.skanpage                    # Multi-page Document Scanning
+        kdePackages.filelight                   # Quickly visualize your disk space usage
         kdePackages.plasma-browser-integration  # Browser Integration in Plasma
         kdePackages.partitionmanager            # Manage disks, partitions and file systems
 
