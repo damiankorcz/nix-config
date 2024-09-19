@@ -55,13 +55,13 @@
             open = true;
 			nvidiaSettings = true;
 			modesetting.enable = true;
-			powerManagement.enable = false;
+			powerManagement.enable = true;
 			powerManagement.finegrained = false;
-            forceFullCompositionPipeline = true;
+            #forceFullCompositionPipeline = true;
 			package = config.boot.kernelPackages.nvidiaPackages.latest;
 			
 			prime = {
-				# Enable render offload support using the NVIDIA proprietary driver via PRIME.
+				# NVIDIA GPU is always on (does all rendering). Output enabled to displays attached only to the integrated Intel/AMD GPU without a multiplexer.
 				sync.enable = true;
 			 
 			  	# Found with `lspci | grep VGA` then convert values from hex to dec
