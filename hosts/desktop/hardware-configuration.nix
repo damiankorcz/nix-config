@@ -91,7 +91,7 @@
         kernelPackages = pkgs.linuxPackagesFor (pkgs.linux_6_11.override {
             argsOverride = rec {
                 version = "6.11";
-                modDirVersion = "6.11";
+                modDirVersion = "6.11.0";
 
                 src = pkgs.fetchurl {
                     url = "https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-${version}.tar.xz";
