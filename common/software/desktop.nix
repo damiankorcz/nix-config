@@ -17,6 +17,7 @@
         wezterm                                 # GPU Accelerated Terminal Emulator
         foliate                                 # Ebook Reader
         komikku                                 # Manga / Comic Reader
+        birdtray                                # Mail system tray notification icon for Thunderbird
         syncplay                                # Synchronise Media Players
         obsidian                                # Note Taking
         gearlever                               # AppImage Manager
