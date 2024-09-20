@@ -13,6 +13,7 @@
         mc                  # File Manager
         unrar               # Utility for RAR archives
         imagemagick         # Image Manipulation Tool
+        atuin               # Shell History Replacement
 
         nixpkgs-review      # Review pull-requests on https://github.com/NixOS/nixpkgs
 
@@ -23,10 +24,14 @@
 
         # GPU Tools
         pciutils            # PCI Device Utilities
-        lshw                # Detailed information on the hardware configuration
+        lshw                # Hardware Configuration Info
         glxinfo             # Test utilities for OpenGL
         wmctrl              # X WM Interaction Tool
-        xdotool             # Fake keyboard/mouse input, window management, and more
+        xdotool             # Fake keyboard/mouse input, window management and more
         xautomation         # Control X from the command line for scripts, and do "visual scraping" to find things on the screen
     ];
+
+    programs = {
+        bash.blesh.enable = true; # Full-featured line editor written in pure Bash
+    };
 }
