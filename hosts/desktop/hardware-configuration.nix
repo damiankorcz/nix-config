@@ -69,11 +69,6 @@
 			  	amdgpuBusId = "PCI:10:0:0";
 			};
 		};
-
-        logitech.wireless = {
-            enable = true;
-            enableGraphical = true; # Enables solaar
-        };
 	};
 
     powerManagement = {
@@ -101,7 +96,6 @@
         # boot.kernelPackages = pkgs.linuxPackages_xanmod_latest; # https://xanmod.org/
         # boot.kernelPackages = pkgs.linuxPackages_latest; # Latest Stable
         # boot.kernelPackages = pkgs.linuxPackages; # LTS
-        # boot.kernelPackages = pkgs.linuxPackages_cachyos; # https://github.com/chaotic-cx/nyx
         kernelPackages = pkgs.linuxPackagesFor (pkgs.linux_6_11.override {
             argsOverride = rec {
                 version = "6.11";
@@ -169,21 +163,11 @@
         });
     };
 
-
     # Trying to fix screen tearing on one screen that it happens on
     environment.etc."X11/xorg.conf.d/10-nvidia.conf".text = ''
-        Section "Screen"
-            Identifier "Screen0"
-            Option "metamodes" "DP-2: nvidia-auto-select +0+0 { ForceFullCompositionPipeline = On }"
-        EndSection
+Section "Screen"
+    Identifier "Screen0"
+    Option "metamodes" "DP-2: nvidia-auto-select +0+0 { ForceFullCompositionPipeline = On }"
+EndSection
     '';
-
-	
-    # chaotic.scx = {
-    #     enable = true;
-
-    #     # https://github.com/chaotic-cx/nyx/blob/935a1f5935853e5b57f1a9432457d8bea4dbb7d7/modules/nixos/scx.nix#L15
-    #     # "scx_bpfland"
-    #     scheduler = "scx_lavd";
-    # };
 }
