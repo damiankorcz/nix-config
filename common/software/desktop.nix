@@ -8,7 +8,7 @@
         mpv                                     # Video Player
         svp                                     # SmoothVideo Project 4 - Converts any video to 60 fps
         #mpvScripts.modernx-zydezu              # Modern OSC UI for MPV
-        #arandr                                 # Frontend for XRandR
+        pinta                                   # Drawing/editing program modeled after Paint.NET
         vscode                                  # Code Editor
         ocs-url                                 # DE Store Website Integration
         #firefox                                # Web Browser
@@ -22,8 +22,6 @@
         syncplay                                # Synchronise Media Players
         obsidian                                # Note Taking
         gearlever                               # AppImage Manager
-        #timeshift                              # BTRFS Snapshots / System Restore Tool
-        #lan-mouse                              # Software KVM switch via the network
         argyllcms                               # Colour Managment System
         displaycal                              # Display Calibration Tool
         trackma-qt                              # AniList Client
@@ -37,8 +35,8 @@
         # Peripherals
         vial                                    # Keyboard Firmware Manager
         jamesdsp                                # Audio effect processor for PipeWire clients (EQ for Headphones)
-        #libForQt5.xo-pen-deco-01-v2-driver     # XP Pen Driver and Software (works with many XP-Pen Tablets)
         naps2                                   # Document Scanning
+        #libForQt5.xo-pen-deco-01-v2-driver     # XP Pen Driver and Software (works with many XP-Pen Tablets)
 
         wineWowPackages.stagingFull             # Run Windows Apps on Linux
         winetricks                              # Script to install DLLs needed to work around problems in Wine
@@ -57,7 +55,6 @@
         kdePackages.skanlite                    # Lite Image Scanning
         kdePackages.skanpage                    # Multi-page Document Scanning
         kdePackages.filelight                   # Quickly visualize your disk space usage
-        #kdePackages.plasma-browser-integration # Browser Integration in Plasma
         kdePackages.kde-gtk-config              # Syncs KDE settings to GTK applications
         kdePackages.partitionmanager            # Manage disks, partitions and file systems
 
@@ -86,6 +83,14 @@
         gnupg.agent.enable = true;
         adb.enable = true;              # Android Debug Bridge (ADB)
         
+        # Hardware control / monitoring and overclocking program
+        tuxclocker = {
+            enable = true;
+            #enabledNVIDIADevices
+            enableAMD = true;
+            useUnfree = true;
+        };
+
         #home-manager.enable = true;    # Nix User Environment Configurator
         #nix-ld.enable  = true;         # TEMP
     };
