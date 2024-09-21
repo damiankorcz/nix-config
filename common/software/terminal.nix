@@ -20,6 +20,8 @@
         thefuck             # Corrects your previous console command
         tlrc                # Official tldr client written in Rust
         fastfetch           # System Info
+        lm_sensors          # Reading hardware sensors
+        nvtopPackages.full  # Task monitor for GPUs and accelerators
         btop                # System Monitor
         imagemagick         # Image Manipulation Tool
         speedtest-go        # Internet Speed Test (speedtest.net)
@@ -35,8 +37,8 @@
         ssh-to-age          # Convert SSH Private Keys (ed25519 format) to age keys
 
         # GPU Tools
-        #pciutils           # PCI Device Utilities
-        #lshw               # Hardware Configuration Info
-        #glxinfo            # Test utilities for OpenGL
+        pciutils           # PCI Device Utilities
+        lshw               # Hardware Configuration Info
+        glxinfo            # Test utilities for OpenGL
     ];
 }
