@@ -38,8 +38,17 @@
         gc = {
             automatic = true;
             dates = "weekly";
-            options = "--delete-older-than 14d";
+            options = "--delete-older-than 7d";
         };
+
+        channel.enable = false;
+    };
+
+    # Recomputes checksums and compares to current to detect corruption
+    services.btrfs.autoScrub = {
+        enable = true;
+        interval = "weekly";
+        fileSystems = [ "/" ];
     };
 
     # ------------ Timezone & Locale ------------
