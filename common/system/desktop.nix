@@ -65,9 +65,6 @@
         # Manage, install and generate color profiles
         colord.enable = true;
 
-        # Gaming Mouse Configuration Library
-        ratbagd.enable = true;
-
         # Auto-mount USB drives
         udisks2.enable = true;
 
