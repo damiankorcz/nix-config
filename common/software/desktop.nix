@@ -38,7 +38,7 @@
         vial                                    # Keyboard Firmware Manager
         jamesdsp                                # Audio effect processor for PipeWire clients (EQ for Headphones)
         #libForQt5.xo-pen-deco-01-v2-driver     # XP Pen Driver and Software (works with many XP-Pen Tablets)
-        naps2
+        naps2                                   # Document Scanning
 
         wineWowPackages.stagingFull             # Run Windows Apps on Linux
         winetricks                              # Script to install DLLs needed to work around problems in Wine
