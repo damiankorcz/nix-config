@@ -2,20 +2,32 @@
 
 {
     environment.systemPackages = with pkgs; [
-        # Terminal App Alternatives
+        # General Apps
         micro               # Terminal-based Text Editor
-        nnn                 # Ncurses-based File Browser
-        ripgrep             # Regex Recursive Directory Search
-        gh                  # GitHub CLI Tool
-        wget                # Download Tool
-        btop                # System Monitor
-        fastfetch           # System Info
+        lazygit             # Simple terminal UI for git commands
         mc                  # File Manager
-        unrar               # Utility for RAR archives
-        imagemagick         # Image Manipulation Tool
         atuin               # Shell History Replacement
+        #nnn                # Ncurses-based File Browser
+        #gh                 # GitHub CLI Tool
 
+        # Terminal Tool Alternatives
+        ripgrep             # 'grep' Alternative
+        bat                 # 'cat' Alternative
+        fd                  # 'find' Alternative
+        eza                 # 'ls' Alternative
+
+        # General Utilities
+        thefuck             # Corrects your previous console command
+        tlrc                # Official tldr client written in Rust
+        fastfetch           # System Info
+        btop                # System Monitor
+        imagemagick         # Image Manipulation Tool
+        speedtest-go        # Internet Speed Test (speedtest.net)
+        unrar               # Utility for RAR archives
         nixpkgs-review      # Review pull-requests on https://github.com/NixOS/nixpkgs
+        wmctrl              # X WM Interaction Tool
+        xdotool             # Fake keyboard/mouse input, window management and more
+        xautomation         # Control X from the command line for scripts, and do "visual scraping" to find things on the screen
 
         # Secret / Keys
         sops                # Managing Secrets Tool
@@ -23,15 +35,8 @@
         ssh-to-age          # Convert SSH Private Keys (ed25519 format) to age keys
 
         # GPU Tools
-        pciutils            # PCI Device Utilities
-        lshw                # Hardware Configuration Info
-        glxinfo             # Test utilities for OpenGL
-        wmctrl              # X WM Interaction Tool
-        xdotool             # Fake keyboard/mouse input, window management and more
-        xautomation         # Control X from the command line for scripts, and do "visual scraping" to find things on the screen
+        #pciutils           # PCI Device Utilities
+        #lshw               # Hardware Configuration Info
+        #glxinfo            # Test utilities for OpenGL
     ];
-
-    programs = {
-        bash.blesh.enable = true; # Full-featured line editor written in pure Bash
-    };
 }
