@@ -4,8 +4,7 @@
     # ------------ Nixpkgs ------------
     
     environment.systemPackages = with pkgs; [
-        # emulationstation-de # Frontend for browsing and launching games from your multi-platform game collection (Outdated - https://github.com/NixOS/nixpkgs/pull/299298)
-        retroarch           # Multi-platform emulator frontend for libretro cores
+        # emulationstation-de # Emulation Frontend (Outdated - https://github.com/NixOS/nixpkgs/pull/299298)
         mame                # Arcade Games
         dosbox-staging      # DOS
         dosbox-x            # DOS
