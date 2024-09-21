@@ -8,9 +8,10 @@
         mpv                                     # Video Player
         svp                                     # SmoothVideo Project 4 - Converts any video to 60 fps
         #mpvScripts.modernx-zydezu              # Modern OSC UI for MPV
-        arandr                                  # Frontend for XRandR
+        #arandr                                 # Frontend for XRandR
         vscode                                  # Code Editor
-        firefox                                 # Web Browser
+        ocs-url                                 # DE Store Website Integration
+        #firefox                                # Web Browser
         bottles                                 # Easy-to-use Wineprefix Manager
         spotify                                 # Music Streaming
         vesktop                                 # Discord (Alt Client)
@@ -21,8 +22,8 @@
         syncplay                                # Synchronise Media Players
         obsidian                                # Note Taking
         gearlever                               # AppImage Manager
-        timeshift                               # BTRFS Snapshots / System Restore Tool
-        lan-mouse                               # Software KVM switch via the network
+        #timeshift                              # BTRFS Snapshots / System Restore Tool
+        #lan-mouse                              # Software KVM switch via the network
         argyllcms                               # Colour Managment System
         displaycal                              # Display Calibration Tool
         trackma-qt                              # AniList Client
@@ -35,7 +36,6 @@
 
         # Peripherals
         vial                                    # Keyboard Firmware Manager
-        piper                                   # Frontend for ratbagd (Gaming Mouse Configuration Library)
         jamesdsp                                # Audio effect processor for PipeWire clients (EQ for Headphones)
         #libForQt5.xo-pen-deco-01-v2-driver     # XP Pen Driver and Software (works with many XP-Pen Tablets)
         naps2
@@ -44,7 +44,7 @@
         winetricks                              # Script to install DLLs needed to work around problems in Wine
 
         # KDE Applications (QT)
-        haruna                                  # Video Player
+        #haruna                                 # Video Player
         krita                                   # Digital Painting
         krita-plugin-gmic                       # Image Processing Plugin
         kdePackages.kate                        # Text / Code Editor
@@ -53,32 +53,30 @@
         #kdePackages.kamoso                     # Webcam Utility (Marked as Broken)
         kdePackages.kclock                      # Clock
         kdePackages.arianna                     # Epub Reader
-        kdePackages.yakuake                     # Drop-down Terminal Emulator
         kdePackages.kweather                    # Weather
         kdePackages.skanlite                    # Lite Image Scanning
         kdePackages.skanpage                    # Multi-page Document Scanning
         kdePackages.filelight                   # Quickly visualize your disk space usage
-        kdePackages.plasma-browser-integration  # Browser Integration in Plasma
+        #kdePackages.plasma-browser-integration # Browser Integration in Plasma
+        kdePackages.kde-gtk-config              # Syncs KDE settings to GTK applications
         kdePackages.partitionmanager            # Manage disks, partitions and file systems
 
         # Spellchecker
-        #hunspell                                # Spell checker
-        #hunspellDicts.pl_PL                     # Dictionary for Polish
-        #hunspellDicts.en_GB-large               # Dictionary for British English
-
-        aspell                                  # Spell checker
-        aspellDicts.en                          # Dictionary for English
-        aspellDicts.en-science                  # Dictionary for English Scientific Jargon
-        aspellDicts.en-computers                # Dictionary for English Computer Jargon
-        aspellDicts.pl                          # Dictionary for Polish
+        # aspell                                  # Spell checker
+        # aspellDicts.en                          # Dictionary for English
+        # aspellDicts.en-science                  # Dictionary for English Scientific Jargon
+        # aspellDicts.en-computers                # Dictionary for English Computer Jargon
+        # aspellDicts.pl                          # Dictionary for Polish
     ];
+
+    services.xserver.excludePackages = [ pkgs.xterm ];
 
     # Plasma Excludes
     # https://github.com/NixOS/nixpkgs/blob/nixos-unstable/nixos/modules/services/desktop-managers/plasma6.nix#L135
     environment.plasma6.excludePackages = with pkgs.kdePackages; [
         krdp            # Remove Desktop (RDP)
         khelpcenter     # Help app
-        #konsole
+        konsole         # Terminal Emulator
     ];
 
     # Programs with Daemons
@@ -86,7 +84,6 @@
         thunderbird.enable = true;      # Email Client
         coolercontrol.enable = true;    # Cooling Device Control
         gnupg.agent.enable = true;
-        kde-pim.kmail = true;           # Email Client
         adb.enable = true;              # Android Debug Bridge (ADB)
         
         #home-manager.enable = true;    # Nix User Environment Configurator
