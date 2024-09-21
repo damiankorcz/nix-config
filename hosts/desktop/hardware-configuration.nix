@@ -162,12 +162,4 @@
             };
         });
     };
-
-    # Trying to fix screen tearing on one screen that it happens on
-    environment.etc."X11/xorg.conf.d/10-nvidia.conf".text = ''
-Section "Screen"
-    Identifier "Screen0"
-    Option "metamodes" "DP-2: nvidia-auto-select +0+0 { ForceFullCompositionPipeline = On }"
-EndSection
-    '';
 }

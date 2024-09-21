@@ -28,12 +28,21 @@
     time.hardwareClockInLocalTime = true;
 
     services = {
-        # Enable the X11 windowing system.
-        # You can disable this if you're only using the Wayland session.
-        xserver.enable = true;
+		xserver = {
+			# Enable the X11 windowing system.
+			# You can disable this if you're only using the Wayland session.
+        	enable = true;
 
-        # Video Drivers
-        xserver.videoDrivers = [ "nvidia" ]; # "radeon" "modesetting" "fbdev"
+        	# Video Drivers
+        	videoDrivers = [ "nvidia" ]; # "radeon" "modesetting" "fbdev"
+
+			# Trying to resolve stuttering and screen tearing
+			screenSection = ''
+				Option         "metamodes" "nvidia-auto-select +0+0 {ForceFullCompositionPipeline=On}"
+				Option         "AllowIndirectGLXProtocol" "off"
+				Option         "TripleBuffer" "on"
+			'';
+		};
 	    
 		# Enable periodic SSD TRIM of mounted partitions in background
         fstrim.enable = true;
