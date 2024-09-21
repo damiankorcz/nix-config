@@ -11,12 +11,6 @@
         alsa.enable = true;
         alsa.support32Bit = true;
         pulse.enable = true;
-        # If you want to use JACK applications, uncomment this
-        #jack.enable = true;
-
-        # use the example session manager (no others are packaged yet so this is enabled by default,
-        # no need to redefine it in your config for now)
-        #media-session.enable = true;
     };
 
     # ------------ Swap ------------
@@ -80,9 +74,8 @@
             };
         };
 
-        # Duplicati
+        # Duplicati (Default port: 8200)
         duplicati.enable = true;
-        # duplicati.port = 8200; # Default 8200
         
         # Syncthing
         syncthing = {

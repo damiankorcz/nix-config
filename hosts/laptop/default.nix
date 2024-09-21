@@ -42,7 +42,8 @@
 
         xserver.videoDrivers = [ "nvidia" ]; # "modesetting" "fbdev"
 	
-        fstrim.enable = true; # Enable periodic SSD TRIM of mounted partitions in background
+		# Enable periodic SSD TRIM of mounted partitions in background
+        fstrim.enable = true;
 
         # Enable the KDE Plasma Desktop Environment.
         desktopManager.plasma6.enable = true;

@@ -17,11 +17,6 @@
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
 
-		# Chaotic's Nyx - collection of bleeding-edge and unreleased packages
-		# e.g. linux_cachyos kernel, mesa_git, etc.
-		# https://www.nyx.chaotic.cx/
-		#chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
-
 		# Secrets Management
 		# https://github.com/mic92/sops-nix
 		sops-nix = {
@@ -39,7 +34,7 @@
 		nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 	};
 
-	outputs = inputs@{ self, nixpkgs, nix-flatpak, home-manager, sops-nix, disko, nixos-hardware }: #chaotic
+	outputs = inputs@{ self, nixpkgs, nix-flatpak, home-manager, sops-nix, disko, nixos-hardware }:
 	let
 		userSettings = {
 			username = "damian"; # Username
@@ -123,6 +118,8 @@
 					}
 
 					sops-nix.nixosModules.sops
+
+					nixos-hardware.nixosModules.raspberry-pi-4
 				];
 
 				specialArgs = {

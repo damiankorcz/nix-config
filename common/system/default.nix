@@ -63,9 +63,6 @@
     # ------------ Fonts ------------
 
     fonts = {
-        # use fonts specified by user rather than default ones
-        # enableDefaultPackages = false;
-
         # Links all fonts to: `/run/current-system/sw/share/X11/font`
         fontDir.enable = true;
 
