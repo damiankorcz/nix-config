@@ -34,9 +34,12 @@
 			url = "github:nix-community/disko";
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
+
+		#https://github.com/NixOS/nixos-hardware
+		nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 	};
 
-	outputs = inputs@{ self, nixpkgs, nix-flatpak, home-manager, sops-nix, disko }: #chaotic
+	outputs = inputs@{ self, nixpkgs, nix-flatpak, home-manager, sops-nix, disko, nixos-hardware }: #chaotic
 	let
 		userSettings = {
 			username = "damian"; # Username
@@ -65,6 +68,12 @@
 					sops-nix.nixosModules.sops
 
 					#chaotic.nixosModules.default
+
+					nixos-hardware.nixosModules.common-cpu-amd
+					nixos-hardware.nixosModules.common-gpu-amd
+					nixos-hardware.nixosModules.common-gpu-nvidia-sync
+					nixos-hardware.nixosModules.common-pc
+					nixos-hardware.nixosModules.common-pc-ssd
 				];
 
 				specialArgs = {
@@ -87,6 +96,11 @@
 					}
 
 					sops-nix.nixosModules.sops
+
+					nixos-hardware.nixosModules.common-cpu-intel
+					nixos-hardware.nixosModules.common-gpu-nvidia-sync
+					nixos-hardware.nixosModules.common-pc
+					nixos-hardware.nixosModules.common-pc-ssd
 				];
 
 				specialArgs = {
