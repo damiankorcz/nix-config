@@ -1,4 +1,4 @@
-{ config, lib, pkgs, modulesPath, ... }:
+{ config, lib, pkgs, modulesPath, inputs, ... }:
 
 {
 	imports = [
@@ -69,19 +69,33 @@
 			  	amdgpuBusId = "PCI:10:0:0";
 			};
 		};
+
+        logitech.wireless = {
+            enable = true;
+            enableGraphical = true; # Enables solaar
+        };
 	};
+
+    powerManagement = {
+        cpuFreqGovernor = lib.mkDefault "performance";
+    };
 
 	# ------------ Kernel ------------
 
 	boot = {
 		initrd.availableKernelModules = [ "nvme" "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" ];
 		initrd.kernelModules = [ ];
-		kernelModules = [ "kvm-amd" ];
+		kernelModules = [ "amdgpu" "kvm-amd" "nvidia" ];
 		extraModulePackages = [ ];
+
+        blacklistedKernelModules = lib.mkDefault [ "nouveau" ];
 
 		kernelParams = [
             "video=DVI-I-1:640x480ieS"
             #"video=DVI-I-1:320x240eS"
+            "nvidia_drm.fbdev=1"
+            "nvidia.NVreg_PreserveVideoMemoryAllocations=1"
+            "nvidia.NVreg_UsePageAttributeTable=1"
         ];
 
         # boot.kernelPackages = pkgs.linuxPackages_xanmod_latest; # https://xanmod.org/

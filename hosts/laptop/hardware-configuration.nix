@@ -83,7 +83,7 @@
 	boot = {
 		initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usb_storage" "sd_mod" "rtsx_pci_sdmmc" ];
 		initrd.kernelModules = [ ];
-		kernelModules = [ "kvm-intel" ];
+		kernelModules = [ "kvm-intel" "nvidia" ];
 		extraModulePackages = [ ];
 
 		kernelParams = [ "acpi_osi=Linux" ]; # TEMP: This might help with some FN keys now working
