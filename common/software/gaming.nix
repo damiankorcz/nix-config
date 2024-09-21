@@ -23,4 +23,7 @@
     };
 
     programs.gamemode.enable = true; # Optimise system performance on demand
+
+    # Improve compatibility with memory hungry applications (e.g. games)
+    boot.kernel.sysctl."vm.max_map_count" = mkDefault 1048576;
 }
