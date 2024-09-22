@@ -57,7 +57,6 @@
 			modesetting.enable = true;
 			powerManagement.enable = true;
 			powerManagement.finegrained = false;
-            #forceFullCompositionPipeline = true;
 			package = config.boot.kernelPackages.nvidiaPackages.latest;
 			
 			prime = {

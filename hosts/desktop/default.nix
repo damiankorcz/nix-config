@@ -66,7 +66,12 @@
             layout = "us";
             variant = "";
         };
-    }; 
+    };
+
+	environment.sessionVariables = {
+        KWIN_EXPLICIT_SYNC = "1";
+        KWIN_TRIPLE_BUFFER = "1";
+    };
 
 	# ------------ Nix ------------
 
