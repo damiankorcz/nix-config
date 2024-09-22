@@ -10,6 +10,10 @@
         #nnn                # Ncurses-based File Browser
         #gh                 # GitHub CLI Tool
 
+        # Web Dev
+        pnpm                # Fast, disk space efficient package manager for JavaScript
+        nodejs_20           # JavaScript runtime environment (20 is latest compatible with pnpm)
+
         # Terminal Tool Alternatives
         ripgrep             # 'grep' Alternative
         bat                 # 'cat' Alternative
