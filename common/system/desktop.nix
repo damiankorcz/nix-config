@@ -102,7 +102,7 @@
 
     hardware = {
         # Enables Xbox One Controller Adapter support
-		# xone.enable = true; # https://github.com/NixOS/nixpkgs/pull/342528
+		xone.enable = true;
 
 		# Non-root acces to the firmware of QMK Keyboards
 		keyboard.qmk.enable = true;
