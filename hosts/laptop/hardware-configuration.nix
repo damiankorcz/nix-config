@@ -83,10 +83,10 @@
 	boot = {
 		initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usb_storage" "sd_mod" "rtsx_pci_sdmmc" ];
 		initrd.kernelModules = [ ];
-		kernelModules = [ "kvm-intel" "nvidia" ];
+		kernelModules = [ "kvm-intel" ];
 		extraModulePackages = [ ];
 
-		kernelParams = [ "acpi_osi=Linux" ]; # TEMP: This might help with some FN keys now working
+		blacklistedKernelModules = lib.mkDefault [ "nouveau" ];
 
 		# kernelPackages = pkgs.linuxPackages_xanmod_latest; # https://xanmod.org/
 		# kernelPackages = pkgs.linuxPackages; # LTS
