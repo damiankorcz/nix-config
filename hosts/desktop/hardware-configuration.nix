@@ -70,16 +70,17 @@
 		};
 	};
 
-    powerManagement = {
-        cpuFreqGovernor = lib.mkDefault "performance";
-    };
+    # Forcing the power management to Performance
+    # powerManagement = {
+    #     cpuFreqGovernor = lib.mkDefault "performance";
+    # };
 
 	# ------------ Kernel ------------
 
 	boot = {
 		initrd.availableKernelModules = [ "nvme" "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" ];
 		initrd.kernelModules = [ ];
-		kernelModules = [ "amdgpu" "kvm-amd" "nvidia" ];
+		kernelModules = [ "kvm-amd" ];
 		extraModulePackages = [ ];
 
         blacklistedKernelModules = lib.mkDefault [ "nouveau" ];
