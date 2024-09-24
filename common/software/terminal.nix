@@ -20,15 +20,17 @@
         fd                  # 'find' Alternative
         eza                 # 'ls' Alternative
 
-        # General Utilities
-        thefuck             # Corrects your previous console command
-        tlrc                # Official tldr client written in Rust
+        # Monitoring / Stats
         fastfetch           # System Info
         lm_sensors          # Reading hardware sensors
         nvtopPackages.full  # Task monitor for GPUs and accelerators
         btop                # System Monitor
-        imagemagick         # Image Manipulation Tool
         speedtest-go        # Internet Speed Test (speedtest.net)
+
+        # General Utilities
+        thefuck             # Corrects your previous console command
+        tlrc                # Official tldr client written in Rust
+        imagemagick         # Image Manipulation Tool
         unrar               # Utility for RAR archives
         nixpkgs-review      # Review pull-requests on https://github.com/NixOS/nixpkgs
         wmctrl              # X WM Interaction Tool

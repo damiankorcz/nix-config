@@ -5,13 +5,17 @@
     
     environment.systemPackages = with pkgs; [
         # emulationstation-de # Emulation Frontend (Outdated - https://github.com/NixOS/nixpkgs/pull/299298)
+        
         mame                # Arcade Games
+
         dosbox-staging      # DOS
         dosbox-x            # DOS
+
         duckstation         # PlayStation 1 (Outdated - https://github.com/NixOS/nixpkgs/issues/335958)
         pcsx2               # PlayStation 2
         rpcs3               # PlayStation 3
         ppsspp-qt           # PlayStation Portable
+
         lime3ds             # Nintendo 3DS
         rmg                 # Nintendo 64
         melonDS             # Nintendo DS
@@ -21,14 +25,16 @@
         dolphin-emu         # Nintendo GameCube & Wii
         cemu                # Nintendo Wii U
         ryujinx             # Nintendo Switch
-
         snes9x-gtk          # Super Nintendo Entertainment System
+
         blastem             # Sega Genesis / Megadrive
         flycast             # Sega Dreamcast, Naomi/2 and Atomiswave
-        xemu                # Xbox
-
         mednafen            # Sega Saturn (Many others supported)
         mednaffe            # GTK-based frontend for mednafen emulator
+
+        xemu                # Xbox
+
+        switchres           # Modeline generation engine for emulation
     ];
     
     # ------------ Flatpak ------------

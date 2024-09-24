@@ -29,20 +29,15 @@
         github-desktop                          # Github Client
         bitwarden-desktop                       # Password Manager
         gimp-with-plugins                       # Image Manipulation Program
-        #libreoffice-qt6-fresh                  # Office Suite
         inkscape-with-extensions                # Vector Graphics Editor
+        #libreoffice-qt6-fresh                  # Office Suite
 
         # Peripherals
         vial                                    # Keyboard Firmware Manager
         jamesdsp                                # Audio effect processor for PipeWire clients (EQ for Headphones)
         naps2                                   # Document Scanning
-        #libForQt5.xo-pen-deco-01-v2-driver     # XP Pen Driver and Software (works with many XP-Pen Tablets)
-
-        wineWowPackages.stagingFull             # Run Windows Apps on Linux
-        winetricks                              # Script to install DLLs needed to work around problems in Wine
 
         # KDE Applications (QT)
-        #haruna                                 # Video Player
         krita                                   # Digital Painting
         krita-plugin-gmic                       # Image Processing Plugin
         kdePackages.kate                        # Text / Code Editor
@@ -58,7 +53,9 @@
         kdePackages.kde-gtk-config              # Syncs KDE settings to GTK applications
         kdePackages.partitionmanager            # Manage disks, partitions and file systems
 
-        # Spellchecker
+        wineWowPackages.stagingFull # Run Windows Apps on Linux
+        winetricks                  # Script to install DLLs needed to work around problems in Wine
+
         # aspell                                  # Spell checker
         # aspellDicts.en                          # Dictionary for English
         # aspellDicts.en-science                  # Dictionary for English Scientific Jargon
