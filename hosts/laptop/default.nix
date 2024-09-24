@@ -11,8 +11,8 @@
 		../../common/home.nix
 		../../common/samba.nix
 		../../common/software/desktop.nix
-		../../common/software/gaming.nix
 		../../common/software/terminal.nix
+		#../../common/software/gaming.nix
 		# ../../common/software/emulators.nix
 	];
 
