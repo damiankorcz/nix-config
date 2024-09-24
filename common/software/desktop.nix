@@ -56,6 +56,16 @@
         wineWowPackages.stagingFull # Run Windows Apps on Linux
         winetricks                  # Script to install DLLs needed to work around problems in Wine
 
+        # Vivaldi - Currently some dependancy issues require this to work
+        # https://github.com/NixOS/nixpkgs/issues/309056
+        # https://github.com/NixOS/nixpkgs/pull/292148
+        (vivaldi.overrideAttrs (oldAttrs: {
+            dontWrapQtApps = false;
+            dontPatchELF = true;
+            nativeBuildInputs = oldAttrs.nativeBuildInputs ++ [ pkgs.kdePackages.wrapQtAppsHook ];
+        }))
+
+        # Spellchecker (Doesn't seem to work on KDE)
         # aspell                                  # Spell checker
         # aspellDicts.en                          # Dictionary for English
         # aspellDicts.en-science                  # Dictionary for English Scientific Jargon
@@ -101,9 +111,7 @@
             onCalendar = "weekly";
         };
 
-        packages = [ 
-            "com.vivaldi.Vivaldi"   # Web Browser (Issues with packaging in nix)
-        ];
+        packages = [ ];
     };
 
     # ------------ AppImage ------------
