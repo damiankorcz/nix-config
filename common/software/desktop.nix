@@ -32,6 +32,8 @@
         inkscape-with-extensions                # Vector Graphics Editor
         #libreoffice-qt6-fresh                  # Office Suite
 
+        simplescreenrecorder                    # Screen Recorder
+
         # Peripherals
         vial                                    # Keyboard Firmware Manager
         jamesdsp                                # Audio effect processor for PipeWire clients (EQ for Headphones)
