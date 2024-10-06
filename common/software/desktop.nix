@@ -12,7 +12,7 @@
         vscode                                  # Code Editor
         ocs-url                                 # DE Store Website Integration
         #firefox                                # Web Browser
-        bottles                                 # Easy-to-use Wineprefix Manager
+        #bottles                                # Easy-to-use Wineprefix Manager
         spotify                                 # Music Streaming
         vesktop                                 # Discord (Alt Client)
         wezterm                                 # GPU Accelerated Terminal Emulator
@@ -23,16 +23,20 @@
         obsidian                                # Note Taking
         gearlever                               # AppImage Manager
         argyllcms                               # Colour Managment System
+        ente-auth                               # 2FA
         displaycal                              # Display Calibration Tool
         trackma-qt                              # AniList Client
         microsoft-edge                          # Web Browser
         github-desktop                          # Github Client
         bitwarden-desktop                       # Password Manager
         gimp-with-plugins                       # Image Manipulation Program
+        simplescreenrecorder                    # Screen Recorder
         inkscape-with-extensions                # Vector Graphics Editor
         #libreoffice-qt6-fresh                  # Office Suite
 
-        simplescreenrecorder                    # Screen Recorder
+        #spacedrive                             # File manager powered by a virtual distributed filesystem (Broken)
+        digikam                                 # Photo Management Application
+        hydrus                                  # Danbooru-like image tagging and searching system
 
         # Peripherals
         vial                                    # Keyboard Firmware Manager
@@ -80,7 +84,7 @@
     # Plasma Excludes
     # https://github.com/NixOS/nixpkgs/blob/nixos-unstable/nixos/modules/services/desktop-managers/plasma6.nix#L135
     environment.plasma6.excludePackages = with pkgs.kdePackages; [
-        krdp            # Remove Desktop (RDP)
+        #krdp            # Remove Desktop (RDP)
         khelpcenter     # Help app
         konsole         # Terminal Emulator
     ];
