@@ -98,12 +98,12 @@
         # boot.kernelPackages = pkgs.linuxPackages; # LTS
         kernelPackages = pkgs.linuxPackagesFor (pkgs.linux_6_11.override {
             argsOverride = rec {
-                version = "6.11";
-                modDirVersion = "6.11.0";
+                version = "6.11.2";
+                modDirVersion = "6.11.2";
 
                 src = pkgs.fetchurl {
                     url = "https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-${version}.tar.xz";
-                    sha256 = "0bnbvadm4wvnwzcq319gsgl03ijvvljn7mj8qw87ihpb4p0cdljm";
+                    sha256 = "7J73oLnOu1WUDh74eh+eEASxBFahGdw4a7PlZbDTnEI=";
                 };
 
                 # Source: https://github.com/D0023R/linux_kernel_15khz
@@ -126,14 +126,14 @@
                     {
                         name = "D0023R's 03 linux 15khz dcn1 dcn2 interlaced mode fix patch";
                         patch = builtins.fetchurl {
-                            url = "https://raw.githubusercontent.com/D0023R/linux_kernel_15khz/9fadc65e58a67bae04e0ee3c80dcb534f80e6460/linux-6.11/03_linux_15khz_dcn1_dcn2_interlaced_mode_fix.patch";
+                            url = "https://raw.githubusercontent.com/D0023R/linux_kernel_15khz/74aa7903891fe3c0c729fbd4986a563f4dce7ee7/linux-6.11/03_linux_15khz_dcn1_dcn2_interlaced_mode_fix.patch";
                             sha256 = "13iqqhvgrzyd72b8101q6qv66yld0lr3vyfbaas4af338b7gydxv";
                         };
                     }
                     {
                         name = "D0023R's 04 linux 15khz dce interlaced mode fix patch";
                         patch = builtins.fetchurl {
-                            url = "https://raw.githubusercontent.com/D0023R/linux_kernel_15khz/9fadc65e58a67bae04e0ee3c80dcb534f80e6460/linux-6.11/04_linux_15khz_dce_interlaced_mode_fix.patch";
+                            url = "https://raw.githubusercontent.com/D0023R/linux_kernel_15khz/74aa7903891fe3c0c729fbd4986a563f4dce7ee7/linux-6.11/04_linux_15khz_dce_interlaced_mode_fix.patch";
                             sha256 = "0dhlvvklqymg43wv4nfs9r9db9qfi2adv9mvr97hm3j77g9rxv5g";
                         };
                     }
