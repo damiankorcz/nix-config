@@ -71,9 +71,9 @@
 	};
 
     # Forcing the power management to Performance
-    # powerManagement = {
-    #     cpuFreqGovernor = lib.mkDefault "performance";
-    # };
+    powerManagement = {
+        cpuFreqGovernor = lib.mkDefault "performance";
+    };
 
 	# ------------ Kernel ------------
 
