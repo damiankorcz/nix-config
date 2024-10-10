@@ -6,7 +6,7 @@
         micro               # Terminal-based Text Editor
         lazygit             # Simple terminal UI for git commands
         mc                  # File Manager
-        atuin               # Shell History Replacement
+        #atuin               # Shell History Replacement
         #nnn                # Ncurses-based File Browser
         #gh                 # GitHub CLI Tool
 
