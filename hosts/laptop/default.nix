@@ -6,6 +6,7 @@
 		./hardware-configuration.nix
 		../../common/system/default.nix
 		../../common/system/desktop.nix
+		../../common/system/systemd-boot.nix
 
 		# Common Config Modules
 		../../common/home.nix

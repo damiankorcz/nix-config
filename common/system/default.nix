@@ -10,13 +10,7 @@
             "systemd.show_status=auto"
             "rd.udev.log_level=3"
         ];
-
-        # Use the systemd-boot EFI boot loader.
-        loader.systemd-boot.enable = true;
-        loader.systemd-boot.configurationLimit = 8;
-        loader.systemd-boot.consoleMode = "max";
-        loader.efi.canTouchEfiVariables = true;
-
+        
         # Filesystem support
         supportedFilesystems = [
             "ntfs"
