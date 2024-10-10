@@ -11,9 +11,10 @@
 		../../common/home.nix
 		../../common/samba.nix
 		../../common/software/desktop.nix
+		../../common/software/emulators.nix
 		../../common/software/gaming.nix
 		../../common/software/terminal.nix
-		../../common/software/emulators.nix
+		../../common/software/virtualization.nix
 	];
 
 	# ------------ Base System ------------
