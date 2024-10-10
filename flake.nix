@@ -61,9 +61,7 @@
 					}
 
 					sops-nix.nixosModules.sops
-
-					#chaotic.nixosModules.default
-
+					
 					nixos-hardware.nixosModules.common-cpu-amd
 					nixos-hardware.nixosModules.common-gpu-amd
 					nixos-hardware.nixosModules.common-gpu-nvidia-sync
