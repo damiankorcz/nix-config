@@ -1,10 +1,35 @@
-{ userSettings, ... }:
+{ pkgs, userSettings, ... }:
 
 {
-    virtualisation.libvirtd.enable = true;
+    # ------------ Virt Manager ------------
+
+    virtualisation.libvirtd = {
+        enable = true;
+
+        qemu = {
+            package = pkgs.qemu_kvm;
+            
+            ovmf = {
+                enable = true;
+                packages = [pkgs.OVMFFull.fd];
+            };
+            
+            swtpm.enable = true;
+        };
+    };
+
     programs.virt-manager.enable = true;
 
     users.users.${userSettings.username}.extraGroups = [ "libvirtd" ];
+
+    # ------------ Distrobox ------------
+
+    virtualisation.podman = {
+        enable = true;
+        dockerCompat = true;
+    };
+
+    environment.systemPackages = [ pkgs.distrobox ];
 
     # For Windows as a Guest:
     # https://github.com/virtio-win/virtio-win-guest-tools-installer
