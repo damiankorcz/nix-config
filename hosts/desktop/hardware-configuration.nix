@@ -93,9 +93,9 @@
             "nvidia.NVreg_UsePageAttributeTable=1"
         ];
 
-        # boot.kernelPackages = pkgs.linuxPackages_xanmod_latest; # https://xanmod.org/
-        # boot.kernelPackages = pkgs.linuxPackages_latest; # Latest Stable
-        # boot.kernelPackages = pkgs.linuxPackages; # LTS
+        # kernelPackages = pkgs.linuxPackages_xanmod_latest; # https://xanmod.org/
+        # kernelPackages = pkgs.linuxPackages_latest; # Latest Stable
+        # kernelPackages = pkgs.linuxPackages; # LTS
         kernelPackages = pkgs.linuxPackagesFor (pkgs.linux_6_11.override {
             argsOverride = rec {
                 version = "6.11.2";

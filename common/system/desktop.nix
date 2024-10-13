@@ -104,7 +104,7 @@
         # Enables Xbox One Controller Adapter support
 		xone.enable = true;
 
-		# Non-root acces to the firmware of QMK Keyboards
+		# Non-root access to the firmware of QMK Keyboards
 		keyboard.qmk.enable = true;
 
 		# Potentially needed for Drawing Tablet Support (?)
