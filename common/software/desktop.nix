@@ -41,7 +41,9 @@
         # Peripherals
         vial                                    # Keyboard Firmware Manager
         jamesdsp                                # Audio effect processor for PipeWire clients (EQ for Headphones)
+        qpwgraph                                # Qt graph manager for PipeWire
         naps2                                   # Document Scanning
+        corectrl                                # Profile based system control utility
 
         # KDE Applications (QT)
         krita                                   # Digital Painting
@@ -59,8 +61,8 @@
         kdePackages.kde-gtk-config              # Syncs KDE settings to GTK applications
         kdePackages.partitionmanager            # Manage disks, partitions and file systems
 
-        wineWowPackages.stagingFull # Run Windows Apps on Linux
-        winetricks                  # Script to install DLLs needed to work around problems in Wine
+        wineWowPackages.stagingFull             # Run Windows Apps on Linux
+        winetricks                              # Script to install DLLs needed to work around problems in Wine
 
         # Vivaldi - Currently some dependancy issues require this to work
         # https://github.com/NixOS/nixpkgs/issues/309056
