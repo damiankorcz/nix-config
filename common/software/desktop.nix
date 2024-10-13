@@ -88,7 +88,7 @@
     environment.plasma6.excludePackages = with pkgs.kdePackages; [
         #krdp            # Remove Desktop (RDP)
         khelpcenter     # Help app
-        konsole         # Terminal Emulator
+        #konsole         # Terminal Emulator
     ];
 
     # Programs with Daemons
