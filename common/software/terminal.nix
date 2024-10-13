@@ -24,6 +24,7 @@
         fastfetch           # System Info
         lm_sensors          # Reading hardware sensors
         nvtopPackages.full  # Task monitor for GPUs and accelerators
+        radeontop           # Task monitor for GPUs and accelerators for AMD Radeon
         btop                # System Monitor
         speedtest-go        # Internet Speed Test (speedtest.net)
 
