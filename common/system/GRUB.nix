@@ -11,7 +11,7 @@
             useOSProber = true;
             efiSupport = true;
             configurationLimit = 10;
-            timeoutStyle = hidden; # Hold SHIFT during boot to show GRUB
+            timeoutStyle = "hidden"; # Hold SHIFT during boot to show GRUB
         };
 
         efi.canTouchEfiVariables = true;
