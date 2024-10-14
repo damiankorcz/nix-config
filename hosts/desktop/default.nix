@@ -7,6 +7,7 @@
 		../../common/system/default.nix
 		../../common/system/desktop.nix
 		../../common/system/GRUB.nix
+		../../common/system/x11-nvidia.nix
 
 		# Common Config Modules
 		../../common/home.nix
@@ -37,13 +38,6 @@
 
         	# Video Drivers
         	videoDrivers = [ "nvidia" ]; # "radeon" "modesetting" "fbdev"
-
-			# Trying to resolve stuttering and screen tearing
-			screenSection = ''
-				Option         "metamodes" "nvidia-auto-select +0+0 {ForceFullCompositionPipeline=On}"
-				Option         "AllowIndirectGLXProtocol" "off"
-				Option         "TripleBuffer" "on"
-			'';
 		};
 	    
 		# Enable periodic SSD TRIM of mounted partitions in background
@@ -68,11 +62,6 @@
             layout = "us";
             variant = "";
         };
-    };
-
-	environment.sessionVariables = {
-        KWIN_EXPLICIT_SYNC = "1";
-        KWIN_TRIPLE_BUFFER = "1";
     };
 
 	# ------------ Nix ------------
