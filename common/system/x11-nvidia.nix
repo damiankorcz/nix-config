@@ -1,13 +1,11 @@
-{ ... }:
+{ lib, ... }:
 {
-    hardware = {
-        # Trying to resolve stuttering and screen tearing
-        nvidia.forceFullCompositionPipeline = true;
+    # Trying to resolve stuttering and screen tearing
+    hardware.nvidia.forceFullCompositionPipeline = true;
 
-        # Forcing the power management to Performance
-        powerManagement = {
-            cpuFreqGovernor = lib.mkDefault "performance";
-        };
+    # Forcing the power management to Performance
+    powerManagement = {
+        cpuFreqGovernor = lib.mkDefault "performance";
     };
 
     # Forcing kwin to believe Explicit Sync and Triple Buffer are used.
