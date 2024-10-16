@@ -96,14 +96,6 @@
         coolercontrol.enable = true;    # Cooling Device Control
         gnupg.agent.enable = true;
         adb.enable = true;              # Android Debug Bridge (ADB)
-        
-        # Hardware control / monitoring and overclocking program
-        tuxclocker = {
-            enable = true;
-            #enabledNVIDIADevices
-            enableAMD = true;
-            useUnfree = true;
-        };
 
         #home-manager.enable = true;    # Nix User Environment Configurator
         #nix-ld.enable  = true;         # TEMP
