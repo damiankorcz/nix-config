@@ -68,7 +68,7 @@
 			  	amdgpuBusId = "PCI:10:0:0";
 			};
 		};
-    };
+	};
 
 	# ------------ Kernel ------------
 
@@ -83,6 +83,8 @@
 		kernelParams = [
             "video=DVI-I-1:640x480ieS"
             #"video=DVI-I-1:320x240eS"
+            "nvidia.NVreg_PreserveVideoMemoryAllocations=1"
+            "nvidia.NVreg_UsePageAttributeTable=1"
         ];
 
         # kernelPackages = pkgs.linuxPackages_xanmod_latest; # https://xanmod.org/

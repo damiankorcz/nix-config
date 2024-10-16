@@ -8,6 +8,7 @@
 		../../common/system/desktop.nix
 		../../common/system/GRUB.nix
 		../../common/system/x11-nvidia.nix
+		# ../../common/system/wayland-nvidia.nix
 
 		# Common Config Modules
 		../../common/home.nix
@@ -32,10 +33,6 @@
 
     services = {
 		xserver = {
-			# Enable the X11 windowing system.
-			# You can disable this if you're only using the Wayland session.
-        	enable = true;
-
         	# Video Drivers
         	videoDrivers = [ "nvidia" ]; # "radeon" "modesetting" "fbdev"
 		};
@@ -45,17 +42,6 @@
 
         # Enable the KDE Plasma Desktop Environment.
         desktopManager.plasma6.enable = true;
-
-        displayManager = {
-            # Declares default session (Wayland = plasma / X11 = plasmax11)
-            defaultSession = "plasmax11";
-
-            # Enable Display Manager for Plasma.
-            sddm = {
-                enable = true;
-                #wayland.enable = true;
-            };
-        };
 
         # Configure keymap in X11
         xserver.xkb = {
