@@ -8,16 +8,15 @@
         mpv                                     # Video Player
         svp                                     # SmoothVideo Project 4 - Converts any video to 60 fps
         #mpvScripts.modernx-zydezu              # Modern OSC UI for MPV
-        pinta                                   # Drawing/editing program modeled after Paint.NET
+        #pinta                                   # Drawing/editing program modeled after Paint.NET
         vscode                                  # Code Editor
-        ocs-url                                 # DE Store Website Integration
         #firefox                                # Web Browser
         #bottles                                # Easy-to-use Wineprefix Manager
         spotify                                 # Music Streaming
         vesktop                                 # Discord (Alt Client)
         wezterm                                 # GPU Accelerated Terminal Emulator
-        foliate                                 # Ebook Reader
-        komikku                                 # Manga / Comic Reader
+        #foliate                                 # Ebook Reader
+        #komikku                                 # Manga / Comic Reader
         birdtray                                # Mail system tray notification icon for Thunderbird
         syncplay                                # Synchronise Media Players
         obsidian                                # Note Taking
@@ -28,7 +27,7 @@
         trackma-qt                              # AniList Client
         microsoft-edge                          # Web Browser
         github-desktop                          # Github Client
-        bitwarden-desktop                       # Password Manager
+        #bitwarden-desktop                       # Password Manager
         gimp-with-plugins                       # Image Manipulation Program
         simplescreenrecorder                    # Screen Recorder
         inkscape-with-extensions                # Vector Graphics Editor
@@ -36,7 +35,7 @@
 
         #spacedrive                             # File manager powered by a virtual distributed filesystem (Broken)
         digikam                                 # Photo Management Application
-        hydrus                                  # Danbooru-like image tagging and searching system
+        #hydrus                                  # Danbooru-like image tagging and searching system
 
         # Peripherals
         vial                                    # Keyboard Firmware Manager
