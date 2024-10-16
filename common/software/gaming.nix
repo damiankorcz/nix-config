@@ -8,21 +8,34 @@
         libnotify                   # Library for Sending Desktop Notifications to the Notification Daemon
     ];
 
-    # Steam locations that should be persistent:
-    #   ~/.local/share/Steam                  - Default Steam install location
-    #   ~/.local/share/Steam/steamapps/common - Default Game install location
-    #   ~/.steam/root                         - Symlink to `~/.local/share/Steam`
-    #   ~/.steam                              - Some Symlinks & user info
-    programs.steam = {
-        enable = true;
-        protontricks.enable = true;                     # Simple wrapper for running Winetricks commands for Proton-enabled games
-        gamescopeSession.enable = true;                 # Enable GameScope Session
-        remotePlay.openFirewall = true;                 # Ports for Steam Remote Play
-        localNetworkGameTransfers.openFirewall = true;  # Ports for Steam Local Network Game Transfers
-        # dedicatedServer.openFirewall = true;          # Ports for Source Dedicated Server
+
+    programs = {
+        # Steam locations that should be persistent:
+        #   ~/.local/share/Steam                  - Default Steam install location
+        #   ~/.local/share/Steam/steamapps/common - Default Game install location
+        #   ~/.steam/root                         - Symlink to `~/.local/share/Steam`
+        #   ~/.steam                              - Some Symlinks & user info
+        steam = {
+            enable = true;
+            protontricks.enable = true;                     # Simple wrapper for running Winetricks commands for Proton-enabled games
+            gamescopeSession.enable = true;                 # Enable GameScope Session
+            remotePlay.openFirewall = true;                 # Ports for Steam Remote Play
+            localNetworkGameTransfers.openFirewall = true;  # Ports for Steam Local Network Game Transfers
+            # dedicatedServer.openFirewall = true;          # Ports for Source Dedicated Server
+        };
+
+        # Hardware control / monitoring and overclocking program
+        tuxclocker = {
+            enable = true;
+            #enabledNVIDIADevices
+            enableAMD = true;
+            useUnfree = true;
+        };
+
+        # Optimise system performance on demand
+        gamemode.enable = true;
     };
 
-    programs.gamemode.enable = true; # Optimise system performance on demand
 
     # Improve compatibility with memory hungry applications (e.g. games)
     boot.kernel.sysctl."vm.max_map_count" = 1048576;
