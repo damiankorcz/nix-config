@@ -9,6 +9,7 @@
 		../../common/system/GRUB.nix
 		../../common/system/x11-nvidia.nix
 		# ../../common/system/wayland-nvidia.nix
+		../../common/system/amdvlk.nix
 
 		# Common Config Modules
 		../../common/home.nix
