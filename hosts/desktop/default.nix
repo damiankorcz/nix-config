@@ -1,6 +1,25 @@
 { config, lib, pkgs, ... }:
 
 {
+	# Temp fix for amdvlk (https://github.com/NixOS/nixpkgs/issues/348903)
+	nixpkgs.overlays = [
+		(
+			self: super: {
+				amdvlk = super.amdvlk.override {
+					glslang = super.glslang.overrideAttrs (finalAttrs: oldAttrs: {
+						version = "15.0.0";
+						src = self.fetchFromGitHub {
+							owner = "KhronosGroup";
+							repo = "glslang";
+							rev = "refs/tags/${finalAttrs.version}";
+							hash = "sha256-QXNecJ6SDeWpRjzHRTdPJHob1H3q2HZmWuL2zBt2Tlw=";
+						};
+					});
+				};
+			}
+		)
+	];
+
 	imports = [
 		# Hardware Config
 		./hardware-configuration.nix
@@ -9,7 +28,6 @@
 		../../common/system/GRUB.nix
 		../../common/system/x11-nvidia.nix
 		# ../../common/system/wayland-nvidia.nix
-		../../common/system/amdvlk.nix
 
 		# Common Config Modules
 		../../common/home.nix
