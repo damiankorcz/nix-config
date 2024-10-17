@@ -26,8 +26,8 @@
 		../../common/system/default.nix
 		../../common/system/desktop.nix
 		../../common/system/GRUB.nix
-		../../common/system/x11-nvidia.nix
-		# ../../common/system/wayland-nvidia.nix
+		#../../common/system/x11-nvidia.nix
+		../../common/system/wayland-nvidia.nix
 
 		# Common Config Modules
 		../../common/home.nix

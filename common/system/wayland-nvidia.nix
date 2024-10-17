@@ -5,7 +5,7 @@
     #     cpuFreqGovernor = lib.mkDefault "performance";
     # };
 
-    displayManager = {
+    services.displayManager = {
         # Declares default session (Wayland = plasma / X11 = plasmax11)
         defaultSession = "plasma";
 
