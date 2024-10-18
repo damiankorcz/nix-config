@@ -6,7 +6,7 @@
         micro               # Terminal-based Text Editor
         lazygit             # Simple terminal UI for git commands
         mc                  # File Manager
-        #atuin               # Shell History Replacement
+        #atuin              # Shell History Replacement
         #nnn                # Ncurses-based File Browser
         #gh                 # GitHub CLI Tool
 
@@ -34,9 +34,6 @@
         imagemagick         # Image Manipulation Tool
         unrar               # Utility for RAR archives
         nixpkgs-review      # Review pull-requests on https://github.com/NixOS/nixpkgs
-        wmctrl              # X WM Interaction Tool
-        xdotool             # Fake keyboard/mouse input, window management and more
-        xautomation         # Control X from the command line for scripts, and do "visual scraping" to find things on the screen
 
         # Secret / Keys
         sops                # Managing Secrets Tool
@@ -48,4 +45,6 @@
         lshw               # Hardware Configuration Info
         glxinfo            # Test utilities for OpenGL
     ];
+
+
 }

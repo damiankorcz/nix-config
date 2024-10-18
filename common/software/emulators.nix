@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, userSettings, ... }:
 
 {
     # ------------ Nixpkgs ------------
@@ -16,7 +16,7 @@
         rpcs3               # PlayStation 3
         ppsspp-qt           # PlayStation Portable
 
-        #lime3ds             # Nintendo 3DS
+        #lime3ds            # Nintendo 3DS
         rmg                 # Nintendo 64
         melonDS             # Nintendo DS
         fceux               # Nintendo Entertainment System
@@ -34,8 +34,20 @@
 
         xemu                # Xbox
 
-        switchres           # Modeline generation engine for emulation
+        
+        # X11
+        #switchres          # Modeline generation engine for emulation (X11 only)
+        #wmctrl              # X WM Interaction Tool
+        #xdotool             # Fake keyboard / mouse input, window management and more
+        #xautomation         # Control X from the command line for scripts, and do "visual scraping" to find things on the screen
+
+        # Wayland
+        kdotool             # xdotool-like for KDE Wayland
     ];
+
+    # Generic Linux command-line automation tool (keyboard / mouse input)
+    programs.ydotool.enable = true;
+    users.users.${userSettings.username}.extraGroups = [ "ydotool" ];
     
     # ------------ Flatpak ------------
 
