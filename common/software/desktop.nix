@@ -13,6 +13,7 @@
         #firefox                                # Web Browser
         #bottles                                # Easy-to-use Wineprefix Manager
         spotify                                 # Music Streaming
+        discord                                 # Official Discord Client
         vesktop                                 # Discord (Alt Client)
         wezterm                                 # GPU Accelerated Terminal Emulator
         #foliate                                 # Ebook Reader

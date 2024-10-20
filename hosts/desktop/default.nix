@@ -28,6 +28,7 @@
 		../../common/system/GRUB.nix
 		#../../common/system/x11-nvidia.nix
 		../../common/system/wayland-nvidia.nix
+		../../common/discord-krisp/default.nix # https://github.com/sersorrel/sys/tree/main/hm/discord
 
 		# Common Config Modules
 		../../common/home.nix

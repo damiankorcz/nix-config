@@ -53,7 +53,7 @@
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
 
-		#https://github.com/NixOS/nixos-hardware
+		# https://github.com/NixOS/nixos-hardware
 		nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 	};
 
