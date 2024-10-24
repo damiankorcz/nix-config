@@ -65,7 +65,7 @@
 			 
 			  	# Found with `lspci | grep VGA` then convert values from hex to dec
 			  	nvidiaBusId = "PCI:9:0:0";
-			  	amdgpuBusId = "PCI:10:0:0";
+			  	amdgpuBusId = "PCI:4:0:0"; # "PCI:10:0:0" when in the other main slot 
 			};
 		};
 	};
