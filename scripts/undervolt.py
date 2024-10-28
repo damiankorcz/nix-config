@@ -1,4 +1,5 @@
 #!/bin/python
+# Source: https://github.com/svenlange2/Ryzen-5800x3d-linux-undervolting (Last Updated: 28/10/24)
 
 import os
 import struct
