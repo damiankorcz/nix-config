@@ -13,6 +13,7 @@
         # Web Dev
         pnpm                # Fast, disk space efficient package manager for JavaScript
         nodejs_20           # JavaScript runtime environment (20 is latest compatible with pnpm)
+        python313           # Python 3.13
 
         # Terminal Tool Alternatives
         ripgrep             # 'grep' Alternative
