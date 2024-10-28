@@ -69,6 +69,23 @@
         };
     };
 
+	systemd.services."undervolt" = {
+		enable = true;
+		description = "This Service runs a Python script to undervolt the 5700X3D CPU.";
+
+		unitConfig = {
+			Type = "simple";
+			After = [ "sleep.target" "multi-user.target" ];
+		};
+
+		serviceConfig = {
+			User= "root";
+			ExecStart = "${pkgs.python313}/bin/python /home/damian/Git/nix-config/scripts/undervolt.py -c 8 -o -30";
+		};
+
+		wantedBy = [ "sleep.target" "multi-user.target" ];
+	};
+
 	# ------------ Nix ------------
 
 	# Enable Nix Flakes

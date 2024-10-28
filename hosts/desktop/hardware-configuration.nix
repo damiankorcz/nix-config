@@ -44,7 +44,10 @@
 	# ------------ Hardware ------------
 
 	hardware = {
-		cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+		cpu.amd = {
+            updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+            ryzen-smu.enable = true; # kernel driver that exposes access to the SMU (System Management Unit). Needed for Undervolting script.
+        };
 
 		# Enable amdgpu kernel driver for Southern Islands and Sea Islands cards.
 		amdgpu.legacySupport.enable = true;
