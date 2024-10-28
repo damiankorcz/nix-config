@@ -50,6 +50,4 @@
         lshw               # Hardware Configuration Info
         glxinfo            # Test utilities for OpenGL
     ];
-
-
 }

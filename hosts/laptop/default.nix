@@ -7,6 +7,8 @@
 		../../common/system/default.nix
 		../../common/system/desktop.nix
 		../../common/system/systemd-boot.nix
+		#../../common/system/x11-nvidia.nix
+		../../common/system/wayland-nvidia.nix
 
 		# Common Config Modules
 		../../common/home.nix
@@ -15,6 +17,7 @@
 		../../common/software/terminal.nix
 		#../../common/software/gaming.nix
 		# ../../common/software/emulators.nix
+		#../../common/software/virtualization.nix
 	];
 
 	# ------------ Base System ------------
@@ -37,10 +40,7 @@
     time.hardwareClockInLocalTime = true;
 
     services = {
-        # Enable the X11 windowing system.
-        # You can disable this if you're only using the Wayland session.
-        # xserver.enable = true;
-
+		# Video Drivers
         xserver.videoDrivers = [ "nvidia" ]; # "modesetting" "fbdev"
 	
 		# Enable periodic SSD TRIM of mounted partitions in background
@@ -48,17 +48,6 @@
 
         # Enable the KDE Plasma Desktop Environment.
         desktopManager.plasma6.enable = true;
-
-        displayManager = {
-            # Declares default session (Wayland = plasma / X11 = plasmax11)
-            defaultSession = "plasma";
-
-            # Enable Display Manager for Plasma.
-            sddm = {
-                enable = true;
-                wayland.enable = true;
-            };
-        };
 
         # Configure keymap in X11
         xserver.xkb = {

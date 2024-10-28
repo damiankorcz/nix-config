@@ -1,25 +1,6 @@
 { config, lib, pkgs, ... }:
 
 {
-	# Temp fix for amdvlk (https://github.com/NixOS/nixpkgs/issues/348903)
-	nixpkgs.overlays = [
-		(
-			self: super: {
-				amdvlk = super.amdvlk.override {
-					glslang = super.glslang.overrideAttrs (finalAttrs: oldAttrs: {
-						version = "15.0.0";
-						src = self.fetchFromGitHub {
-							owner = "KhronosGroup";
-							repo = "glslang";
-							rev = "refs/tags/${finalAttrs.version}";
-							hash = "sha256-QXNecJ6SDeWpRjzHRTdPJHob1H3q2HZmWuL2zBt2Tlw=";
-						};
-					});
-				};
-			}
-		)
-	];
-
 	imports = [
 		# Hardware Config
 		./hardware-configuration.nix
@@ -51,16 +32,11 @@
     time.hardwareClockInLocalTime = true;
 
     services = {
-		xserver = {
-        	# Video Drivers
-        	videoDrivers = [ "nvidia" ]; # "radeon" "modesetting" "fbdev"
-		};
-	    
+		# Video Drivers
+		xserver.videoDrivers = [ "nvidia" ]; # "radeon" "modesetting" "fbdev"
+
 		# Enable periodic SSD TRIM of mounted partitions in background
         fstrim.enable = true;
-
-        # Enable the KDE Plasma Desktop Environment.
-        desktopManager.plasma6.enable = true;
 
         # Configure keymap in X11
         xserver.xkb = {

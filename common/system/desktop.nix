@@ -56,12 +56,6 @@
             openFirewall = true;
         };
 
-        # Manage, install and generate color profiles
-        colord.enable = true;
-
-        # Auto-mount USB drives
-        udisks2.enable = true;
-
         # Samba Client
         samba = {
             enable = true;
@@ -106,11 +100,5 @@
 
 		# Non-root access to the firmware of QMK Keyboards
 		keyboard.qmk.enable = true;
-
-		# Potentially needed for Drawing Tablet Support (?)
-		uinput.enable = true;
-
-        # User-mode tablet driver
-		# opentabletdriver.enable = true;
     };
 }

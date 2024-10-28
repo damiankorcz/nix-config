@@ -34,7 +34,6 @@
 
         xemu                # Xbox
 
-        
         # X11
         #switchres          # Modeline generation engine for emulation (X11 only)
         #wmctrl              # X WM Interaction Tool

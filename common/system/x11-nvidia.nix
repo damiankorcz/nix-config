@@ -13,6 +13,9 @@
         KWIN_EXPLICIT_SYNC = "1";
         KWIN_TRIPLE_BUFFER = "1";
     };
+    
+    # Enable the KDE Plasma Desktop Environment.
+    desktopManager.plasma6.enable = true;
 
     # Enable the X11 windowing system.
     # You can disable this if you're only using the Wayland session.
@@ -27,4 +30,7 @@
             sddm.enable = true;
         };
     };
+
+    # Manage, install and generate color profiles
+    services.colord.enable = true;
 }

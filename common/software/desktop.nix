@@ -11,7 +11,6 @@
         spotify                                 # Music Streaming
         discord                                 # Official Discord Client
         vesktop                                 # Discord (Alt Client)
-        wezterm                                 # GPU Accelerated Terminal Emulator
         birdtray                                # Mail system tray notification icon for Thunderbird
         syncplay                                # Synchronise Media Players
         obsidian                                # Note Taking
@@ -43,10 +42,10 @@
         kdePackages.elisa                       # Music Player
         #kdePackages.kamoso                     # Webcam Utility (Marked as Broken)
         kdePackages.kclock                      # Clock
-        kdePackages.arianna                     # Epub Reader
+        #kdePackages.arianna                    # Epub Reader
         kdePackages.kweather                    # Weather
-        kdePackages.skanlite                    # Lite Image Scanning
-        kdePackages.skanpage                    # Multi-page Document Scanning
+        # kdePackages.skanlite                  # Lite Image Scanning
+        # kdePackages.skanpage                  # Multi-page Document Scanning
         kdePackages.filelight                   # Quickly visualize your disk space usage
         kdePackages.kde-gtk-config              # Syncs KDE settings to GTK applications
         kdePackages.partitionmanager            # Manage disks, partitions and file systems
@@ -62,18 +61,12 @@
             dontPatchELF = true;
             nativeBuildInputs = oldAttrs.nativeBuildInputs ++ [ pkgs.kdePackages.wrapQtAppsHook ];
         }))
-
-        # Spellchecker (Doesn't seem to work on KDE)
-        # aspell                                  # Spell checker
-        # aspellDicts.en                          # Dictionary for English
-        # aspellDicts.en-science                  # Dictionary for English Scientific Jargon
-        # aspellDicts.en-computers                # Dictionary for English Computer Jargon
-        # aspellDicts.pl                          # Dictionary for Polish
     ];
+
+    # ------------ Excludes ------------
 
     services.xserver.excludePackages = [ pkgs.xterm ];
 
-    # Plasma Excludes
     # https://github.com/NixOS/nixpkgs/blob/nixos-unstable/nixos/modules/services/desktop-managers/plasma6.nix#L135
     environment.plasma6.excludePackages = with pkgs.kdePackages; [
         #krdp            # Remove Desktop (RDP)
@@ -81,7 +74,8 @@
         #konsole         # Terminal Emulator
     ];
 
-    # Programs with Daemons
+    # ------------ Programs with Daemons ------------
+
     programs = {
         thunderbird.enable = true;      # Email Client
         coolercontrol.enable = true;    # Cooling Device Control

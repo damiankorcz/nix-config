@@ -73,9 +73,6 @@
 
 		# Enable bluetooth
     	bluetooth.enable = true;
-
-		# User-mode tablet driver
-		# opentabletdriver.enable = true;
 	};
 
 	# ------------ Kernel Modules ------------
