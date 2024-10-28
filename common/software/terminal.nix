@@ -29,12 +29,16 @@
         btop                # System Monitor
         speedtest-go        # Internet Speed Test (speedtest.net)
 
+        # Benchmark / Stress Test
+        stress-ng
+
         # General Utilities
         thefuck             # Corrects your previous console command
         tlrc                # Official tldr client written in Rust
         imagemagick         # Image Manipulation Tool
         unrar               # Utility for RAR archives
         nixpkgs-review      # Review pull-requests on https://github.com/NixOS/nixpkgs
+        xorg.xlsclients     # See which apps are running under xwayland
 
         # Secret / Keys
         sops                # Managing Secrets Tool
