@@ -9,13 +9,14 @@
 		../../common/system/systemd-boot.nix
 		#../../common/system/x11-nvidia.nix
 		../../common/system/wayland-nvidia.nix
+		../../common/syste/nvidia-offload.nix
 
 		# Common Config Modules
 		../../common/home.nix
 		../../common/samba.nix
 		../../common/software/desktop.nix
 		../../common/software/terminal.nix
-		#../../common/software/gaming.nix
+		../../common/software/gaming.nix
 		# ../../common/software/emulators.nix
 		#../../common/software/virtualization.nix
 	];

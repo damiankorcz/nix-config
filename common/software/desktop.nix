@@ -31,7 +31,6 @@
         jamesdsp                                # Audio effect processor for PipeWire clients (EQ for Headphones)
         qpwgraph                                # Qt graph manager for PipeWire
         naps2                                   # Document Scanning
-        corectrl                                # Profile based system control utility
 
         # KDE Applications (QT)
         krita                                   # Digital Painting

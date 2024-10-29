@@ -68,6 +68,7 @@
 			terminal = "konsole";
 			browser = "edge"; # Default browser; must select one from ./user/app/browser/
 		};
+
 	in {
 		nixosConfigurations = {
 			# Desktop (Custom Build)

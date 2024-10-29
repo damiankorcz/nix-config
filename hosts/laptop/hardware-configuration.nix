@@ -47,29 +47,8 @@
 	swapDevices = [ { device = "/dev/disk/by-label/swap"; } ];
 
 	# ------------ Hardware ------------
-
 	hardware = {
 		cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
-
-		# Nvidia configuration
-		# https://nixos.wiki/wiki/Nvidia
-		nvidia = {
-			open = false;
-			nvidiaSettings = true;
-			modesetting.enable = true;
-			powerManagement.enable = false;
-			powerManagement.finegrained = false;
-			package = config.boot.kernelPackages.nvidiaPackages.latest;
-			
-			prime = {
-				# Enable NVIDIA Optimus support using the NVIDIA proprietary driver via PRIME
-				sync.enable = true;
-				
-				# Found with `lspci` then convert values from hex to dec
-				nvidiaBusId = "PCI:1:0:0";
-				intelBusId = "PCI:0:2:0";
-			};
-		};
 
 		# Enable bluetooth
     	bluetooth.enable = true;

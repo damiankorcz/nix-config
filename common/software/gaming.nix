@@ -24,14 +24,6 @@
             # dedicatedServer.openFirewall = true;          # Ports for Source Dedicated Server
         };
 
-        # Hardware control / monitoring and overclocking program
-        tuxclocker = {
-            enable = true;
-            #enabledNVIDIADevices
-            enableAMD = true;
-            useUnfree = true;
-        };
-
         # Optimise system performance on demand
         gamemode.enable = true;
     };
