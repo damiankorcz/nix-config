@@ -119,7 +119,8 @@
 					sops-nix.nixosModules.sops
 
 					nixos-hardware.nixosModules.common-cpu-intel
-					nixos-hardware.nixosModules.common-gpu-nvidia-sync
+					nixos-hardware.nixosModules.common-gpu-intel
+					nixos-hardware.nixosModules.common-gpu-nvidia
 					nixos-hardware.nixosModules.common-pc
 					nixos-hardware.nixosModules.common-pc-ssd
 				];
