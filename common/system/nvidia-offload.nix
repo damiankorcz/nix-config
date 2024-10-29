@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
 let
     nvidia-offload = pkgs.writeShellScriptBin "nvidia-offload" ''
@@ -14,19 +14,19 @@ in {
     services.xserver.videoDrivers = [ "nvidia" ];
     hardware.nvidia = {
         open = false;
-			nvidiaSettings = true;
-			modesetting.enable = true;
-			powerManagement.enable = false;
-			powerManagement.finegrained = false;
-			package = config.boot.kernelPackages.nvidiaPackages.latest;
-			
-			prime = {
-				# Enable NVIDIA Optimus support using the NVIDIA proprietary driver via PRIME
-				offload.enable = true;
-				
-				# Found with `lspci` then convert values from hex to dec
-				nvidiaBusId = "PCI:1:0:0";
-				intelBusId = "PCI:0:2:0";
-			};
+        nvidiaSettings = true;
+        modesetting.enable = true;
+        powerManagement.enable = false;
+        powerManagement.finegrained = false;
+        package = config.boot.kernelPackages.nvidiaPackages.latest;
+        
+        prime = {
+            # Enable NVIDIA Optimus support using the NVIDIA proprietary driver via PRIME
+            offload.enable = true;
+            
+            # Found with `lspci` then convert values from hex to dec
+            nvidiaBusId = "PCI:1:0:0";
+            intelBusId = "PCI:0:2:0";
+        };
     };
 }
