@@ -16,7 +16,7 @@
         rpcs3               # PlayStation 3
         ppsspp-qt           # PlayStation Portable
 
-        lime3ds            # Nintendo 3DS
+        #lime3ds            # Nintendo 3DS
         rmg                 # Nintendo 64
         melonDS             # Nintendo DS
         fceux               # Nintendo Entertainment System
