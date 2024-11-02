@@ -83,6 +83,7 @@
 
         #home-manager.enable = true;    # Nix User Environment Configurator
         #nix-ld.enable  = true;         # TEMP
+    };
 
     programs.xppen = {
         enable = true;
