@@ -28,6 +28,9 @@
 		# Official NixOS Package Source
 		nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
 
+		# NixOS Package Source with XP Pen Drivers / app
+		nixpkgs-xppen.url = "github:gepbird/nixpkgs?ref=xppen-init-v3-v4-nixos-module";
+
 		# Declarative Flatpak Manager
 		# Use github:gmodena/nix-flatpak?ref=<tag> to pin releases.
 		# https://github.com/gmodena/nix-flatpak
@@ -57,7 +60,7 @@
 		nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 	};
 
-	outputs = inputs@{ self, nixpkgs, nix-flatpak, home-manager, sops-nix, disko, nixos-hardware }:
+	outputs = inputs@{ self, nixpkgs, nixpkgs-xppen, nix-flatpak, home-manager, sops-nix, disko, nixos-hardware }:
 	let
 		userSettings = {
 			username = "damian"; # Username
@@ -72,7 +75,7 @@
 	in {
 		nixosConfigurations = {
 			# Desktop (Custom Build)
-			nixos-desktop = nixpkgs.lib.nixosSystem {
+			nixos-desktop = nixpkgs-xppen.lib.nixosSystem {
 				system = "x86_64-linux";
 				modules = [
 					./hosts/desktop/default.nix
