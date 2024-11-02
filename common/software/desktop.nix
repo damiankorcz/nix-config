@@ -83,6 +83,10 @@
 
         #home-manager.enable = true;    # Nix User Environment Configurator
         #nix-ld.enable  = true;         # TEMP
+
+    programs.xppen = {
+        enable = true;
+        package = pkgs.xppen_3; # or `pkgs.xppen_4` for the newer driver
     };
 
     # ------------ Flatpak ------------
