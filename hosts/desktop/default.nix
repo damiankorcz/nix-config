@@ -18,7 +18,6 @@
 		../../common/software/gaming.nix
 		../../common/software/terminal.nix
 		../../common/software/virtualization.nix
-		../../common/software/discord-krisp/default.nix
 	];
 
 	# ------------ Base System ------------
