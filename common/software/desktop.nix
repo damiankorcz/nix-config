@@ -9,8 +9,6 @@
         svp                                     # SmoothVideo Project 4 - Converts any video to 60 fps
         vscode                                  # Code Editor
         spotify                                 # Music Streaming
-        discord                                 # Official Discord Client
-        vesktop                                 # Discord (Alt Client)
         birdtray                                # Mail system tray notification icon for Thunderbird
         syncplay                                # Synchronise Media Players
         obsidian                                # Note Taking
@@ -99,7 +97,9 @@
             onCalendar = "weekly";
         };
 
-        packages = [ ];
+        packages = [ 
+            "com.discordapp.Discord" # Requires XDG_SESSION_TYPE=x11 for screensharing to work.
+        ];
     };
 
     # ------------ AppImage ------------
