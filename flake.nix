@@ -69,7 +69,7 @@
 			editor = "kate";
 			spawnEditor = "exec $(userSettings.terminal) -e micro";
 			terminal = "konsole";
-			browser = "edge"; # Default browser; must select one from ./user/app/browser/
+			browser = "brave"; # Default browser; must select one from ./user/app/browser/
 		};
 
 	in {

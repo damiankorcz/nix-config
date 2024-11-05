@@ -7,6 +7,7 @@
         # Applications
         mpv                                     # Video Player
         svp                                     # SmoothVideo Project 4 - Converts any video to 60 fps
+        brave                                   # Web Browser
         vscode                                  # Code Editor
         spotify                                 # Music Streaming
         birdtray                                # Mail system tray notification icon for Thunderbird
@@ -53,11 +54,11 @@
         # Vivaldi - Currently some dependancy issues require this to work
         # https://github.com/NixOS/nixpkgs/issues/309056
         # https://github.com/NixOS/nixpkgs/pull/292148
-        (vivaldi.overrideAttrs (oldAttrs: {
-            dontWrapQtApps = false;
-            dontPatchELF = true;
-            nativeBuildInputs = oldAttrs.nativeBuildInputs ++ [ pkgs.kdePackages.wrapQtAppsHook ];
-        }))
+        # (vivaldi.overrideAttrs (oldAttrs: {
+        #     dontWrapQtApps = false;
+        #     dontPatchELF = true;
+        #     nativeBuildInputs = oldAttrs.nativeBuildInputs ++ [ pkgs.kdePackages.wrapQtAppsHook ];
+        # }))
     ];
 
     # ------------ Excludes ------------
