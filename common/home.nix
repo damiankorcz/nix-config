@@ -1,4 +1,4 @@
-{ config, pkgs, userSettings, ... }:
+{ userSettings, ... }:
 
 {
     # Define a user account. Don't forget to set a password with ‘passwd’.
@@ -10,7 +10,7 @@
         extraGroups = [ "networkmanager" "wheel" "adbusers" "kvm" "video" ];
     };
 
-    home-manager.users.${userSettings.username} =  { pkgs, ... }: {
+    home-manager.users.${userSettings.username} =  { ... }: {
         home.stateVersion = "24.05";
 
         home.username = userSettings.username;

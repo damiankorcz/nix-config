@@ -1,4 +1,4 @@
-{ lib, pkgs, userSettings, ... }:
+{ pkgs, userSettings, ... }:
 
 {
     # For mount.cifs, required unless domain name resolution is not needed.

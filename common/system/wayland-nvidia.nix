@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ ... }:
 {
     # Forcing the power management to Performance
     # powerManagement = {
