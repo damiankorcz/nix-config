@@ -6,7 +6,6 @@
     environment.systemPackages = with pkgs; [
         # Applications
         mpv                                     # Video Player
-        svp                                     # SmoothVideo Project 4 - Converts any video to 60 fps
         brave                                   # Web Browser
         vscode                                  # Code Editor
         spotify                                 # Music Streaming
@@ -24,6 +23,7 @@
         simplescreenrecorder                    # Screen Recorder
         inkscape-with-extensions                # Vector Graphics Editor
         #libreoffice-qt6-fresh                  # Office Suite
+        exodus                                  # Crypto Wallet
 
         # Peripherals
         vial                                    # Keyboard Firmware Manager
@@ -79,14 +79,6 @@
         coolercontrol.enable = true;    # Cooling Device Control
         gnupg.agent.enable = true;
         adb.enable = true;              # Android Debug Bridge (ADB)
-
-        #home-manager.enable = true;    # Nix User Environment Configurator
-        #nix-ld.enable  = true;         # TEMP
-    };
-
-    programs.xppen = {
-        enable = true;
-        package = pkgs.xppen_3; # or `pkgs.xppen_4` for the newer driver
     };
 
     # ------------ Flatpak ------------
