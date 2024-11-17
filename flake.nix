@@ -15,6 +15,7 @@
 			# nix community's cache server
 			"https://nix-community.cachix.org"
 		];
+
 		trusted-public-keys = [
 			# the default public key of cache.nixos.org, it's built-in, no need to add it here
 			"cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
@@ -29,7 +30,7 @@
 		nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
 
 		# NixOS Package Source with XP Pen Drivers / app
-		nixpkgs-xppen.url = "github:gepbird/nixpkgs?ref=xppen-init-v3-v4-nixos-module";
+		xppen-pr.url = "github:gepbird/nixpkgs/xppen-init-v3-v4-nixos-module";
 
 		# Declarative Flatpak Manager
 		# Use github:gmodena/nix-flatpak?ref=<tag> to pin releases.
@@ -60,7 +61,7 @@
 		nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 	};
 
-	outputs = inputs@{ self, nixpkgs, nixpkgs-xppen, nix-flatpak, home-manager, sops-nix, disko, nixos-hardware }:
+	outputs = inputs@{ self, nixpkgs, xppen-pr, nix-flatpak, home-manager, sops-nix, disko, nixos-hardware }:
 	let
 		userSettings = {
 			username = "damian"; # Username
@@ -75,7 +76,7 @@
 	in {
 		nixosConfigurations = {
 			# Desktop (Custom Build)
-			nixos-desktop = nixpkgs-xppen.lib.nixosSystem {
+			nixos-desktop = nixpkgs.lib.nixosSystem {
 				system = "x86_64-linux";
 				modules = [
 					./hosts/desktop/default.nix
@@ -87,17 +88,17 @@
 						home-manager.useGlobalPkgs = true;
 					}
 
-					sops-nix.nixosModules.sops
+					# sops-nix.nixosModules.sops
 					
+					{
+						nix.settings.trusted-users = [ "$(userSettings.userName)" ];
+					}
+
 					nixos-hardware.nixosModules.common-cpu-amd
 					nixos-hardware.nixosModules.common-gpu-amd
 					nixos-hardware.nixosModules.common-gpu-nvidia-sync
 					nixos-hardware.nixosModules.common-pc
 					nixos-hardware.nixosModules.common-pc-ssd
-
-					{
-						nix.settings.trusted-users = [ "$(userSettings.userName)" ];
-					}
 				];
 
 				specialArgs = {
@@ -119,7 +120,7 @@
 						home-manager.useGlobalPkgs = true;
 					}
 
-					sops-nix.nixosModules.sops
+					# sops-nix.nixosModules.sops
 
 					nixos-hardware.nixosModules.common-cpu-intel
 					nixos-hardware.nixosModules.common-gpu-intel
@@ -147,7 +148,7 @@
 						home-manager.useGlobalPkgs = true;
 					}
 
-					sops-nix.nixosModules.sops
+					# sops-nix.nixosModules.sops
 
 					nixos-hardware.nixosModules.raspberry-pi-4
 				];
