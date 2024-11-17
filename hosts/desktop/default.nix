@@ -26,25 +26,25 @@
 	nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
 
 	# System Name / Host name
-    networking.hostName = "nixos-desktop";
+	networking.hostName = "nixos-desktop";
 	networking.useDHCP = lib.mkDefault true;
 
-    # Fixing time sync when dualbooting with Windows
-    time.hardwareClockInLocalTime = true;
+	# Fixing time sync when dualbooting with Windows
+	time.hardwareClockInLocalTime = true;
 
-    services = {
+	services = {
 		# Video Drivers
 		xserver.videoDrivers = [ "nvidia" ]; # "radeon" "modesetting" "fbdev"
 
 		# Enable periodic SSD TRIM of mounted partitions in background
-        fstrim.enable = true;
+		fstrim.enable = true;
 
-        # Configure keymap in X11
-        xserver.xkb = {
-            layout = "us";
-            variant = "";
-        };
-    };
+		# Configure keymap in X11
+		xserver.xkb = {
+				layout = "us";
+				variant = "";
+		};
+	};
 
 	systemd.services."undervolt" = {
 		enable = true;
