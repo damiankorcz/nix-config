@@ -10,10 +10,11 @@
         #nnn                # Ncurses-based File Browser
         #gh                 # GitHub CLI Tool
 
-        # Web Dev
+        # Development Dependencies
         pnpm                # Fast, disk space efficient package manager for JavaScript
         nodejs_20           # JavaScript runtime environment (20 is latest compatible with pnpm)
         python313           # Python 3.13
+        nixd                # Nix language server
 
         # Terminal Tool Alternatives
         ripgrep             # 'grep' Alternative
