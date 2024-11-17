@@ -10,7 +10,7 @@
         vscode                                  # Code Editor
         spotify                                 # Music Streaming
         birdtray                                # Mail system tray notification icon for Thunderbird
-        syncplay                                # Synchronise Media Players
+        #syncplay                                # Synchronise Media Players
         obsidian                                # Note Taking
         gearlever                               # AppImage Manager
         argyllcms                               # Colour Managment System
@@ -23,7 +23,7 @@
         simplescreenrecorder                    # Screen Recorder
         inkscape-with-extensions                # Vector Graphics Editor
         #libreoffice-qt6-fresh                  # Office Suite
-        exodus                                  # Crypto Wallet
+        #exodus                                  # Crypto Wallet
 
         # Peripherals
         vial                                    # Keyboard Firmware Manager
