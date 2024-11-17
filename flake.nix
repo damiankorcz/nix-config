@@ -74,10 +74,15 @@
 		};
 
 	in {
+		# https://github.com/nix-community/vscode-nix-ide/issues/412#issuecomment-2295386507
+		formatter.x86_64-linux = inputs.nixpkgs.legacyPackages.x86_64-linux.nixfmt-rfc-style;
+
 		nixosConfigurations = {
 			# Desktop (Custom Build)
 			nixos-desktop = nixpkgs.lib.nixosSystem {
 				system = "x86_64-linux";
+				
+				
 				modules = [
 					./hosts/desktop/default.nix
 
