@@ -95,12 +95,12 @@
         # kernelPackages = pkgs.linuxPackages; # LTS
         kernelPackages = pkgs.linuxPackagesFor (pkgs.linux_6_11.override {
             argsOverride = rec {
-                version = "6.11.5";
-                modDirVersion = "6.11.5";
+                version = "6.11.8";
+                modDirVersion = "6.11.8";
 
                 src = pkgs.fetchurl {
                     url = "https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-${version}.tar.xz";
-                    sha256 = "01rafnqal2v96dzkabz0irymq4sc9ja00ggyv1xn7yzjnyrqa527";
+                    sha256 = "0g9wz6dqbq9h5yiiz8sdma4k1cmr4n2sxzvhrsz2090mzr2ais5f";
                 };
 
                 # Source: https://github.com/D0023R/linux_kernel_15khz
