@@ -41,8 +41,8 @@
 
 		# Configure keymap in X11
 		xserver.xkb = {
-				layout = "us";
-				variant = "";
+			layout = "us";
+			variant = "";
 		};
 	};
 

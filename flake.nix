@@ -109,7 +109,7 @@
 				specialArgs = {
 					# Pass config variables from above
 					inherit userSettings;
-					
+
 					inherit inputs;
 				};
 			};
@@ -182,10 +182,10 @@
 				];
 
 				specialArgs = {
-					inherit inputs;
-
 					# Pass config variables from above
 					inherit userSettings;
+
+					inherit inputs;
 				};
 			};
 		};

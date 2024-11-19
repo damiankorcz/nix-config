@@ -44,7 +44,7 @@
 	# ------------ Hardware ------------
 
 	hardware = {
-		cpu.amd = {
+        cpu.amd = {
             updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
             ryzen-smu.enable = true; # kernel driver that exposes access to the SMU (System Management Unit). Needed for Undervolting script.
         };
@@ -54,7 +54,7 @@
 
 		# Nvidia configuration
 		# https://nixos.wiki/wiki/Nvidia
-		nvidia = {
+        nvidia = {
             open = true;
 			nvidiaSettings = true;
 			modesetting.enable = true;
@@ -83,7 +83,7 @@
 
         blacklistedKernelModules = lib.mkDefault [ "nouveau" ];
 
-		kernelParams = [
+        kernelParams = [
             "video=DVI-I-1:640x480ieS"
             #"video=DVI-I-1:320x240eS"
             "nvidia.NVreg_PreserveVideoMemoryAllocations=1"

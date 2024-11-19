@@ -23,7 +23,7 @@
 
 	# ------------ Base System ------------
 	nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-	
+
 	networking = {
 		# System Name / Host name
 		hostName = "nixos-laptop";
@@ -34,28 +34,29 @@
 		# Enables wireless and changes the backend to iwd
 		# https://nixos.wiki/wiki/Iwd
 		wireless.iwd.enable = true;
-        networkmanager.wifi.backend = "iwd";
+
+		networkmanager.wifi.backend = "iwd";
 	};
 
-    # Fixing time sync when dualbooting with Windows
-    time.hardwareClockInLocalTime = true;
+	# Fixing time sync when dualbooting with Windows
+	time.hardwareClockInLocalTime = true;
 
-    services = {
+	services = {
 		# Video Drivers
-        xserver.videoDrivers = [ "nvidia" ]; # "modesetting" "fbdev"
-	
+		xserver.videoDrivers = [ "nvidia" ]; # "modesetting" "fbdev"
+
 		# Enable periodic SSD TRIM of mounted partitions in background
-        fstrim.enable = true;
+		fstrim.enable = true;
 
-        # Enable the KDE Plasma Desktop Environment.
-        desktopManager.plasma6.enable = true;
+		# Enable the KDE Plasma Desktop Environment.
+		desktopManager.plasma6.enable = true;
 
-        # Configure keymap in X11
-        xserver.xkb = {
-            layout = "gb";
-            variant = "";
-        };
-    };
+		# Configure keymap in X11
+		xserver.xkb = {
+				layout = "gb";
+				variant = "";
+		};
+	};
 
 	# ------------ Nix ------------
 
