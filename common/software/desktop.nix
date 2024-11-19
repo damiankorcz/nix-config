@@ -47,6 +47,7 @@
         kdePackages.filelight                   # Quickly visualize your disk space usage
         kdePackages.kde-gtk-config              # Syncs KDE settings to GTK applications
         kdePackages.partitionmanager            # Manage disks, partitions and file systems
+        kdePackages.kleopatra
 
         wineWowPackages.stagingFull             # Run Windows Apps on Linux
         winetricks                              # Script to install DLLs needed to work around problems in Wine
