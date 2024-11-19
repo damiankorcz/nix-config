@@ -27,7 +27,7 @@
 
 | **Specification**         | **Description**                                                                        |
 | ------------------------- | -------------------------------------------------------------------------------------- |
-| **Operating System**      | Windows 11 Pro x64 / NixOS (Dual Boot)                                                 |
+| **Operating System**      | Windows 11 Pro / NixOS (Dual Boot)                                                 |
 | **Case**                  | Phanteks Enthoo Evolv ATX (Galaxy Silver)                                              |
 | **CPU**                   | AMD Ryzen R7 5700X3D (8c \/ 16t 3 GHz Base \/ 4.1 GHz Turbo) -30mv All Core Undervolt  |
 | **Watercooler**           | Corsair Hydro H115i Pro 280mm                                                          |
@@ -51,7 +51,7 @@
 
 | **Specification**                 | **Description**                                                               |
 | --------------------------------- | ----------------------------------------------------------------------------- |
-| **Operating System**              | Windows 11 Pro x64 / NixOS (Dual Boot)                                        |
+| **Operating System**              | Windows 11 Pro / NixOS (Dual Boot)                                        |
 | **CPU**                           | Intel Core i5-10210U (4c \/ 8t 1.6 GHz Base \/ 4.2 GHz Turbo)                 |
 | **RAM**                           | 8 GB DDR4-2666 SDRAM (onboard)                                                |
 | **GPU (Integrated)**              | Intel Optane Memory H10 (512 GB NVMe M.2 SSD + 32 GB Intel Optane memory)     |
