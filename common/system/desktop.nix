@@ -96,9 +96,9 @@
 
     hardware = {
         # Enables Xbox One Controller Adapter support
-		xone.enable = true;
+        xone.enable = true;
 
-		# Non-root access to the firmware of QMK Keyboards
-		keyboard.qmk.enable = true;
+        # Non-root access to the firmware of QMK Keyboards
+        keyboard.qmk.enable = true;
     };
 }
