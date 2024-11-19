@@ -51,12 +51,12 @@
 
 | **Specification**                 | **Description**                                                               |
 | --------------------------------- | ----------------------------------------------------------------------------- |
-| **Operating System**              | Windows 11 Pro / NixOS (Dual Boot)                                        |
+| **Operating System**              | Windows 11 Pro / NixOS (Dual Boot)                                            |
 | **CPU**                           | Intel Core i5-10210U (4c \/ 8t 1.6 GHz Base \/ 4.2 GHz Turbo)                 |
 | **RAM**                           | 8 GB DDR4-2666 SDRAM (onboard)                                                |
-| **GPU (Integrated)**              | Intel Optane Memory H10 (512 GB NVMe M.2 SSD + 32 GB Intel Optane memory)     |
+| **GPU (Integrated)**              | Intel UHD Graphics 620                                                        |
 | **GPU (Discrete)**                | NVIDIA GeForce MX350 (2 GB GDDR5 dedicated)                                   |
-| **Storage (SSD) Linux & Windows** | Lexar NM790 NVMe (1TB)                                                        |
+| **Storage (SSD) Linux & Windows** | Intel Optane Memory H10 (512 GB NVMe M.2 SSD + 32 GB Intel Optane memory)     |
 | **Monitor**                       | 13.3" 1080p IPS 400 nits 100% sRGB 60Hz                                       |
 | **Wireless Adapter**              | Intel Wi-Fi 6 AX201 (2x2) and Bluetooth 5 combo                               |
 
