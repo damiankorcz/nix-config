@@ -114,7 +114,7 @@
 				};
 			};
 
-			# Laptop (Envy 13 2020)
+			# Laptop (HP Envy 13 2020)
 			nixos-laptop = nixpkgs.lib.nixosSystem {
 				system = "x86_64-linux";
 				modules = [

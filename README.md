@@ -21,7 +21,7 @@
 
 # 🎯 Hosts
 
-## 🖥️ Main Desktop
+## 🖥️ Main Desktop - Custom Build
 <details>
 <summary>Specification</summary>
 
@@ -45,7 +45,7 @@
 
 </details>
 
-## 💻 Laptop
+## 💻 Laptop - HP Envy 13 (2020) Model: ba0553na
 <details>
 <summary>Specification</summary>
 
