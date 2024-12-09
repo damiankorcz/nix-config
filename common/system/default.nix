@@ -18,7 +18,13 @@
         ];
 
         # Boot Splash Screen
-        # plymouth.enable = true;        
+        # plymouth.enable = true;
+
+        # Bandaid for LVM warnings on boot
+        # https://github.com/NixOS/nixpkgs/issues/342082#issuecomment-2384783512
+        initrd.preLVMCommands = ''
+            export LVM_SUPPRESS_FD_WARNINGS=1
+        '';
     };
 
     # ------------ Cleanup ------------
