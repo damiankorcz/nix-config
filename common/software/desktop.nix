@@ -8,6 +8,7 @@
         mpv                                     # Video Player
         brave                                   # Web Browser
         vscode                                  # Code Editor
+        firefox                                  # Web Browser
         spotify                                 # Music Streaming
         birdtray                                # Mail system tray notification icon for Thunderbird
         #syncplay                                # Synchronise Media Players
@@ -22,11 +23,13 @@
         gimp-with-plugins                       # Image Manipulation Program
         simplescreenrecorder                    # Screen Recorder
         inkscape-with-extensions                # Vector Graphics Editor
-        #libreoffice-qt6-fresh                  # Office Suite
+        libreoffice-qt6-fresh                  # Office Suite
         #exodus                                  # Crypto Wallet
 
         # Peripherals
+        qmk                                     # Keyboard Firmware
         vial                                    # Keyboard Firmware Manager
+        dfu-util                                 # USB Programmer
         jamesdsp                                # Audio effect processor for PipeWire clients (EQ for Headphones)
         qpwgraph                                # Qt graph manager for PipeWire
         naps2                                   # Document Scanning
