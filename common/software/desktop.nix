@@ -111,4 +111,11 @@
         enable = true;
         binfmt = true;
     };
+
+    # Temporary fix. Do this to figure out what is causing it: https://discourse.nixos.org/t/how-to-find-which-package-dependency-it-is/49432
+    nixpkgs.config.permittedInsecurePackages = [
+        "dotnet-core-combined"
+        "dotnet-sdk-6.0.428"
+        "dotnet-sdk-wrapped-6.0.428"
+    ];
 }
