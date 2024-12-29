@@ -13,7 +13,7 @@
 		# Common Config Modules
 		../../common/home.nix
 		../../common/samba.nix
-		../../common/software/obs.nix
+		#../../common/software/obs.nix
 		../../common/software/xppen.nix
 		../../common/software/desktop.nix
 		../../common/software/emulators.nix
