@@ -60,7 +60,7 @@
 			modesetting.enable = true;
 			powerManagement.enable = false;
 			powerManagement.finegrained = false;
-			package = config.boot.kernelPackages.nvidiaPackages.beta; # Temporarily on Beta before this gets fixed: https://github.com/NixOS/nixpkgs/issues/357643
+			package = config.boot.kernelPackages.nvidiaPackages.latest;
 			
 			prime = {
 				# NVIDIA GPU is always on (does all rendering). Output enabled to displays attached only to the integrated Intel/AMD GPU without a multiplexer.
