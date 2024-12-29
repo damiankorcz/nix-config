@@ -4,14 +4,13 @@
     # ------------ Nixpkgs ------------
     
     environment.systemPackages = with pkgs; [
-        # emulationstation-de # Emulation Frontend (Outdated - https://github.com/NixOS/nixpkgs/pull/299298)
-        
+        # emulationstation-de # Emulation Frontend
         mame                # Arcade Games
 
         dosbox-staging      # DOS
         dosbox-x            # DOS
 
-        duckstation         # PlayStation 1 (Outdated - https://github.com/NixOS/nixpkgs/issues/335958)
+        #duckstation         # PlayStation 1 (Outdated - https://github.com/NixOS/nixpkgs/issues/335958)
         pcsx2               # PlayStation 2
         rpcs3               # PlayStation 3
         ppsspp-qt           # PlayStation Portable
@@ -24,7 +23,7 @@
         mgba                # Nintendo Game Boy Advance
         dolphin-emu         # Nintendo GameCube & Wii
         cemu                # Nintendo Wii U
-        ryujinx             # Nintendo Switch
+        #ryujinx-greemdev             # Nintendo Switch
         snes9x-gtk          # Super Nintendo Entertainment System
 
         blastem             # Sega Genesis / Megadrive
@@ -50,7 +49,12 @@
     
     # ------------ Flatpak ------------
 
-    services.flatpak.packages = [ ];
+    services.flatpak.packages = [
+        # Duckstation changed licensing so nixpkgs is outdated and in limbo.
+        # https://github.com/NixOS/nixpkgs/issues/341915
+        # https://github.com/NixOS/nixpkgs/issues/342570
+        "org.duckstation.DuckStation"
+     ];
 
     # App Images
     # - PlayStation Vita = https://github.com/Vita3K/Vita3K/releases
