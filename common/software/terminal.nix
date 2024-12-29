@@ -5,6 +5,7 @@
         # General Apps
         micro               # Terminal-based Text Editor
         lazygit             # Simple terminal UI for git commands
+        yazi                 # File Manager
         mc                  # File Manager
         #atuin              # Shell History Replacement
         #nnn                # Ncurses-based File Browser
@@ -24,9 +25,9 @@
 
         # Monitoring / Stats
         fastfetch           # System Info
-        lm_sensors          # Reading hardware sensors
+        #lm_sensors          # Reading hardware sensors
         nvtopPackages.full  # Task monitor for GPUs and accelerators
-        radeontop           # Task monitor for GPUs and accelerators for AMD Radeon
+        #radeontop           # Task monitor for GPUs and accelerators for AMD Radeon
         btop                # System Monitor
         speedtest-go        # Internet Speed Test (speedtest.net)
 
@@ -39,7 +40,7 @@
         imagemagick         # Image Manipulation Tool
         unrar               # Utility for RAR archives
         nixpkgs-review      # Review pull-requests on https://github.com/NixOS/nixpkgs
-        xorg.xlsclients     # See which apps are running under xwayland
+        #xorg.xlsclients     # See which apps are running under xwayland
 
         # Secret / Keys
         sops                # Managing Secrets Tool
