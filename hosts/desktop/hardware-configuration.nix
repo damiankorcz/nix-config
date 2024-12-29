@@ -93,14 +93,14 @@
         # kernelPackages = pkgs.linuxPackages_xanmod_latest; # https://xanmod.org/
         # kernelPackages = pkgs.linuxPackages_latest; # Latest Stable
         # kernelPackages = pkgs.linuxPackages; # LTS
-        kernelPackages = pkgs.linuxPackagesFor (pkgs.linux_6_11.override {
+        kernelPackages = pkgs.linuxPackagesFor (pkgs.linux_6_12.override {
             argsOverride = rec {
-                version = "6.12.1";
-                modDirVersion = "6.12.1";
+                version = "6.12.5";
+                modDirVersion = "6.12.5";
 
                 src = pkgs.fetchurl {
                     url = "https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-${version}.tar.xz";
-                    sha256 = "06f6y37fi7galj001wwrq5pz3vhdl9nryydf3f4yqwnkdpcb34q1";
+                    sha256 = "1k9bc0lpgg29bh7zqz3pm91hhjnfyl5aw6r6hph3ha743k77y81r";
                 };
 
                 # Source: https://github.com/D0023R/linux_kernel_15khz
@@ -123,8 +123,8 @@
                     {
                         name = "D0023R's 03 linux 15khz dcn1 dcn2 interlaced mode fix patch";
                         patch = builtins.fetchurl {
-                            url = "https://raw.githubusercontent.com/D0023R/linux_kernel_15khz/19ba7d6653a15a976db1eccb4a2a1f3e2104618f/linux-6.12/03_linux_15khz_dcn1_dcn2_interlaced_mode_fix.patch";
-                            sha256 = "146f73w6mc17lcnyjwsfsrg2b0rg3868s47k03n8zbifxdc6q26c";
+                            url = "https://raw.githubusercontent.com/D0023R/linux_kernel_15khz/104584d9816c50bbd3e8529521d7a3f230028fcc/linux-6.12/03_linux_15khz_dcn1_dcn2_interlaced_mode_fix.patch";
+                            sha256 = "0wpf1lfc283bmqag2kbjjph93b9gg6v4fwqhaprvw6bpbgvklbxg";
                         };
                     }
                     {
