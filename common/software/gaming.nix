@@ -9,6 +9,8 @@
         libnotify     # Library for Sending Desktop Notifications to the Notification Daemon
         prismlauncher # Launcher for Minecraft
 
+        #moonlight-qt    # Play your PC games on almost any device
+
         # Sched-ext userspace Schedulers (Available in Kernel 6.12 or newer)
         # https://github.com/sched-ext/scx
         # https://www.kernel.org/doc/html/next/scheduler/sched-ext.html
@@ -16,6 +18,17 @@
         scx.full
     ];
 
+    # services.sunshine = {
+    #     enable = true;
+    #     openFirewall = true;
+    #     capSysAdmin = true;
+    # };
+
+    # ------------ Flatpak ------------
+
+    services.flatpak.packages = [ 
+        "com.parsecgaming.parsec"
+    ];
 
     programs = {
         # Steam locations that should be persistent:
