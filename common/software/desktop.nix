@@ -71,14 +71,16 @@
 
     # https://github.com/NixOS/nixpkgs/blob/nixos-unstable/nixos/modules/services/desktop-managers/plasma6.nix#L135
     environment.plasma6.excludePackages = with pkgs.kdePackages; [
-        #krdp            # Remove Desktop (RDP)
         khelpcenter     # Help app
-        #konsole         # Terminal Emulator
+        krdp            # Remove Desktop (RDP)
+        discover        # Software Store
+        #konsole        # Terminal Emulator
     ];
 
     # ------------ Programs with Daemons ------------
 
     programs = {
+        kde-pim.enable = false;         # Used for Kontact / Kmail
         thunderbird.enable = true;      # Email Client
         coolercontrol.enable = true;    # Cooling Device Control
         gnupg.agent.enable = true;
@@ -102,6 +104,7 @@
         packages = [ 
             { appId = "com.discordapp.DiscordCanary"; origin = "flathub-beta";  }
             "com.discordapp.Discord" # Requires XDG_SESSION_TYPE=x11 for screensharing to work.
+            "dev.vencord.Vesktop"
         ];
     };
 
