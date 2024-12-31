@@ -7,7 +7,6 @@
         # Applications
         mpv                                     # Video Player
         brave                                   # Web Browser
-        vscode                                  # Code Editor
         firefox                                  # Web Browser
         spotify                                 # Music Streaming
         syncplay                                # Synchronise Media Players

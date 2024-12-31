@@ -2,9 +2,6 @@
 
 {
     environment.systemPackages = with pkgs; [
-        # Terminal
-        ghostty
-
         # General Apps
         micro               # Terminal-based Text Editor
         lazygit             # Simple terminal UI for git commands
@@ -13,12 +10,6 @@
         #atuin              # Shell History Replacement
         #nnn                # Ncurses-based File Browser
         #gh                 # GitHub CLI Tool
-
-        # Development Dependencies
-        pnpm                # Fast, disk space efficient package manager for JavaScript
-        nodejs_20           # JavaScript runtime environment (20 is latest compatible with pnpm)
-        python313           # Python 3.13
-        nixd                # Nix language server
 
         # Terminal Tool Alternatives
         ripgrep             # 'grep' Alternative

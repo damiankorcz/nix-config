@@ -16,6 +16,7 @@
 		#../../common/software/obs.nix
 		../../common/software/xppen.nix
 		../../common/software/desktop.nix
+		../../common/software/development.nix
 		../../common/software/emulators.nix
 		../../common/software/gaming.nix
 		../../common/software/terminal.nix
