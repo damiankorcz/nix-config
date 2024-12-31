@@ -74,6 +74,7 @@
             source-serif
             corefonts
             vistafonts
+            ubuntu-sans
 
             # Nerdfonts
             nerd-fonts.symbols-only
