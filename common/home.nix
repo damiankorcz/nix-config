@@ -49,8 +49,8 @@
                 extraConfig = {
                     init.defaultBranch = "main";
                     safe.directory = [
-                    "/etc/nixos"
-                    "/home/${userSettings.username}"
+                        "/etc/nixos"
+                        "/home/${userSettings.username}"
                     ];
                 };
             };
