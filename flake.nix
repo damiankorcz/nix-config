@@ -4,12 +4,6 @@
 	nixConfig = {
 		# override the default substituters
 		substituters = [
-			# cache mirror located in China
-			# status: https://mirror.sjtu.edu.cn/
-			#"https://mirror.sjtu.edu.cn/nix-channels/store"
-			# status: https://mirrors.ustc.edu.cn/status/
-			# "https://mirrors.ustc.edu.cn/nix-channels/store"
-
 			"https://cache.nixos.org"
 
 			# nix community's cache server
@@ -44,24 +38,11 @@
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
 
-		# Secrets Management
-		# https://github.com/mic92/sops-nix
-		sops-nix = {
-			url = "github:mic92/sops-nix";
-			inputs.nixpkgs.follows = "nixpkgs";
-		};
-
-		# Declarative Disk Partitioning
-		disko = {
-			url = "github:nix-community/disko";
-			inputs.nixpkgs.follows = "nixpkgs";
-		};
-
 		# https://github.com/NixOS/nixos-hardware
 		nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 	};
 
-	outputs = inputs@{ self, nixpkgs, xppen-pr, nix-flatpak, home-manager, sops-nix, disko, nixos-hardware }:
+	outputs = inputs@{ self, nixpkgs, xppen-pr, nix-flatpak, home-manager, nixos-hardware }:
 	let
 		userSettings = {
 			username = "damian"; # Username
@@ -92,15 +73,12 @@
 					{
 						home-manager.useGlobalPkgs = true;
 					}
-
-					# sops-nix.nixosModules.sops
-					
+			
 					{
 						nix.settings.trusted-users = [ "$(userSettings.userName)" ];
 					}
 
 					nixos-hardware.nixosModules.common-cpu-amd
-					#nixos-hardware.nixosModules.common-gpu-amd
 					nixos-hardware.nixosModules.common-gpu-nvidia-sync
 					nixos-hardware.nixosModules.common-pc
 					nixos-hardware.nixosModules.common-pc-ssd
@@ -127,37 +105,11 @@
 						home-manager.useGlobalPkgs = true;
 					}
 
-					# sops-nix.nixosModules.sops
-
 					nixos-hardware.nixosModules.common-cpu-intel
 					nixos-hardware.nixosModules.common-gpu-intel
 					nixos-hardware.nixosModules.common-gpu-nvidia
 					nixos-hardware.nixosModules.common-pc
 					nixos-hardware.nixosModules.common-pc-ssd
-				];
-
-				specialArgs = {
-					# Pass config variables from above
-					inherit userSettings;
-				};
-			};
-
-			# Raspberry Pi 4 (4GB)
-			nixos-pi4 = nixpkgs.lib.nixosSystem {
-				system = "aarch64-linux";
-				modules = [
-					./hosts/pi4/default.nix
-
-					nix-flatpak.nixosModules.nix-flatpak
-
-					home-manager.nixosModules.home-manager
-					{
-						home-manager.useGlobalPkgs = true;
-					}
-
-					# sops-nix.nixosModules.sops
-
-					nixos-hardware.nixosModules.raspberry-pi-4
 				];
 
 				specialArgs = {
@@ -176,9 +128,6 @@
 					{
 						home-manager.useGlobalPkgs = true;
 					}
-
-					#sops-nix.nixosModules.sops
-					disko.nixosModules.disko
 				];
 
 				specialArgs = {
