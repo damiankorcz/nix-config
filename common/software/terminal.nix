@@ -2,6 +2,9 @@
 
 {
     environment.systemPackages = with pkgs; [
+        # Terminal
+        ghostty
+
         # General Apps
         micro               # Terminal-based Text Editor
         lazygit             # Simple terminal UI for git commands
