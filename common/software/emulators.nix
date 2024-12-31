@@ -23,7 +23,7 @@
         mgba                # Nintendo Game Boy Advance
         dolphin-emu         # Nintendo GameCube & Wii
         cemu                # Nintendo Wii U
-        #ryujinx-greemdev             # Nintendo Switch
+        ryujinx-greemdev             # Nintendo Switch
         snes9x-gtk          # Super Nintendo Entertainment System
 
         blastem             # Sega Genesis / Megadrive
@@ -54,6 +54,25 @@
         # https://github.com/NixOS/nixpkgs/issues/341915
         # https://github.com/NixOS/nixpkgs/issues/342570
         "org.duckstation.DuckStation"
+        
+        # "org.mamedev.MAME"
+        # "io.github.dosbox-staging"
+        # "com.dosbox_x.DOSBox-X"
+        # "net.pcsx2.PCSX2"
+        # "net.rpcs3.RPCS3"
+        # "org.ppsspp.PPSSPP"
+        # "com.github.Rosalie241.RMG"
+        # "net.kuribo64.melonDS"
+        # "io.github.sameboy.SameBoy"
+        # "io.mgba.mGBA"
+        # "org.DolphinEmu.dolphin-emu"
+        # "info.cemu.Cemu"
+        # "org.ryujinx.Ryujinx"
+        # "com.snes9x.Snes9x"
+        # "com.retrodev.blastem"
+        # "org.flycast.Flycast"
+        # "com.github.AmatCoder.mednaffe"
+        # "app.xemu.xemu"
      ];
 
     # App Images

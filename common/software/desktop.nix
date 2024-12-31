@@ -10,8 +10,7 @@
         vscode                                  # Code Editor
         firefox                                  # Web Browser
         spotify                                 # Music Streaming
-        birdtray                                # Mail system tray notification icon for Thunderbird
-        #syncplay                                # Synchronise Media Players
+        syncplay                                # Synchronise Media Players
         obsidian                                # Note Taking
         gearlever                               # AppImage Manager
         argyllcms                               # Colour Managment System
@@ -20,11 +19,10 @@
         trackma-qt                              # AniList Client
         microsoft-edge                          # Web Browser
         github-desktop                          # Github Client
-        gimp-with-plugins                       # Image Manipulation Program
+        #gimp-with-plugins                       # Image Manipulation Program
         simplescreenrecorder                    # Screen Recorder
         inkscape-with-extensions                # Vector Graphics Editor
         libreoffice-qt6-fresh                  # Office Suite
-        #exodus                                  # Crypto Wallet
 
         # Peripherals
         qmk                                     # Keyboard Firmware
@@ -32,37 +30,23 @@
         dfu-util                                 # USB Programmer
         jamesdsp                                # Audio effect processor for PipeWire clients (EQ for Headphones)
         qpwgraph                                # Qt graph manager for PipeWire
-        naps2                                   # Document Scanning
+        #naps2                                   # Document Scanning / ISSUE: https://github.com/NixOS/nixpkgs/issues/326335
 
         # KDE Applications (QT)
         krita                                   # Digital Painting
-        digikam                                 # Photo Management Application
         krita-plugin-gmic                       # Image Processing Plugin
         kdePackages.kate                        # Text / Code Editor
         kdePackages.kalk                        # Calculator
         kdePackages.elisa                       # Music Player
-        #kdePackages.kamoso                     # Webcam Utility (Marked as Broken)
         kdePackages.kclock                      # Clock
-        #kdePackages.arianna                    # Epub Reader
         kdePackages.kweather                    # Weather
-        # kdePackages.skanlite                  # Lite Image Scanning
-        # kdePackages.skanpage                  # Multi-page Document Scanning
         kdePackages.filelight                   # Quickly visualize your disk space usage
         kdePackages.kde-gtk-config              # Syncs KDE settings to GTK applications
         kdePackages.partitionmanager            # Manage disks, partitions and file systems
-        kdePackages.kleopatra
+        #kdePackages.kleopatra
 
         wineWowPackages.stagingFull             # Run Windows Apps on Linux
         winetricks                              # Script to install DLLs needed to work around problems in Wine
-
-        # Vivaldi - Currently some dependancy issues require this to work
-        # https://github.com/NixOS/nixpkgs/issues/309056
-        # https://github.com/NixOS/nixpkgs/pull/292148
-        # (vivaldi.overrideAttrs (oldAttrs: {
-        #     dontWrapQtApps = false;
-        #     dontPatchELF = true;
-        #     nativeBuildInputs = oldAttrs.nativeBuildInputs ++ [ pkgs.kdePackages.wrapQtAppsHook ];
-        # }))
     ];
 
     # ------------ Excludes ------------
@@ -74,14 +58,12 @@
         khelpcenter     # Help app
         krdp            # Remove Desktop (RDP)
         discover        # Software Store
-        #konsole        # Terminal Emulator
     ];
 
     # ------------ Programs with Daemons ------------
 
     programs = {
         kde-pim.enable = false;         # Used for Kontact / Kmail
-        thunderbird.enable = true;      # Email Client
         coolercontrol.enable = true;    # Cooling Device Control
         gnupg.agent.enable = true;
         adb.enable = true;              # Android Debug Bridge (ADB)
@@ -105,6 +87,7 @@
             { appId = "com.discordapp.DiscordCanary"; origin = "flathub-beta";  }
             "com.discordapp.Discord" # Requires XDG_SESSION_TYPE=x11 for screensharing to work.
             "dev.vencord.Vesktop"
+            "eu.betterbird.Betterbird" # Imporved client for Thunderbird. Removed from nixpkgs due to lack of maintainers
         ];
     };
 
@@ -114,11 +97,4 @@
         enable = true;
         binfmt = true;
     };
-
-    # Temporary fix. Do this to figure out what is causing it: https://discourse.nixos.org/t/how-to-find-which-package-dependency-it-is/49432
-    nixpkgs.config.permittedInsecurePackages = [
-        "dotnet-core-combined"
-        "dotnet-sdk-6.0.428"
-        "dotnet-sdk-wrapped-6.0.428"
-    ];
 }
