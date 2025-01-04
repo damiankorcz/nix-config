@@ -42,6 +42,8 @@
 	swapDevices = [ { device = "/dev/disk/by-label/swap"; } ];
 
 	# ------------ Hardware ------------
+    
+    services.xserver.videoDrivers = [ "nvidia" ];
 
 	hardware = {
         cpu.amd = {
@@ -88,6 +90,7 @@
             #"video=DVI-I-1:320x240eS"
             "nvidia.NVreg_PreserveVideoMemoryAllocations=1"
             "nvidia.NVreg_UsePageAttributeTable=1"
+            "amd_pstate=guided"
         ];
 
         # kernelPackages = pkgs.linuxPackages_xanmod_latest; # https://xanmod.org/
