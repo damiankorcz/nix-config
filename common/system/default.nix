@@ -75,10 +75,10 @@
             corefonts
             vistafonts
             ubuntu-sans
+            cascadia-code
 
             # Nerdfonts
             nerd-fonts.symbols-only
-            nerd-fonts.caskaydia-cove
             nerd-fonts.fira-code
             nerd-fonts.geist-mono
             nerd-fonts.blex-mono
