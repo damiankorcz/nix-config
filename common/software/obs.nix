@@ -12,7 +12,7 @@
 
     # OBS + Plugins
     environment.systemPackages = with pkgs; [
-        obs-studio #Open Broadcasting Studio
+        obs-studio # Open Broadcasting Studio
 
         (pkgs.wrapOBS {
             plugins = with pkgs.obs-studio-plugins; [
