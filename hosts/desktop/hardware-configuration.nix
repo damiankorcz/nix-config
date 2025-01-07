@@ -98,12 +98,12 @@
         # kernelPackages = pkgs.linuxPackages; # LTS
         kernelPackages = pkgs.linuxPackagesFor (pkgs.linux_6_12.override {
             argsOverride = rec {
-                version = "6.12.5";
-                modDirVersion = "6.12.5";
+                version = "6.12.8";
+                modDirVersion = "6.12.8";
 
                 src = pkgs.fetchurl {
                     url = "https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-${version}.tar.xz";
-                    sha256 = "1k9bc0lpgg29bh7zqz3pm91hhjnfyl5aw6r6hph3ha743k77y81r";
+                    sha256 = "0y992b484rkkaqdkz5mw2is1l0izxhm3cl7fi5f72jx0bh3dm492";
                 };
 
                 # Source: https://github.com/D0023R/linux_kernel_15khz
@@ -112,49 +112,49 @@
                     {
                         name = "D0023R's 01 linux 15khz patch";
                         patch = builtins.fetchurl {
-                            url = "https://raw.githubusercontent.com/D0023R/linux_kernel_15khz/19ba7d6653a15a976db1eccb4a2a1f3e2104618f/linux-6.12/01_linux_15khz.patch";
-                            sha256 = "05w80cnv50fk0cv6pc919jvnfr2c7f17kg896pjm3j1jjlxxi2jz";
+                            url = "https://raw.githubusercontent.com/D0023R/linux_kernel_15khz/32dc02a74362d736d2585c9be6e9ce22490c7f04/linux-6.12/01_linux_15khz.patch";
+                            sha256 = "1iig8sl6527s1a1rgjn9k0g9sanw09rxi9bcjpw1dqmgj4g9rhmm";
                         };
                     }
                     # {
                     #     name = "D0023R's 02 linux 15khz interlaced mode fix patch";
                     #     patch = builtins.fetchurl {
-                    #         url = "https://raw.githubusercontent.com/D0023R/linux_kernel_15khz/19ba7d6653a15a976db1eccb4a2a1f3e2104618f/linux-6.12/02_linux_15khz_interlaced_mode_fix.patch";
-                    #         sha256 = "0ad18gxdrmji5y0yy0h3p22hkvzh61smcp94ibrsan7bvd6qix15";
+                    #         url = "https://raw.githubusercontent.com/D0023R/linux_kernel_15khz/32dc02a74362d736d2585c9be6e9ce22490c7f04/linux-6.12/02_linux_15khz_interlaced_mode_fix.patch";
+                    #         sha256 = "0pnl61pqddhpr3ka5h8am7vzg7p2g52f9hrz2qzji2cdym251di7";
                     #     };
                     # }
                     {
                         name = "D0023R's 03 linux 15khz dcn1 dcn2 interlaced mode fix patch";
                         patch = builtins.fetchurl {
-                            url = "https://raw.githubusercontent.com/D0023R/linux_kernel_15khz/104584d9816c50bbd3e8529521d7a3f230028fcc/linux-6.12/03_linux_15khz_dcn1_dcn2_interlaced_mode_fix.patch";
-                            sha256 = "0wpf1lfc283bmqag2kbjjph93b9gg6v4fwqhaprvw6bpbgvklbxg";
+                            url = "https://raw.githubusercontent.com/D0023R/linux_kernel_15khz/32dc02a74362d736d2585c9be6e9ce22490c7f04/linux-6.12/03_linux_15khz_dcn1_dcn2_dcn3_interlaced_mode_fix.patch";
+                            sha256 = "0fggw0s1681sgsgjvm2266hp7375y7kz00xg3rn59jg6g4mm7r51";
                         };
                     }
                     {
                         name = "D0023R's 04 linux 15khz dce interlaced mode fix patch";
                         patch = builtins.fetchurl {
-                            url = "https://raw.githubusercontent.com/D0023R/linux_kernel_15khz/19ba7d6653a15a976db1eccb4a2a1f3e2104618f/linux-6.12/04_linux_15khz_dce_interlaced_mode_fix.patch";
+                            url = "https://raw.githubusercontent.com/D0023R/linux_kernel_15khz/32dc02a74362d736d2585c9be6e9ce22490c7f04/linux-6.12/04_linux_15khz_dce_interlaced_mode_fix.patch";
                             sha256 = "1wpyxqvi03bxnsa2xw0lpmr1gvfw3ll841bd80lkm6vrdjf8k88v";
                         };
                     }
                     {
                         name = "D0023R's 05 linux 15khz amdgpu pll fix patch";
                         patch = builtins.fetchurl {
-                            url = "https://raw.githubusercontent.com/D0023R/linux_kernel_15khz/19ba7d6653a15a976db1eccb4a2a1f3e2104618f/linux-6.12/05_linux_15khz_amdgpu_pll_fix.patch";
+                            url = "https://raw.githubusercontent.com/D0023R/linux_kernel_15khz/32dc02a74362d736d2585c9be6e9ce22490c7f04/linux-6.12/05_linux_15khz_amdgpu_pll_fix.patch";
                             sha256 = "15yiqpa8j802yv33p5hx887ixfkk7wqg52hggksqgf2vc4kssxwh";
                         };
                     }
                     {
                         name = "D0023R's 06 linux switchres kms drm modesetting patch";
                         patch = builtins.fetchurl {
-                            url = "https://raw.githubusercontent.com/D0023R/linux_kernel_15khz/19ba7d6653a15a976db1eccb4a2a1f3e2104618f/linux-6.12/06_linux_switchres_kms_drm_modesetting.patch";
-                            sha256 = "162c8vknl6n5gldffh9a04mlzcss97q4aid9h8mlqfca6fqazv2w";
+                            url = "https://raw.githubusercontent.com/D0023R/linux_kernel_15khz/32dc02a74362d736d2585c9be6e9ce22490c7f04/linux-6.12/06_linux_switchres_kms_drm_modesetting.patch";
+                            sha256 = "17m3bgacc6zwg8p6g4k9fx4pn3ql23dxhm6m85zgnsnfa087y4b6";
                         };
                     }
                     {
                         name = "D0023R's 07 linux 15khz fix ddc patch";
                         patch = builtins.fetchurl {
-                            url = "https://raw.githubusercontent.com/D0023R/linux_kernel_15khz/19ba7d6653a15a976db1eccb4a2a1f3e2104618f/linux-6.12/07_linux_15khz_fix_ddc.patch";
+                            url = "https://raw.githubusercontent.com/D0023R/linux_kernel_15khz/32dc02a74362d736d2585c9be6e9ce22490c7f04/linux-6.12/07_linux_15khz_fix_ddc.patch";
                             sha256 = "18vpy1j8zshznvc662zgqjln391qhr95wy53hvbq7z8fdv5xvpdg";
                         };
                     }
