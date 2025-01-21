@@ -18,10 +18,15 @@
         trackma-qt                      # AniList Client
         microsoft-edge                  # Web Browser
         github-desktop                  # Github Client
-        #gimp-with-plugins              # Image Manipulation Program
+        gimp              # Image Manipulation Program
         simplescreenrecorder            # Screen Recorder
         inkscape-with-extensions        # Vector Graphics Editor
         libreoffice-qt6-fresh           # Office Suite
+        mailspring              # Email Client
+
+        # Disk Utilities
+        kdiskmark                 # HDD / SSD Benchmark Tool
+        f3                          # Tests flash cards capacity / performance to see if they live up to claimed specifications
 
         # Peripherals
         qmk                             # Keyboard Firmware
@@ -72,9 +77,12 @@
 
     services.flatpak = {
         enable = true;
-        update.auto = {
-            enable = true;
-            onCalendar = "weekly";
+        update = {
+            onActivation = true;
+            auto = {
+                enable = true;
+                onCalendar = "weekly";
+            };
         };
 
         remotes = [
@@ -86,7 +94,6 @@
             { appId = "com.discordapp.DiscordCanary"; origin = "flathub-beta";  }
             "com.discordapp.Discord" # Requires XDG_SESSION_TYPE=x11 for screensharing to work.
             "dev.vencord.Vesktop"
-            "eu.betterbird.Betterbird" # Imporved client for Thunderbird. Removed from nixpkgs due to lack of maintainers
         ];
     };
 
