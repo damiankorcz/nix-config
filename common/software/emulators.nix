@@ -61,6 +61,7 @@
         # "net.pcsx2.PCSX2"
         # "net.rpcs3.RPCS3"
         # "org.ppsspp.PPSSPP"
+        "io.github.lime3ds.Lime3DS"
         # "com.github.Rosalie241.RMG"
         # "net.kuribo64.melonDS"
         # "io.github.sameboy.SameBoy"
