@@ -6,6 +6,10 @@
     environment.systemPackages = with pkgs; [
         # Applications
         mpv                             # Video Player
+        mpvScripts.thumbnail          # Lua script to show preview thumbnails in mpv's OSC seekbar
+        mpvScripts.thumbfast          # High-performance on-the-fly thumbnailer for mpv
+        mpvScripts.uosc               # Feature-rich minimalist proximity-based UI for MPV player
+        
         brave                           # Web Browser
         firefox                         # Web Browser
         spotify                         # Music Streaming
@@ -15,7 +19,7 @@
         argyllcms                       # Colour Managment System
         ente-auth                       # 2FA
         displaycal                      # Display Calibration Tool
-        trackma-qt                      # AniList Client
+        # trackma-qt                      # AniList Client / Currently broken - ISSUE: https://github.com/NixOS/nixpkgs/issues/377206
         microsoft-edge                  # Web Browser
         github-desktop                  # Github Client
         gimp              # Image Manipulation Program
@@ -23,6 +27,7 @@
         inkscape-with-extensions        # Vector Graphics Editor
         libreoffice-qt6-fresh           # Office Suite
         mailspring              # Email Client
+        #fooyin                         # Music Player
 
         # Disk Utilities
         kdiskmark                 # HDD / SSD Benchmark Tool
