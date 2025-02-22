@@ -10,7 +10,7 @@
             device = "nodev";
             useOSProber = true;
             efiSupport = true;
-            configurationLimit = 10;
+            configurationLimit = 20;
             timeoutStyle = "hidden"; # Hold SHIFT during boot to show GRUB
         };
 
