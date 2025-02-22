@@ -8,6 +8,6 @@
 
     programs.xppen = {
         enable = true;
-        package = (import inputs.xppen-pr { inherit (pkgs) system; config.allowUnfree = true; }).xppen_3;
+        package = (import inputs.xppen-pr { inherit (pkgs) system; config.allowUnfree = true; }).xppen_4;
     };
 }
