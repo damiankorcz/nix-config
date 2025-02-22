@@ -77,6 +77,12 @@
         discover        # Software Store
     ];
 
+    # Redirects the MailSpring update URL to prevent the update notification.
+    networking.extraHosts = ''
+        127.0.0.1 updates.getmailspring.com
+    '';
+
+
     # ------------ Programs with Daemons ------------
 
     programs = {
