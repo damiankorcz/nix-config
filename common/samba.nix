@@ -16,6 +16,8 @@
             "x-systemd.mount-timeout=5s"
             "uid=1000"
             "gid=1000"
+            "x-systemd.after=graphical-session.target"
+            "x-systemd.requires=graphical-session.target"
         ];
     };
 }
