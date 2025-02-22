@@ -131,4 +131,20 @@
         openssh.settings.PasswordAuthentication = true;
         openssh.settings.PermitRootLogin = "no";
     };
+
+    # The system doesn't need anything from the network to start so this is disabled for boot speed up.
+    systemd.services.NetworkManager-wait-online.enable = false;
+
+    # Delays services to start once the graphical session is up and running.
+    systemd.services = {
+        fwupd = {
+            after = [ "graphical-session.target" ];
+            wantedBy = [ "graphical-session.target" ];
+        };
+
+        fwupd-refresh = {
+            after = [ "graphical-session.target" ];
+            wantedBy = [ "graphical-session.target" ];
+        };
+    };
 }
