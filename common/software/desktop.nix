@@ -6,9 +6,9 @@
     environment.systemPackages = with pkgs; [
         # Applications
         mpv                             # Video Player
-        mpvScripts.thumbnail          # Lua script to show preview thumbnails in mpv's OSC seekbar
-        mpvScripts.thumbfast          # High-performance on-the-fly thumbnailer for mpv
-        mpvScripts.uosc               # Feature-rich minimalist proximity-based UI for MPV player
+        mpvScripts.thumbnail            # Lua script to show preview thumbnails in mpv's OSC seekbar
+        mpvScripts.thumbfast            # High-performance on-the-fly thumbnailer for mpv
+        mpvScripts.uosc                 # Feature-rich minimalist proximity-based UI for MPV player
         
         brave                           # Web Browser
         firefox                         # Web Browser
@@ -19,22 +19,22 @@
         argyllcms                       # Colour Managment System
         ente-auth                       # 2FA
         displaycal                      # Display Calibration Tool
-        # trackma-qt                      # AniList Client / Currently broken - ISSUE: https://github.com/NixOS/nixpkgs/issues/377206
+        # trackma-qt                    # AniList Client / Currently broken - ISSUE: https://github.com/NixOS/nixpkgs/issues/377206
         microsoft-edge                  # Web Browser
         github-desktop                  # Github Client
-        gimp              # Image Manipulation Program
+        gimp                            # Image Manipulation Program
         simplescreenrecorder            # Screen Recorder
         inkscape-with-extensions        # Vector Graphics Editor
         libreoffice-qt6-fresh           # Office Suite
-        mailspring              # Email Client
-        #fooyin                         # Music Player
+        mailspring                      # Email Client
 
         # Disk Utilities
-        kdiskmark                 # HDD / SSD Benchmark Tool
-        f3                          # Tests flash cards capacity / performance to see if they live up to claimed specifications
+        kdiskmark                       # HDD / SSD Benchmark Tool
+        f3                              # Tests flash cards capacity / performance to see if they live up to claimed specifications
 
         # Peripherals
         qmk                             # Keyboard Firmware
+        solaar                          # Linux device manager for Logitech devices
         vial                            # Keyboard Firmware Manager
         dfu-util                        # USB Programmer
         jamesdsp                        # Audio effect processor for PipeWire clients (EQ for Headphones)
@@ -54,7 +54,7 @@
         kdePackages.partitionmanager    # Manage disks, partitions and file systems
         
         kdePackages.sonnet              # Spelling framework for Qt
-        aspell                # Spell Checker
+        aspell                          # Spell Checker
         aspellDicts.en                  # English dictionary
         aspellDicts.en-science          # English Scientific Jargon dictionary
         aspellDicts.en-computers        # English Computer Jargon dictionary
