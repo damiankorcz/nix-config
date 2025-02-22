@@ -111,8 +111,10 @@
 
         packages = [
             { appId = "com.discordapp.DiscordCanary"; origin = "flathub-beta";  }
-            "com.discordapp.Discord" # Requires XDG_SESSION_TYPE=x11 for screensharing to work.
-            "dev.vencord.Vesktop"
+            "com.discordapp.Discord"            # Requires XDG_SESSION_TYPE=x11 for screensharing to work.
+            "dev.vencord.Vesktop"               # Discord Client
+            "org.gitfourchette.gitfourchette"   # Git Client
+            "io.github.giantpinkrobots.bootqt"  # Bootable Image -> USB Creator
         ];
     };
 
