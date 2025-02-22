@@ -52,6 +52,8 @@
         kdePackages.filelight           # Quickly visualize your disk space usage
         kdePackages.kde-gtk-config      # Syncs KDE settings to GTK applications
         kdePackages.partitionmanager    # Manage disks, partitions and file systems
+
+        fooyin                          # Music Player
         
         kdePackages.sonnet              # Spelling framework for Qt
         aspell                          # Spell Checker

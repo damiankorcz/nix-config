@@ -13,5 +13,7 @@
         python313   # Python 3.13
         nixd        # Nix language server
         nil         # Nix language server (Required by Zed)
+
+        imhex       # Hex Editor
     ];
 }
