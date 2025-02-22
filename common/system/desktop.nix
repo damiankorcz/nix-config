@@ -69,7 +69,10 @@
         };
 
         # Duplicati (Default port: 8200)
-        duplicati.enable = true;
+        duplicati = {
+            enable = true;
+            user = "${userSettings.username}";
+        };
         
         # Syncthing
         syncthing = {
