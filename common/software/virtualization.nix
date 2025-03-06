@@ -29,7 +29,12 @@
         dockerCompat = true;
     };
 
-    environment.systemPackages = [ pkgs.distrobox ];
+    environment.systemPackages = with pkgs; [
+        distrobox
+        boxbuddy
+     ];
+
+    # Quadlet?
 
     # For Windows as a Guest:
     # https://github.com/virtio-win/virtio-win-guest-tools-installer

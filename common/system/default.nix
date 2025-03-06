@@ -1,150 +1,137 @@
 { pkgs, ... }:
 
 {
-    # ------------ Bootloader ------------
+  # ------------ Bootloader ------------
 
-    boot = {
-        consoleLogLevel = 3;
-        kernelParams = [
-            "quiet"
-            "systemd.show_status=auto"
-            "rd.udev.log_level=3"
-        ];
-        
-        # Filesystem support
-        supportedFilesystems = [
-            "ntfs"
-            "btrfs"
-        ];
+  boot = {
+    consoleLogLevel = 3;
+    kernelParams = [
+      "quiet"
+      "systemd.show_status=auto"
+      "rd.udev.log_level=3"
+    ];
 
-        # Boot Splash Screen
-        # plymouth.enable = true;
+    # Filesystem support
+    supportedFilesystems = [
+      "ntfs"
+      "btrfs"
+    ];
 
-        # Bandaid for LVM warnings on boot
-        # https://github.com/NixOS/nixpkgs/issues/342082#issuecomment-2384783512
-        initrd.preLVMCommands = ''
-            export LVM_SUPPRESS_FD_WARNINGS=1
-        '';
+    # Boot Splash Screen
+    # plymouth.enable = true;
+
+    # Bandaid for LVM warnings on boot
+    # https://github.com/NixOS/nixpkgs/issues/342082#issuecomment-2384783512
+    initrd.preLVMCommands = ''
+      export LVM_SUPPRESS_FD_WARNINGS=1
+    '';
+  };
+
+  # ------------ Cleanup ------------
+
+  nix = {
+    # Optimisation of the Nix Store
+    optimise.automatic = true;
+    optimise.dates = [ "weekly" ];
+
+    # Garbage colection (Removes Old Snapshots)
+    gc = {
+      automatic = true;
+      dates = "weekly";
+      options = "--delete-older-than 7d";
     };
 
-    # ------------ Cleanup ------------
+    channel.enable = false;
 
-    nix = {
-        # Optimisation of the Nix Store
-        optimise.automatic = true;
-        optimise.dates = [ "weekly" ];
+    # Increase download buffer size
+    settings.download-buffer-size = 10485760; # 10 MB buffer size
+  };
 
-        # Garbage colection (Removes Old Snapshots)
-        gc = {
-            automatic = true;
-            dates = "weekly";
-            options = "--delete-older-than 7d";
-        };
+  # Recomputes checksums and compares to current to detect corruption
+  services.btrfs.autoScrub = {
+    enable = true;
+    interval = "weekly";
+    fileSystems = [ "/" ];
+  };
 
-        channel.enable = false;
+  # ------------ Timezone & Locale ------------
+
+  # Set your time zone
+  time.timeZone = "Europe/London";
+
+  # Select internationalisation properties
+  i18n.defaultLocale = "en_GB.UTF-8";
+  i18n.supportedLocales = [ "all" ];
+
+  # ------------ Fonts ------------
+
+  fonts = {
+    # Links all fonts to: `/run/current-system/sw/share/X11/font`
+    fontDir.enable = true;
+
+    packages = with pkgs; [
+      font-awesome
+      noto-fonts
+      noto-fonts-emoji
+      source-sans
+      source-serif
+      corefonts
+      vistafonts
+      ubuntu-sans
+      cascadia-code
+
+      # Nerdfonts
+      nerd-fonts.symbols-only
+      nerd-fonts.fira-code
+      nerd-fonts.geist-mono
+      nerd-fonts.blex-mono
+      nerd-fonts.iosevka
+      nerd-fonts.jetbrains-mono
+      nerd-fonts.sauce-code-pro
+      nerd-fonts.ubuntu-mono
+    ];
+  };
+
+  # ------------ Networking ------------
+
+  networking = {
+    networkmanager.enable = true;
+
+    # Open ports in the firewall.
+    #firewall {
+    # allowedTCPPorts = [ ... ];
+    # allowedUDPPorts = [ ... ];
+    # Or disable the firewall altogether.
+    # enable = false;
+    #}
+  };
+
+  # ------------ Hardware ------------
+
+  hardware = {
+    enableAllFirmware = true;
+
+    graphics = {
+      enable = true;
+
+      # Vulkan support for 32bit programs
+      enable32Bit = true;
+
+      ## amdvlk: an open-source Vulkan driver from AMD. Otherwise RADV is used.
+      #extraPackages = [ pkgs.amdvlk ];
+      #extraPackages32 = [ pkgs.driversi686Linux.amdvlk ];
     };
+  };
 
-    # Recomputes checksums and compares to current to detect corruption
-    services.btrfs.autoScrub = {
-        enable = true;
-        interval = "weekly";
-        fileSystems = [ "/" ];
-    };
+  # ------------ Services ------------
 
-    # ------------ Timezone & Locale ------------
+  services = {
+    # Enable Linux Vendor Firmware Service
+    fwupd.enable = true;
 
-    # Set your time zone
-    time.timeZone = "Europe/London";
-
-    # Select internationalisation properties
-    i18n.defaultLocale = "en_GB.UTF-8";
-    i18n.supportedLocales = ["all"];
-
-    # ------------ Fonts ------------
-
-    fonts = {
-        # Links all fonts to: `/run/current-system/sw/share/X11/font`
-        fontDir.enable = true;
-
-        packages = with pkgs; [
-            font-awesome
-            noto-fonts
-            noto-fonts-emoji
-            source-sans
-            source-serif
-            corefonts
-            vistafonts
-            ubuntu-sans
-            cascadia-code
-
-            # Nerdfonts
-            nerd-fonts.symbols-only
-            nerd-fonts.fira-code
-            nerd-fonts.geist-mono
-            nerd-fonts.blex-mono
-            nerd-fonts.iosevka
-            nerd-fonts.jetbrains-mono
-            nerd-fonts.sauce-code-pro
-            nerd-fonts.ubuntu-mono
-        ];
-    };
-
-    # ------------ Networking ------------
-
-    networking = {
-        networkmanager.enable = true;
-
-        # Open ports in the firewall.
-        #firewall {
-            # allowedTCPPorts = [ ... ];
-            # allowedUDPPorts = [ ... ];
-            # Or disable the firewall altogether.
-            # enable = false;
-        #}
-    };
-
-    # ------------ Hardware ------------
-
-    hardware = {
-        enableAllFirmware = true;
-
-        graphics = {
-            enable = true;
-
-            # Vulkan support for 32bit programs
-            enable32Bit = true;
-
-            ## amdvlk: an open-source Vulkan driver from AMD
-            extraPackages = [ pkgs.amdvlk ];
-            extraPackages32 = [ pkgs.driversi686Linux.amdvlk ];
-        };
-    };
-
-    # ------------ Services ------------
-    
-    services = {
-        # Enable Linux Vendor Firmware Service
-        fwupd.enable = true;
-
-        # Enable the OpenSSH daemon
-        openssh.enable = true;
-        openssh.settings.PasswordAuthentication = true;
-        openssh.settings.PermitRootLogin = "no";
-    };
-
-    # The system doesn't need anything from the network to start so this is disabled for boot speed up.
-    systemd.services.NetworkManager-wait-online.enable = false;
-
-    # Delays services to start once the graphical session is up and running.
-    systemd.services = {
-        fwupd = {
-            after = [ "graphical-session.target" ];
-            wantedBy = [ "graphical-session.target" ];
-        };
-
-        fwupd-refresh = {
-            after = [ "graphical-session.target" ];
-            wantedBy = [ "graphical-session.target" ];
-        };
-    };
+    # Enable the OpenSSH daemon
+    openssh.enable = true;
+    openssh.settings.PasswordAuthentication = true;
+    openssh.settings.PermitRootLogin = "no";
+  };
 }
