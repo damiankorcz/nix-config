@@ -20,5 +20,6 @@
     dfu-util # USB Programmer
     i2c-tools
 
+    nixfmt-rfc-style # Nix Formatter
   ];
 }
