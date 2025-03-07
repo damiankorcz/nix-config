@@ -126,12 +126,12 @@
     kernelPackages = pkgs.linuxPackagesFor (
       pkgs.linux_6_13.override {
         argsOverride = rec {
-          version = "6.13.3";
-          modDirVersion = "6.13.3";
+          version = "6.13.5";
+          modDirVersion = "6.13.5";
 
           src = pkgs.fetchurl {
             url = "https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-${version}.tar.xz";
-            sha256 = "0b60rbii83lx2h455nm66hhlnygckprbaw3qifmala16xlazncys";
+            sha256 = "1qp6aprkkf2iwlhg2czd2msyqc728ab1vyr2v1nw3yzkhh3wngi8";
           };
 
           # Source: https://github.com/D0023R/linux_kernel_15khz
