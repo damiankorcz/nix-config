@@ -1,7 +1,7 @@
 { lib, ... }:
 {
   # Trying to resolve stuttering and screen tearing
-  hardware.nvidia.forceFullCompositionPipeline = true;
+  # hardware.nvidia.forceFullCompositionPipeline = true;
 
   # Forcing the power management to Performance
   powerManagement = {

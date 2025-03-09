@@ -7,8 +7,8 @@
     ../../common/system/default.nix
     ../../common/system/desktop.nix
     ../../common/system/systemd-boot.nix
-    #../../common/system/x11-nvidia.nix
-    ../../common/system/wayland-nvidia.nix
+    #../../common/system/plasma-x11.nix
+    ../../common/system/plasma-wayland.nix
     ../../common/system/nvidia-offload.nix
 
     # Common Config Modules

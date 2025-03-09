@@ -7,8 +7,8 @@
     ../../common/system/default.nix
     ../../common/system/desktop.nix
     ../../common/system/GRUB.nix
-    #../../common/system/x11-nvidia.nix
-    ../../common/system/wayland-nvidia.nix
+    #../../common/system/plasma-x11.nix
+    ../../common/system/plasma-wayland.nix
 
     # Common Config Modules
     ../../common/home.nix
@@ -36,7 +36,7 @@
 
   services = {
     # Video Drivers
-    xserver.videoDrivers = [ "nvidia" ]; # "radeon" "modesetting" "fbdev"
+    xserver.videoDrivers = [ "amdgpu" ]; # "radeon" "modesetting" "fbdev"
 
     # Enable periodic SSD TRIM of mounted partitions in background
     fstrim.enable = true;

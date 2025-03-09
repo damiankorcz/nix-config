@@ -63,7 +63,7 @@
 
   # ------------ Hardware ------------
 
-  services.xserver.videoDrivers = [ "nvidia" ];
+  services.xserver.videoDrivers = [ "amdgpu" ];
 
   hardware = {
     cpu.amd = {
@@ -73,26 +73,6 @@
 
     # Enable amdgpu kernel driver for Southern Islands and Sea Islands cards.
     amdgpu.legacySupport.enable = true;
-
-    # Nvidia configuration
-    # https://nixos.wiki/wiki/Nvidia
-    nvidia = {
-      open = true;
-      nvidiaSettings = true;
-      modesetting.enable = true;
-      powerManagement.enable = false;
-      powerManagement.finegrained = false;
-      package = config.boot.kernelPackages.nvidiaPackages.latest;
-
-      prime = {
-        # NVIDIA GPU is always on (does all rendering). Output enabled to displays attached only to the integrated Intel/AMD GPU without a multiplexer.
-        sync.enable = true;
-
-        # Found with `lspci | grep VGA` then convert values from hex to dec
-        nvidiaBusId = "PCI:9:0:0";
-        amdgpuBusId = "PCI:4:0:0"; # "PCI:10:0:0" when in the other main slot
-      };
-    };
   };
 
   # ------------ Kernel ------------
@@ -106,23 +86,21 @@
       "usb_storage"
       "sd_mod"
     ];
+    
     initrd.kernelModules = [ ];
     kernelModules = [ "kvm-amd" ];
     extraModulePackages = [ ];
 
-    blacklistedKernelModules = lib.mkDefault [ "nouveau" ];
-
     kernelParams = [
       "video=DVI-I-1:640x480ieS"
       #"video=DVI-I-1:320x240eS"
-      "nvidia.NVreg_PreserveVideoMemoryAllocations=1"
-      "nvidia.NVreg_UsePageAttributeTable=1"
       "amd_pstate=guided"
     ];
 
     # kernelPackages = pkgs.linuxPackages_xanmod_latest; # https://xanmod.org/
     # kernelPackages = pkgs.linuxPackages_latest; # Latest Stable
     # kernelPackages = pkgs.linuxPackages; # LTS
+
     kernelPackages = pkgs.linuxPackagesFor (
       pkgs.linux_6_13.override {
         argsOverride = rec {
