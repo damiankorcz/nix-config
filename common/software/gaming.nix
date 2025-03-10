@@ -9,6 +9,8 @@
     libnotify # Library for Sending Desktop Notifications to the Notification Daemon
     prismlauncher # Launcher for Minecraft
 
+    vulkan-tools # Khronos official Vulkan Tools and Utilities
+    lact
     #moonlight-qt    # Play your PC games on almost any device
 
     # Sched-ext userspace Schedulers (Available in Kernel 6.12 or newer)
@@ -17,6 +19,17 @@
     # https://wiki.cachyos.org/configuration/sched-ext/
     scx.full
   ];
+
+  # Enable the AMDGPU Control Daemon
+  systemd.services.lact = {
+    description = "AMDGPU Control Daemon";
+    after = [ "multi-user.target" ];
+    wantedBy = [ "multi-user.target" ];
+    serviceConfig = {
+      ExecStart = "${pkgs.lact}/bin/lact daemon";
+    };
+    enable = true;
+  };
 
   # services.sunshine = {
   #     enable = true;
