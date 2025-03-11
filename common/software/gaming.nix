@@ -10,7 +10,6 @@
     prismlauncher # Launcher for Minecraft
 
     vulkan-tools # Khronos official Vulkan Tools and Utilities
-    lact
     #moonlight-qt    # Play your PC games on almost any device
 
     # Sched-ext userspace Schedulers (Available in Kernel 6.12 or newer)
@@ -18,7 +17,22 @@
     # https://www.kernel.org/doc/html/next/scheduler/sched-ext.html
     # https://wiki.cachyos.org/configuration/sched-ext/
     scx.full
+
+    # lact
+
+    corectrl
   ];
+
+  # # Enable the AMDGPU Control Daemon
+  # systemd.services.lact = {
+  #   description = "AMDGPU Control Daemon";
+  #   after = [ "multi-user.target" ];
+  #   wantedBy = [ "multi-user.target" ];
+  #   serviceConfig = {
+  #     ExecStart = "${pkgs.lact}/bin/lact daemon";
+  #   };
+  #   enable = true;
+  # };
 
   chaotic.mesa-git.enable = true;
 
