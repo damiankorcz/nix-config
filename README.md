@@ -27,13 +27,13 @@
 
 | **Specification**         | **Description**                                                                        |
 | ------------------------- | -------------------------------------------------------------------------------------- |
-| **Operating System**      | Windows 11 Pro / NixOS (Dual Boot)                                                 |
+| **Operating System**      | Windows 11 Pro / NixOS (Dual Boot)                                                     |
 | **Case**                  | Phanteks Enthoo Evolv ATX (Galaxy Silver)                                              |
 | **CPU**                   | AMD Ryzen R7 5700X3D (8c \/ 16t 3 GHz Base \/ 4.1 GHz Turbo) -30mv All Core Undervolt  |
 | **Watercooler**           | Corsair Hydro H115i Pro 280mm                                                          |
 | **Motherboard**           | ASUS Prime X470-Pro (AM4)                                                              |
 | **RAM**                   | G.SKILL Flare X 32 GB (8 GB x 4) 3200 MHz CL14 (F4-3200C14D-16GFX)                     |
-| **GPU (Main)**            | ZOTAC GAMING GeForce RTX 2080 AMP                                                      |
+| **GPU (Main)**            | Sapphire AMD Radeon RX 9070 XT Pulse 16GB                                              |
 | **GPU (CRT)**             | Dell AMD Radeon R5 340x                                                                |
 | **PSU**                   | EVGA SuperNOVA 650 G2                                                                  |
 | **Storage (SSD) Linux**   | Lexar NM790 NVMe (1TB)                                                                 |
