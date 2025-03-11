@@ -33,6 +33,9 @@
 
     # https://github.com/NixOS/nixos-hardware
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+
+    # https://github.com/chaotic-cx/nyx
+    chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
   };
 
   outputs =
@@ -42,6 +45,7 @@
       xppen-pr,
       nix-flatpak,
       nixos-hardware,
+      chaotic,
     }:
     let
       userSettings = {
@@ -74,6 +78,8 @@
             nixos-hardware.nixosModules.common-gpu-amd
             nixos-hardware.nixosModules.common-pc
             nixos-hardware.nixosModules.common-pc-ssd
+
+            chaotic.nixosModules.default 
           ];
 
           specialArgs = {
