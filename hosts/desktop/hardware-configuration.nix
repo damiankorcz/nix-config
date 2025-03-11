@@ -86,7 +86,7 @@
       "usb_storage"
       "sd_mod"
     ];
-    
+
     initrd.kernelModules = [ ];
     kernelModules = [ "kvm-amd" ];
     extraModulePackages = [ ];
@@ -104,12 +104,12 @@
     kernelPackages = pkgs.linuxPackagesFor (
       pkgs.linux_6_13.override {
         argsOverride = rec {
-          version = "6.13.5";
-          modDirVersion = "6.13.5";
+          version = "6.13.6";
+          modDirVersion = "6.13.6";
 
           src = pkgs.fetchurl {
             url = "https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-${version}.tar.xz";
-            sha256 = "1qp6aprkkf2iwlhg2czd2msyqc728ab1vyr2v1nw3yzkhh3wngi8";
+            sha256 = "3gBTy0E9QI8g/R1XiCGZUbikQD5drBsdkDIJCTis0Zk=";
           };
 
           # Source: https://github.com/D0023R/linux_kernel_15khz
