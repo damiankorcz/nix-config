@@ -10,6 +10,7 @@
     prismlauncher # Launcher for Minecraft
 
     vulkan-tools # Khronos official Vulkan Tools and Utilities
+    inxi
     #moonlight-qt    # Play your PC games on almost any device
 
     # Sched-ext userspace Schedulers (Available in Kernel 6.12 or newer)
@@ -20,8 +21,16 @@
 
     # lact
 
-    corectrl
+    # corectrl
   ];
+
+  programs.corectrl = {
+    enable = true;
+    gpuOverclock = {
+      enable = true;
+      ppfeaturemask = "0xffffffff";
+    };
+  };
 
   # # Enable the AMDGPU Control Daemon
   # systemd.services.lact = {
