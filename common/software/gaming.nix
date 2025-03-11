@@ -20,6 +20,8 @@
     scx.full
   ];
 
+  chaotic.mesa-git.enable = true;
+
   # Enable the AMDGPU Control Daemon
   systemd.services.lact = {
     description = "AMDGPU Control Daemon";
