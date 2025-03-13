@@ -36,6 +36,11 @@
 
     # https://github.com/chaotic-cx/nyx
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
+
+    tagstudio = {
+      url = "github:TagStudioDev/TagStudio";
+      inputs.nixpkgs.follows = "nixpkgs"; # Use the same package set as your flake.
+    };
   };
 
   outputs =
@@ -46,8 +51,17 @@
       nix-flatpak,
       nixos-hardware,
       chaotic,
+      tagstudio,
     }:
     let
+      pkgs = import nixpkgs {
+        system = "x86_64-linux"; # Adjust based on your architecture
+        overlays = [
+          import
+          ./overlays/lact-overlay.nix # Import the custom overlay
+        ];
+      };
+
       userSettings = {
         username = "damian"; # Username
         name = "Damian Korcz"; # Name  / Identifier
@@ -57,7 +71,6 @@
         terminal = "konsole";
         browser = "brave"; # Default browser; must select one from ./user/app/browser/
       };
-
     in
     {
       nixosConfigurations = {
@@ -79,7 +92,7 @@
             nixos-hardware.nixosModules.common-pc
             nixos-hardware.nixosModules.common-pc-ssd
 
-            chaotic.nixosModules.default 
+            chaotic.nixosModules.default
           ];
 
           specialArgs = {
