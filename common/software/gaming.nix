@@ -19,31 +19,36 @@
     # https://wiki.cachyos.org/configuration/sched-ext/
     scx.full
 
-    # lact
-
-    # corectrl
+    lact
   ];
 
-  programs.corectrl = {
-    enable = true;
-    gpuOverclock = {
-      enable = true;
-      ppfeaturemask = "0xffffffff";
-    };
-  };
-
-  # # Enable the AMDGPU Control Daemon
-  # systemd.services.lact = {
-  #   description = "AMDGPU Control Daemon";
-  #   after = [ "multi-user.target" ];
-  #   wantedBy = [ "multi-user.target" ];
-  #   serviceConfig = {
-  #     ExecStart = "${pkgs.lact}/bin/lact daemon";
-  #   };
+  # programs.corectrl = {
   #   enable = true;
+  #   gpuOverclock = {
+  #     enable = true;
+  #     ppfeaturemask = "0xfffd3fff"; # 0xffffffff
+  #   };
   # };
 
-  chaotic.mesa-git.enable = true;
+  # Enable the AMDGPU Control Daemon
+  systemd.services.lact = {
+    description = "AMDGPU Control Daemon";
+    after = [ "multi-user.target" ];
+    wantedBy = [ "multi-user.target" ];
+    serviceConfig = {
+      ExecStart = "${pkgs.lact}/bin/lact daemon";
+    };
+    enable = true;
+  };
+
+  chaotic = {
+    mesa-git = {
+      enable = true;
+      extraPackages = [ pkgs.amdvlk ]; # pkgs.rocmPackages.clr.icd
+      extraPackages32 = [ pkgs.driversi686Linux.amdvlk ];
+    };
+    nyx.cache.enable = true;
+  };
 
   hardware.firmware = with pkgs; [
     (linux-firmware.overrideAttrs (old: {
