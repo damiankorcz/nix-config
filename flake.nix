@@ -54,14 +54,6 @@
       tagstudio,
     }:
     let
-      pkgs = import nixpkgs {
-        system = "x86_64-linux"; # Adjust based on your architecture
-        overlays = [
-          import
-          ./overlays/lact-overlay.nix # Import the custom overlay
-        ];
-      };
-
       userSettings = {
         username = "damian"; # Username
         name = "Damian Korcz"; # Name  / Identifier
