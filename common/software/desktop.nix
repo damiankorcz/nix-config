@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ inputs, pkgs, ... }:
 
 {
   # ------------ Nixpkgs ------------
@@ -35,7 +35,7 @@
     # Peripherals
     solaar # Linux device manager for Logitech devices
     vial # Keyboard Firmware Manager
-    jamesdsp # Audio effect processor for PipeWire clients (EQ for Headphones)
+    #jamesdsp # Audio effect processor for PipeWire clients (EQ for Headphones) ISSUE: ??? Currently not building
     qpwgraph # Qt graph manager for PipeWire
     #naps2 # Document Scanning / ISSUE: https://github.com/NixOS/nixpkgs/issues/326335
 
@@ -64,6 +64,8 @@
     winetricks # Script to install DLLs needed to work around problems in Wine
 
     discord-krisp
+
+    inputs.tagstudio.packages.${pkgs.stdenv.hostPlatform.system}.tagstudio
   ];
 
   # ------------ Excludes ------------
@@ -86,7 +88,7 @@
 
   programs = {
     kde-pim.enable = false; # Used for Kontact / Kmail
-    coolercontrol.enable = true; # Cooling Device Control
+    #coolercontrol.enable = true; # Cooling Device Control
     gnupg.agent.enable = true; # GNU Privacy Guard, a GPL OpenPGP implementation
     adb.enable = true; # Android Debug Bridge (ADB)
   };
@@ -123,6 +125,7 @@
       #"dev.vencord.Vesktop" # Discord Client
       "org.gitfourchette.gitfourchette" # Git Client
       "io.github.giantpinkrobots.bootqt" # Bootable Image -> USB Creator
+      "me.timschneeberger.jdsp4linux" # JamesDSP
     ];
   };
 
