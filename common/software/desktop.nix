@@ -118,10 +118,10 @@
     ];
 
     packages = [
-      {
-        appId = "com.discordapp.DiscordCanary";
-        origin = "flathub-beta";
-      }
+      # {
+      #   appId = "com.discordapp.DiscordCanary";
+      #   origin = "flathub-beta";
+      # }
       #"com.discordapp.Discord" # Requires XDG_SESSION_TYPE=x11 for screensharing to work.
       #"dev.vencord.Vesktop" # Discord Client
       "org.gitfourchette.gitfourchette" # Git Client
