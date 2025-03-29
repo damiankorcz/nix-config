@@ -95,6 +95,7 @@
       "video=DVI-I-1:640x480ieS"
       #"video=DVI-I-1:320x240eS"
       "amd_pstate=guided"
+      "amdgpu.ppfeaturemask=0xfffd7fff" # Enables Overclocking on AMD GPU
     ];
 
     # kernelPackages = pkgs.linuxPackages_xanmod_latest; # https://xanmod.org/
