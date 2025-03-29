@@ -47,7 +47,7 @@
     channel.enable = false;
 
     # Increase download buffer size
-    settings.download-buffer-size = 10485760; # 10 MB buffer size
+    settings.download-buffer-size = 524288000; # 500 MB buffer size
   };
 
   # Recomputes checksums and compares to current to detect corruption
