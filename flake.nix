@@ -26,6 +26,9 @@
     # NixOS Package Source with XP Pen Drivers / app
     xppen-pr.url = "github:gepbird/nixpkgs/xppen-init-v3-v4-nixos-module";
 
+    # NixOS Package Source with LACT 0.7.2 (RDNA4 Support)
+    lact-pr.url = "github:cything/nixpkgs?ref=lact";
+
     # Declarative Flatpak Manager
     # Use github:gmodena/nix-flatpak?ref=<tag> to pin releases.
     # https://github.com/gmodena/nix-flatpak
@@ -48,6 +51,7 @@
       self,
       nixpkgs,
       xppen-pr,
+      lact-pr,
       nix-flatpak,
       nixos-hardware,
       chaotic,
@@ -85,6 +89,16 @@
             nixos-hardware.nixosModules.common-pc-ssd
 
             chaotic.nixosModules.default
+
+            {
+              nixpkgs.overlays = [
+                (final: prev: {
+                  lact = final.callPackage "${lact-pr}/pkgs/by-name/la/lact/package.nix" {
+                    hwdata = final.callPackage "${lact-pr}/pkgs/by-name/hw/hwdata/package.nix" { };
+                  };
+                })
+              ];
+            }
           ];
 
           specialArgs = {
