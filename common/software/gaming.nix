@@ -12,6 +12,7 @@
     vulkan-tools # Khronos official Vulkan Tools and Utilities
     inxi
     #moonlight-qt    # Play your PC games on almost any device
+    goverlay # GUI for managing Linux overlays (e.g. MangoHud)
 
     # Sched-ext userspace Schedulers (Available in Kernel 6.12 or newer)
     # https://github.com/sched-ext/scx
@@ -20,6 +21,10 @@
     scx.full
 
     lact
+
+    # Benchmarks
+    unigine-superposition
+    furmark
   ];
 
   # programs.corectrl = {
