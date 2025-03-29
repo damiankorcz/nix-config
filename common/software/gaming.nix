@@ -30,9 +30,9 @@
   #   };
   # };
 
-  # Enable the AMDGPU Control Daemon
+  # Enable the LACT Daemon
   systemd.services.lact = {
-    description = "AMDGPU Control Daemon";
+    description = "LACT Daemon";
     after = [ "multi-user.target" ];
     wantedBy = [ "multi-user.target" ];
     serviceConfig = {
@@ -44,8 +44,8 @@
   chaotic = {
     mesa-git = {
       enable = true;
-      extraPackages = [ pkgs.amdvlk ]; # pkgs.rocmPackages.clr.icd
-      extraPackages32 = [ pkgs.driversi686Linux.amdvlk ];
+      # extraPackages = [ pkgs.amdvlk ]; # pkgs.rocmPackages.clr.icd
+      # extraPackages32 = [ pkgs.driversi686Linux.amdvlk ];
     };
     nyx.cache.enable = true;
   };
