@@ -35,7 +35,7 @@
     # Peripherals
     solaar # Linux device manager for Logitech devices
     vial # Keyboard Firmware Manager
-    #jamesdsp # Audio effect processor for PipeWire clients (EQ for Headphones) ISSUE: ??? Currently not building
+    jamesdsp # Audio effect processor for PipeWire clients (EQ for Headphones) ISSUE: ??? Currently not building
     qpwgraph # Qt graph manager for PipeWire
     #naps2 # Document Scanning / ISSUE: https://github.com/NixOS/nixpkgs/issues/326335
 
@@ -125,7 +125,7 @@
       #"dev.vencord.Vesktop" # Discord Client
       "org.gitfourchette.gitfourchette" # Git Client
       "io.github.giantpinkrobots.bootqt" # Bootable Image -> USB Creator
-      "me.timschneeberger.jdsp4linux" # JamesDSP
+      #"me.timschneeberger.jdsp4linux" # JamesDSP
     ];
   };
 
