@@ -35,7 +35,7 @@
 | **RAM**                   | G.SKILL Flare X 32 GB (8 GB x 4) 3200 MHz CL14 (F4-3200C14D-16GFX)                     |
 | **GPU (Main)**            | Sapphire AMD Radeon RX 9070 XT Pulse 16GB                                              |
 | **GPU (CRT)**             | Dell AMD Radeon R5 340x                                                                |
-| **PSU**                   | EVGA SuperNOVA 650 G2                                                                  |
+| **PSU**                   | Corsair RM850x Fully Modular Power Supply                                              |
 | **Storage (SSD) Linux**   | Lexar NM790 NVMe (1TB)                                                                 |
 | **Storage (SSD) Windows** | Sabrent ROCKET NVMe (1TB)                                                              |
 | **Monitor 1 Main**        | LG 27GN800-B 27" 1440p IPS 144Hz                                                       |
