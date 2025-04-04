@@ -14,6 +14,7 @@
     # Common Config Modules
     ../../common/home.nix
     ../../common/samba.nix
+    ../../common/software/xppen.nix
     ../../common/software/desktop.nix
     ../../common/software/development.nix
     ../../common/software/terminal.nix
