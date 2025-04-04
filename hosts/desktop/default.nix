@@ -19,6 +19,7 @@
     ../../common/software/development.nix
     ../../common/software/emulators.nix
     ../../common/software/gaming.nix
+    ../../common/software/overclocking.nix
     ../../common/software/terminal.nix
     ../../common/software/virtualization.nix
   ];
