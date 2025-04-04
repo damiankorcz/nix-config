@@ -2,7 +2,8 @@
 
 # Define your sinks
 DEVICE1="alsa_output.pci-0000_0d_00.4.iec958-stereo"
-DEVICE2="alsa_output.usb-iFi__by_AMR__iFi__by_AMR__HD_USB_Audio_0000-00.iec958-stereo"
+# DEVICE2="alsa_output.usb-iFi__by_AMR__iFi__by_AMR__HD_USB_Audio_0000-00.iec958-stereo"
+DEVICE2="jamesdsp_sink"
 
 # Lock file
 LOCKFILE="/tmp/audioDeviceToggle.lock"
