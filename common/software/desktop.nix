@@ -65,7 +65,7 @@
 
     discord-krisp
 
-    inputs.tagstudio.packages.${pkgs.stdenv.hostPlatform.system}.tagstudio
+    # inputs.tagstudio.packages.${pkgs.stdenv.hostPlatform.system}.tagstudio
     blender-hip
   ];
 
