@@ -19,6 +19,7 @@
     # https://www.kernel.org/doc/html/next/scheduler/sched-ext.html
     # https://wiki.cachyos.org/configuration/sched-ext/
     scx.full
+    osu-lazer-bin
   ];
 
   # services.sunshine = {
