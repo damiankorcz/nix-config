@@ -50,9 +50,6 @@
     # Enable periodic SSD TRIM of mounted partitions in background
     fstrim.enable = true;
 
-    # Enable the KDE Plasma Desktop Environment.
-    desktopManager.plasma6.enable = true;
-
     # Configure keymap in X11
     xserver.xkb = {
       layout = "gb";
