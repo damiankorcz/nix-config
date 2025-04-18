@@ -60,7 +60,7 @@
     aspellDicts.en-computers # English Computer Jargon dictionary
     aspellDicts.pl # Polish dictionary
 
-    wineWowPackages.stagingFull # Run Windows Apps on Linux
+    wineWowPackages.stableFull # Run Windows Apps on Linux
     winetricks # Script to install DLLs needed to work around problems in Wine
 
     discord-krisp
