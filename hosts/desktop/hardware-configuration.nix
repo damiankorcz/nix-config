@@ -62,7 +62,7 @@
   swapDevices = [ { device = "/dev/disk/by-label/swap"; } ];
 
   # ------------ Hardware ------------
-
+  
   services.xserver.videoDrivers = [ "amdgpu" ];
 
   hardware = {
@@ -107,12 +107,12 @@
     kernelPackages = pkgs.linuxPackagesFor (
       pkgs.linux_6_14.override {
         argsOverride = rec {
-          version = "6.14";
-          modDirVersion = "6.14.0";
+          version = "6.14.2";
+          modDirVersion = "6.14.2";
 
           src = pkgs.fetchurl {
             url = "https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-${version}.tar.xz";
-            sha256 = "opS2g+exYbsFF7sy7H7R0up2A9+6utE1Fw7RLQDEdnA=";
+            sha256 = "xcaCo1TqMZATk1elfTSnnlw3IhrOgjqTjhARa1d6Lhs=";
           };
 
           # Source: https://github.com/D0023R/linux_kernel_15khz
