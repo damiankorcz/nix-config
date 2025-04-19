@@ -119,32 +119,32 @@
           # Get sha256: `nix-prefetch-url --type sha256 *patch link*`
           kernelPatches = [
             {
-              name = "D0023R's 01 linux 15khz patch";
-              patch = builtins.fetchFile "../../scripts/15Khz Patch/01_linux_15khz.patch";
+              name = "D0023R's 01 linux 15khz";
+              patch = ../../scripts/15Khz/01_linux_15khz.patch;
             }
             # {
-            #   name = "D0023R's 02 linux 15khz interlaced mode fix patch";
-            #   patch = builtins.fetchFile "../../scripts/15Khz Patch/02_linux_15khz_interlaced_mode_fix.patch";
+            #   name = "D0023R's 02 linux 15khz interlaced mode fix";
+            #   patch = ../../scripts/15Khz/02_linux_15khz_interlaced_mode_fix.patch;
             # }
             {
-              name = "D0023R's 03 linux 15khz dcn1 dcn2 interlaced mode fix patch";
-              patch = builtins.fetchFile "../../scripts/15Khz Patch/03_linux_15khz_dcn1_dcn2_dcn3_interlaced_mode_fix.patch";
+              name = "D0023R's 03 linux 15khz dcn1 dcn2 interlaced mode fix";
+              patch = ../../scripts/15Khz/03_linux_15khz_dcn1_dcn2_dcn3_interlaced_mode_fix.patch;
             }
             {
-              name = "D0023R's 04 linux 15khz dce interlaced mode fix patch";
-              patch = builtins.fetchFile "../../scripts/15Khz Patch/04_linux_15khz_dce_interlaced_mode_fix.patch";
+              name = "D0023R's 04 linux 15khz dce interlaced mode fix";
+              patch = ../../scripts/15Khz/04_linux_15khz_dce_interlaced_mode_fix.patch;
             }
             {
-              name = "0023R's 05 linux 15khz amdgpu pll fix patch";
-              patch = builtins.fetchFile "../../scripts/15Khz Patch/05_linux_15khz_amdgpu_pll_fix.patch";
+              name = "0023R's 05 linux 15khz amdgpu pll fix";
+              patch = ../../scripts/15Khz/05_linux_15khz_amdgpu_pll_fix.patch;
             }
             {
-              name = "D0023R's 06 linux switchres kms drm modesetting patch";
-              patch = builtins.fetchFile "../../scripts/15Khz Patch/06_linux_switchres_kms_drm_modesetting.patch";
+              name = "D0023R's 06 linux switchres kms drm modesetting";
+              patch = ../../scripts/15Khz/06_linux_switchres_kms_drm_modesetting.patch;
             }
             {
-              name = "D0023R's 07 linux 15khz fix ddc patch";
-              patch = builtins.fetchFile "../../scripts/15Khz Patch/07_linux_15khz_fix_ddc.patch";
+              name = "D0023R's 07 linux 15khz fix ddc";
+              patch = ../../scripts/15Khz/07_linux_15khz_fix_ddc.patch;
             }
           ];
         };
