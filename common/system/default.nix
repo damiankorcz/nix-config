@@ -114,6 +114,8 @@
   hardware = {
     enableAllFirmware = true;
 
+    logitech.wireless.enable = true;
+
     graphics = {
       enable = true;
 
@@ -137,6 +139,9 @@
   services = {
     # Enable Linux Vendor Firmware Service
     fwupd.enable = true;
+
+    # Daemon to configure input devices, mainly gaming mice (Paired with Piper)
+    ratbagd.enable = true;
 
     # Enable the OpenSSH daemon
     openssh.enable = true;
