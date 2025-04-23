@@ -12,11 +12,11 @@
 
     #duckstation # PlayStation 1 (Outdated - https://github.com/NixOS/nixpkgs/issues/335958)
     pcsx2 # PlayStation 2
-    rpcs3 # PlayStation 3
+    #rpcs3 # PlayStation 3
     ppsspp-qt # PlayStation Portable
 
     #lime3ds # Nintendo 3DS
-    azahar # Nintendo 3DS
+    #azahar # Nintendo 3DS
     rmg # Nintendo 64
     melonDS # Nintendo DS
     fceux # Nintendo Entertainment System
