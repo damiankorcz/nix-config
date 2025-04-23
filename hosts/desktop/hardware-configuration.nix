@@ -107,16 +107,16 @@
     kernelPackages = pkgs.linuxPackagesFor (
       pkgs.linux_6_14.override {
         argsOverride = rec {
-          version = "6.14.2";
-          modDirVersion = "6.14.2";
+          version = "6.14.3";
+          modDirVersion = "6.14.3";
 
+          # Get sha256: `nix-prefetch-url --type sha256 *url*`
           src = pkgs.fetchurl {
             url = "https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-${version}.tar.xz";
-            sha256 = "xcaCo1TqMZATk1elfTSnnlw3IhrOgjqTjhARa1d6Lhs=";
+            sha256 = "0ak5av0ykf8m65dmbihlcx9ahb1p8rgx6bm04acz0s15qcic7ili";
           };
 
           # Source: https://github.com/D0023R/linux_kernel_15khz
-          # Get sha256: `nix-prefetch-url --type sha256 *patch link*`
           kernelPatches = [
             {
               name = "D0023R's 01 linux 15khz";
