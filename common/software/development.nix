@@ -21,5 +21,9 @@
     i2c-tools
 
     nixfmt-rfc-style # Nix Formatter
+
+    # Utilities
+    # kdiskmark # HDD / SSD Benchmark Tool
+    # f3 # Tests flash cards capacity / performance to see if they live up to claimed specifications
   ];
 }

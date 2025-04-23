@@ -20,28 +20,23 @@
     ente-auth # 2FA
     displaycal # Display Calibration Tool
     # trackma-qt                    # AniList Client / Currently broken - ISSUE: https://github.com/NixOS/nixpkgs/issues/377206
-    microsoft-edge # Web Browser
+    #microsoft-edge # Web Browser
     github-desktop # Github Client
     gimp # Image Manipulation Program
-    simplescreenrecorder # Screen Recorder
+    #simplescreenrecorder # Screen Recorder
     inkscape-with-extensions # Vector Graphics Editor
     libreoffice-qt6-fresh # Office Suite
     mailspring # Email Client
 
-    # Disk Utilities
-    kdiskmark # HDD / SSD Benchmark Tool
-    f3 # Tests flash cards capacity / performance to see if they live up to claimed specifications
-
     # Peripherals
     solaar # Linux device manager for Logitech devices
+    piper # Linux device manager for gaming mice
     vial # Keyboard Firmware Manager
-    jamesdsp # Audio effect processor for PipeWire clients (EQ for Headphones) ISSUE: ??? Currently not building
-    qpwgraph # Qt graph manager for PipeWire
-    #naps2 # Document Scanning / ISSUE: https://github.com/NixOS/nixpkgs/issues/326335
+    # jamesdsp # Audio effect processor for PipeWire clients (EQ for Headphones) ISSUE: ??? Currently not building
+    # qpwgraph # Qt graph manager for PipeWire
+    # naps2 # Document Scanning / ISSUE: https://github.com/NixOS/nixpkgs/issues/326335
 
     # KDE Applications (QT)
-    #krita # Digital Painting
-    #krita-plugin-gmic # Image Processing Plugin
     kdePackages.kate # Text / Code Editor
     kdePackages.kalk # Calculator
     kdePackages.elisa # Music Player
@@ -51,7 +46,7 @@
     kdePackages.kde-gtk-config # Syncs KDE settings to GTK applications
     kdePackages.partitionmanager # Manage disks, partitions and file systems
 
-    fooyin # Music Player
+    #fooyin # Music Player
 
     kdePackages.sonnet # Spelling framework for Qt
     aspell # Spell Checker
@@ -124,9 +119,9 @@
       # }
       #"com.discordapp.Discord" # Requires XDG_SESSION_TYPE=x11 for screensharing to work.
       #"dev.vencord.Vesktop" # Discord Client
+      
       "org.gitfourchette.gitfourchette" # Git Client
       "io.github.giantpinkrobots.bootqt" # Bootable Image -> USB Creator
-      #"me.timschneeberger.jdsp4linux" # JamesDSP
     ];
   };
 
