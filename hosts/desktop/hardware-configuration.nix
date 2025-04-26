@@ -62,7 +62,7 @@
   swapDevices = [ { device = "/dev/disk/by-label/swap"; } ];
 
   # ------------ Hardware ------------
-  
+
   services.xserver.videoDrivers = [ "amdgpu" ];
 
   hardware = {
@@ -76,6 +76,21 @@
   };
 
   # ------------ Kernel ------------
+
+  # hardware.firmware = [
+  # (
+  #   pkgs.runCommand "edid.bin" { } ''
+  #     mkdir -p $out/lib/firmware/edid
+  #     cp ${../../scripts/edid/320x240_60.bin} $out/lib/firmware/edid/edid.bin
+  #   ''
+  # )];
+
+  # hardware.display.edid.modelines = {
+  #   "320x240p" = "6.514560 320 333 364 416 240 241 244 261 -hsync -vsync";
+  #   "640x480i" = "13.038390 640 666 727 831 480 483 489 523 interlace -hsync -vsync";
+  # };
+
+  # hardware.display.outputs."DVI-I-1".edid = "320x240p.bin";
 
   boot = {
     initrd.availableKernelModules = [
@@ -94,6 +109,8 @@
     kernelParams = [
       "video=DVI-I-1:640x480ieS"
       #"video=DVI-I-1:320x240eS"
+      # "drm.edid_firmware=DVI-I-1:320x240p.bin"
+      # "video=DVI-I-1:eS"
       "amd_pstate=guided"
       "amdgpu.ppfeaturemask=0xfffd7fff" # Enables Overclocking on AMD GPU
     ];
