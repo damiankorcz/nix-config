@@ -32,7 +32,7 @@
     solaar # Linux device manager for Logitech devices
     piper # Linux device manager for gaming mice
     vial # Keyboard Firmware Manager
-    # jamesdsp # Audio effect processor for PipeWire clients (EQ for Headphones) ISSUE: ??? Currently not building
+    jamesdsp # Audio effect processor for PipeWire clients (EQ for Headphones) ISSUE: ??? Currently not building
     # qpwgraph # Qt graph manager for PipeWire
     # naps2 # Document Scanning / ISSUE: https://github.com/NixOS/nixpkgs/issues/326335
 
