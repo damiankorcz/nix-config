@@ -1,5 +1,9 @@
 # nixos-config
 
+No longer maintained. I've since moved to CachyOS.
+
+---
+
 > ⚠️ WIP - Not intended for direct use. Made for my setup / systems specifically.
 
 # 🌟 Points of Interest
